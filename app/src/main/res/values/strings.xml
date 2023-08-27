@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ImprOOve</string>
+    <string name="search_hint">Cari Event Disini . . . .</string>
+    <string name="lomba">Lomba</string>
+    <string name="seminar">Seminar</string>
+    <string name="lainnya">Lainnya</string>
+    <string name="rekomendasi_lomba">Lomba Untukmu</string>
+    <string name="lihat_semua">Lihat Semua</string>
+    <string name="rekomendasi_seminar_home">Mari Tingkatkan Dirimu</string>
 </resources>
