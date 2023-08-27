@@ -11,14 +11,14 @@ import com.google.android.material.navigation.NavigationBarView;
 
 import astratech.myapplication.R;
 import astratech.myapplication.ui.fragment.FirstFragment;
-import astratech.myapplication.ui.fragment.SecondFragment;
+import astratech.myapplication.ui.fragment.HomeFragment;
 import astratech.myapplication.ui.fragment.LeaderBoardFragment;
 
 public class HomeActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
 
     BottomNavigationView bottomNavigationView;
     FirstFragment firstFragment = new FirstFragment();
-    SecondFragment secondFragment = new SecondFragment();
+    HomeFragment mHomeFragment = new HomeFragment();
     LeaderBoardFragment thirdFragment = new LeaderBoardFragment();
 
     @Override
@@ -40,7 +40,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, firstFragment).commit();
                 return true;
             case R.id.home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, secondFragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, mHomeFragment).commit();
                 return true;
             case R.id.leaderboard:
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, thirdFragment).commit();
