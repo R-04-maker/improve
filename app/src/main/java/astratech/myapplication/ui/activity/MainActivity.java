@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 
 import astratech.myapplication.R;
+import astratech.myapplication.model.LeaderBoard;
+import astratech.myapplication.ui.fragment.LeaderBoardFragment;
 import astratech.myapplication.ui.fragment.OnBoardingFragment;
 
 public class MainActivity extends AppCompatActivity {

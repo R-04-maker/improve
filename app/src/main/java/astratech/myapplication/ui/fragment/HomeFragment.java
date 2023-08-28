@@ -27,7 +27,6 @@ import astratech.myapplication.model.Seminar;
 public class HomeFragment extends Fragment {
 
     private static final String TAG = "HomeFragment";
-
     private RecyclerView mRvRekomendasiLomba, mRvRekomendasiSeminar;
     private ImageButton mBtnSavedEvent, mBtnNotification;
     private LombaAdapter mLombaAdapter;
