@@ -63,7 +63,7 @@ public class LeaderBoardFragment extends Fragment {
         for(int i  = 0; i < 7; i++){
             LeaderBoard lomba = new LeaderBoard();
             lomba.setIdLeaderBoard(i + 4);
-                lomba.setNamaOrang("Muhammad Gema");
+                lomba.setNamaOrang("Muhammad Gema Rhomadon");
             if (i == 5){
                 lomba.setNamaOrang("Dewi Sonya (You)");
             }
