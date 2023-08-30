@@ -10,6 +10,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -56,8 +57,15 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        updateLomba(dataLomba());
-        updateSeminar(dataSeminar());
+
+        List<Lomba> lombas = dataLomba();
+        List<Seminar> seminars = dataSeminar();
+
+        mLombaAdapter = new LombaAdapter(lombas);
+        mSeminarAdapter = new SeminarAdapter(seminars);
+
+        mRvRekomendasiLomba.setAdapter(mLombaAdapter);
+        mRvRekomendasiSeminar.setAdapter(mSeminarAdapter);
     }
 
     private void updateLomba(List<Lomba> lombas){
@@ -117,7 +125,7 @@ public class HomeFragment extends Fragment {
             return mLombas.size();
         }
 
-        private class LombaHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        private class LombaHolder extends RecyclerView.ViewHolder{
             private ImageView mPoster;
             private TextView mNamaLomba;
             private Lomba mLomba;
@@ -127,24 +135,18 @@ public class HomeFragment extends Fragment {
 
                 mPoster = itemView.findViewById(R.id.cover_image);
                 mNamaLomba = itemView.findViewById(R.id.title);
-                itemView.setOnClickListener(this);
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
+                        itemView.startAnimation(scaleDown);
+                        Toast.makeText(getActivity(), "Clicked " + mLomba.getNamaLomba(), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
             public void bind(Lomba lomba){
                 mLomba = lomba;
-
-/*                Picasso.get()
-                        .load(koleksi.getGambar())
-                        .placeholder(R.drawable.no_cover_book)
-                        .error(R.drawable.no_cover_book)
-                        .into(mBookImage);*/
-
                 mNamaLomba.setText(lomba.getNamaLomba());
-            }
-            @Override
-            public void onClick(View v) {
-/*                Intent intent = new Intent(getActivity(), BookDetailActivity.class);
-                intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
-                startActivity(intent);*/
             }
         }
     }
@@ -176,7 +178,7 @@ public class HomeFragment extends Fragment {
             return mSeminars.size();
         }
 
-        private class SeminarHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        private class SeminarHolder extends RecyclerView.ViewHolder{
             private ImageView mPoster;
             private TextView mNamaSeminar;
             private Seminar mSeminar;
@@ -186,24 +188,18 @@ public class HomeFragment extends Fragment {
 
                 mPoster = itemView.findViewById(R.id.cover_image);
                 mNamaSeminar = itemView.findViewById(R.id.title);
-                itemView.setOnClickListener(this);
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
+                        itemView.startAnimation(scaleDown);
+                        Toast.makeText(getActivity(), "Clicked " + mSeminar.getNamaSeminar(), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
             public void bind(Seminar seminar){
                 mSeminar = seminar;
-
-/*                Picasso.get()
-                        .load(koleksi.getGambar())
-                        .placeholder(R.drawable.no_cover_book)
-                        .error(R.drawable.no_cover_book)
-                        .into(mBookImage);*/
-
                 mNamaSeminar.setText(seminar.getNamaSeminar());
-            }
-            @Override
-            public void onClick(View v) {
-/*                Intent intent = new Intent(getActivity(), BookDetailActivity.class);
-                intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
-                startActivity(intent);*/
             }
         }
     }
