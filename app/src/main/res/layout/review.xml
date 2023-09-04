@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Layoutassettersedia"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e8e8f9"
+    tools:context=".ui.activity.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/headerMenuAssetTersedia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/headerMenuAssetTersedia"
+        app:layout_constraintTop_toTopOf="@+id/headerMenuAssetTersedia"
+        app:srcCompat="@drawable/background_menu" />
+
+    <!--    <ImageView-->
+<!--        android:id="@+id/backBarangList"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        app:srcCompat="@drawable/backk"-->
+<!--        android:layout_marginStart="50dp"-->
+<!--        android:layout_margin="30dp"/>-->
+
+    <ImageView
+        android:id="@+id/headerMenuAssetTersedia"
+        android:layout_width="422dp"
+        android:layout_height="189dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.483" />
+
+    <EditText
+        android:id="@+id/txtCariAsset"
+        android:layout_width="364dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/bg_search"
+        android:drawableEnd="@drawable/ic_search"
+        android:hint="Gemastik XVII 2023"
+        android:paddingStart="10dp"
+        android:paddingEnd="7dp"
+        android:textColor="@color/black"
+
+        android:textColorHint="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/headerMenuAssetTersedia"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/FYPtxt"
+        android:layout_width="191dp"
+        android:layout_height="22dp"
+        android:autoSizeMaxTextSize="12dp"
+        android:autoSizeMinTextSize="10dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="Untuk Anda"
+        android:textAllCaps="false"
+        android:textColor="#F7893C"
+        android:textSize="12dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="65dp" />
+
+    <TextView
+        android:id="@+id/reviewteratastxt"
+        android:layout_width="191dp"
+        android:layout_height="22dp"
+        android:autoSizeMaxTextSize="12dp"
+        android:autoSizeMinTextSize="10dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="Review Teratas"
+        android:textAllCaps="false"
+        android:textColor="#B8B8B8"
+        android:textSize="12dp"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="65dp" />
+
+
+    <ImageView
+        android:id="@+id/separatororange"
+        android:layout_width="203dp"
+        android:layout_height="5dp"
+        app:srcCompat="@drawable/separator"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="92dp" />
+
+    <ImageView
+        android:id="@+id/separatororange2"
+        android:layout_width="203dp"
+        android:layout_height="5dp"
+        app:srcCompat="@drawable/separator"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="92dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="410dp"
+        android:layout_height="635dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="10dp" />
+
+        </ScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
