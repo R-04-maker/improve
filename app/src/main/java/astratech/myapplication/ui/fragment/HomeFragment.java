@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,12 +25,15 @@ import java.util.List;
 import astratech.myapplication.R;
 import astratech.myapplication.model.Lomba;
 import astratech.myapplication.model.Seminar;
+import astratech.myapplication.ui.activity.DetailLombaActivity;
+import astratech.myapplication.ui.activity.LombaActivity;
 
 public class HomeFragment extends Fragment {
 
     private static final String TAG = "HomeFragment";
     private RecyclerView mRvRekomendasiLomba, mRvRekomendasiSeminar;
     private ImageButton mBtnSavedEvent, mBtnNotification;
+    private ConstraintLayout mLombaMenu, mSeminarMenu, mLainnyaMenu;
     private LombaAdapter mLombaAdapter;
     private SeminarAdapter mSeminarAdapter;
 
@@ -42,6 +46,10 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
+
+        mLombaMenu = view.findViewById(R.id.lomba);
+        mSeminarMenu = view.findViewById(R.id.seminar);
+        mLainnyaMenu = view.findViewById(R.id.lainnya);
 
         mRvRekomendasiLomba = view.findViewById(R.id.rv_lomba);
         mRvRekomendasiLomba.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
@@ -57,6 +65,17 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        mLombaMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
+                mLombaMenu.startAnimation(scaleDown);
+                Intent intent = new Intent(getActivity(), LombaActivity.class);
+//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                startActivity(intent);
+            }
+        });
 
         List<Lomba> lombas = dataLomba();
         List<Seminar> seminars = dataSeminar();
@@ -98,7 +117,7 @@ public class HomeFragment extends Fragment {
         return seminarList;
     }
 
-    private class LombaAdapter extends RecyclerView.Adapter<LombaAdapter.LombaHolder>{
+    public class LombaAdapter extends RecyclerView.Adapter<LombaAdapter.LombaHolder>{
         private List<Lomba> mLombas;
 
         public LombaAdapter(List<Lomba> lombas){
@@ -140,7 +159,9 @@ public class HomeFragment extends Fragment {
                     public void onClick(View v) {
                         Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
-                        Toast.makeText(getActivity(), "Clicked " + mLomba.getNamaLomba(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), DetailLombaActivity.class);
+//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        startActivity(intent);
                     }
                 });
             }

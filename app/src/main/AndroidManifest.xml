@@ -12,6 +12,12 @@
         android:theme="@style/Theme.Improve"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.LombaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.DetailLombaActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>
@@ -20,11 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.activity.HomeActivity"
-            android:label="@string/app_name"
-            android:exported="false">
+            android:exported="false"
+            android:label="@string/app_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.activity.HomeActivity" />
