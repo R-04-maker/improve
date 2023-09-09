@@ -28,7 +28,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(this);
-        bottomNavigationView.setSelectedItemId(R.id.leaderboard);
+        bottomNavigationView.setSelectedItemId(R.id.profile);
     }
 
     @Override
