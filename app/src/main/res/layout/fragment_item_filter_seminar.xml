@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_seminar"
+    android:name="astratech.myapplication.ui.fragment.ItemFilterAllFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutManager="LinearLayoutManager"
+    tools:context=".ui.fragment.ItemFilterAllFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_filter_seminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        tools:listitem="@layout/list_card_event"
+        tools:itemCount="5"/>
+
+    <include
+        android:id="@+id/layout_empty_data_con_lomba"
+        layout="@layout/layout_empty_data_white"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

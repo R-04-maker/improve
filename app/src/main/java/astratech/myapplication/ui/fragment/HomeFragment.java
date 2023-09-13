@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,6 +28,7 @@ import astratech.myapplication.model.Lomba;
 import astratech.myapplication.model.Seminar;
 import astratech.myapplication.ui.activity.DetailLombaActivity;
 import astratech.myapplication.ui.activity.LombaActivity;
+import astratech.myapplication.ui.activity.SearchActivity;
 
 public class HomeFragment extends Fragment {
 
@@ -34,6 +36,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView mRvRekomendasiLomba, mRvRekomendasiSeminar;
     private ImageButton mBtnSavedEvent, mBtnNotification;
     private ConstraintLayout mLombaMenu, mSeminarMenu, mLainnyaMenu;
+    private EditText mSearchTxt;
     private LombaAdapter mLombaAdapter;
     private SeminarAdapter mSeminarAdapter;
 
@@ -50,6 +53,7 @@ public class HomeFragment extends Fragment {
         mLombaMenu = view.findViewById(R.id.lomba);
         mSeminarMenu = view.findViewById(R.id.seminar);
         mLainnyaMenu = view.findViewById(R.id.lainnya);
+        mSearchTxt = view.findViewById(R.id.search);
 
         mRvRekomendasiLomba = view.findViewById(R.id.rv_lomba);
         mRvRekomendasiLomba.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
@@ -72,7 +76,6 @@ public class HomeFragment extends Fragment {
                 Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
                 mLombaMenu.startAnimation(scaleDown);
                 Intent intent = new Intent(getActivity(), LombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
                 startActivity(intent);
             }
         });
@@ -85,6 +88,17 @@ public class HomeFragment extends Fragment {
 
         mRvRekomendasiLomba.setAdapter(mLombaAdapter);
         mRvRekomendasiSeminar.setAdapter(mSeminarAdapter);
+
+        mSearchTxt.setFocusable(false);
+        mSearchTxt.setClickable(false);
+        mSearchTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void updateLomba(List<Lomba> lombas){
