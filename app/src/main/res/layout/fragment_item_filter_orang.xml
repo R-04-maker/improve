@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_orang"
+    android:name="astratech.myapplication.ui.fragment.ItemFilterAllFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutManager="LinearLayoutManager"
+    tools:context=".ui.fragment.ItemFilterOrangFragment"
+    tools:itemCount="5"
+    tools:listitem="@layout/list_rekomendasi_home">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_filter_orang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        tools:listitem="@layout/list_card_orang"
+        tools:itemCount="8"/>
+
+    <include
+        android:id="@+id/layout_empty_data_con_lomba"
+        layout="@layout/layout_empty_data_white"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

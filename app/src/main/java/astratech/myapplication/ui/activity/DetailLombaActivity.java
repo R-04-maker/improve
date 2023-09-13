@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import astratech.myapplication.R;
 
@@ -16,6 +20,7 @@ public class DetailLombaActivity extends AppCompatActivity {
 
     private TextView mDetailEvent, mSelengkapnya, mLink;
     private CardView mBackButton, mShareButton;
+    private FloatingActionButton mSavedBtn;
     String fullText = "Assalamualaikum wr wb ✨ \n\nHallo Sobat Informatika 🙌🏻 \nGet Ready to NovAstech 2023! \nSaatnya tunjukkan potensi dalam dirimu, mari berprestasi bersama NovAstech! NovAstech merupakan lomba internal Politeknik Astra";
 
     @Override
@@ -28,6 +33,7 @@ public class DetailLombaActivity extends AppCompatActivity {
         mBackButton = findViewById(R.id.backBtn);
         mShareButton = findViewById(R.id.shareBtn);
         mLink = findViewById(R.id.informasi_lanjut);
+        mSavedBtn = findViewById(R.id.icon_cart);
 
         mDetailEvent.setText(fullText);
         mDetailEvent.post(new Runnable() {
@@ -80,7 +86,18 @@ public class DetailLombaActivity extends AppCompatActivity {
                 intent.setData(Uri.parse(url));
 
                 // Pastikan ada aplikasi browser yang dapat menangani intent ini sebelum memulainya
-                    startActivity(intent);
+                startActivity(intent);
+            }
+        });
+        mSavedBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Drawable currentDrawable = mSavedBtn.getDrawable();
+                if (currentDrawable.getConstantState().equals(getResources().getDrawable(R.drawable.bookmark_regular_1).getConstantState())) {
+                    mSavedBtn.setImageResource(R.drawable.baseline_bookmark_24);
+                } else {
+                    mSavedBtn.setImageResource(R.drawable.bookmark_regular_1);
+                }
             }
         });
     }
