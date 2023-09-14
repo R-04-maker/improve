@@ -24,6 +24,27 @@
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
+            android:name=".ui.activity.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.XPActivty"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.PoinActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.HistoryXPActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.HistoryPoinActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AddSertifikatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AddActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">

@@ -11,4 +11,56 @@
     <string name="saved_lomba">Disimpan</string>
     <string name="sertifikat">Sertifikat</string>
     <string name="lombaLain">Lomba Lainnya</string>
+
+
+    <string-array name="data_topik">
+        <item>Pilih Topik Lomba</item>
+        <item>Pemrograman</item>
+        <item>Database</item>
+        <item>UI/UX</item>
+        <item>Jaringan</item>
+    </string-array>
+
+    <string-array name="data_jenis">
+        <item>Pilih Jenis</item>
+        <item>Individu</item>
+        <item>Kelompok</item>
+        <item>Individu dan Kelompok</item>
+    </string-array>
+
+    <string-array name="data_tingkat">
+        <item>Pilih Tingkat</item>
+        <item>Internal Kampus</item>
+        <item>Daerah</item>
+        <item>Nasional</item>
+        <item>Internasional</item>
+    </string-array>
+
+    <string-array name="data_lomba">
+        <item>Pilih Lomba</item>
+        <item>Web Design Universitas Atmajaya</item>
+        <item>Mobile App Universitas Amikom</item>
+        <item>Web Design Universitas Yogyakarta</item>
+        <item>Software Developer Politeknik Astra</item>
+    </string-array>
+
+    <string-array name="data_dosen">
+        <item>Pilih Dosen Pembimbing</item>
+        <item>Vian Ardiyansyah S. , S.S.T., M.Kom.</item>
+        <item>Ning Ratwastuti, S.T., M.Eng.</item>
+        <item>Radix Rascalia, S.T., M.T</item>
+        <item>Luthfi Atikah, S.Kom., M.Kom.</item>
+    </string-array>
+
+    <string-array name="pilihan_pengajuan">
+        <item>Pilih Pengajuan</item>
+        <item>Lomba</item>
+        <item>Seminar</item>
+        <item>Lainnya</item>
+        <item>Surat Pengantar</item>
+        <item>Dana</item>
+        <item>Konsultasi</item>
+    </string-array>
+
+
 </resources>

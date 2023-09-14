@@ -39,7 +39,6 @@ public class LeaderBoardFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_leaderboard, container, false);
 
-
         mRvLeaderBoard = view.findViewById(R.id.leaderboard_recycler_view);
         mRvLeaderBoard.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         mRvLeaderBoard.setAdapter(mLeaderBoardAdapter);

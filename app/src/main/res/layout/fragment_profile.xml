@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     xmlns:tools="http://schemas.android.com/tools"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="1.0"
@@ -375,15 +376,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <ImageView
-            android:id="@+id/ic_add_minat"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="45dp"
-            app:srcCompat="@drawable/baseline_add_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--        <ImageView-->
+<!--            android:id="@+id/ic_add_minat"-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginEnd="45dp"-->
+<!--            app:srcCompat="@drawable/baseline_add_24"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
         <ImageView
             android:id="@+id/ic_edit_minat"
@@ -412,7 +413,6 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="15dp"
                 android:fontFamily="@font/poppins"
-                android:paddingVertical="1dp"
                 android:text="UI/UX"
                 android:textColor="@color/black"
                 android:textSize="12dp" />
@@ -435,7 +435,6 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="15dp"
                 android:fontFamily="@font/poppins"
-                android:paddingVertical="1dp"
                 android:text="Data Science"
                 android:textColor="@color/white"
                 android:textSize="12dp" />
@@ -458,7 +457,6 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="15dp"
                 android:fontFamily="@font/poppins"
-                android:paddingVertical="1dp"
                 android:text="IOT"
                 android:textColor="@color/white"
                 android:textSize="12dp" />
@@ -502,25 +500,54 @@
             app:layout_constraintStart_toEndOf="@id/txt_judul_review"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/ic_add_review"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="45dp"
-            app:srcCompat="@drawable/baseline_add_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/ic_edit_review"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrain_history_poin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
-            app:srcCompat="@drawable/baseline_edit_24"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/rounded_border_orange">
+
+            <TextView
+                android:id="@+id/xp11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tambah Review"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        <ImageView-->
+<!--            android:id="@+id/ic_add_review"-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginEnd="45dp"-->
+<!--            app:srcCompat="@drawable/baseline_add_24"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/ic_edit_review"-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            app:srcCompat="@drawable/baseline_edit_24"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -738,25 +765,54 @@
             app:layout_constraintStart_toEndOf="@id/txt_judul_sertifikat"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/ic_add_sertifikat"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="45dp"
-            app:srcCompat="@drawable/baseline_add_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/ic_edit_sertifikat"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrain_btn_tambah_sertifikat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
-            app:srcCompat="@drawable/baseline_edit_24"
+            android:padding="5dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/rounded_border_orange">
+
+            <TextView
+                android:id="@+id/txt_tambah_sertifikat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tambah Sertifikat"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/ic_add_sertifikat"-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginEnd="45dp"-->
+<!--            app:srcCompat="@drawable/baseline_add_24"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/ic_edit_sertifikat"-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            app:srcCompat="@drawable/baseline_edit_24"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -766,6 +822,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_judul_sertifikat"
+            android:paddingBottom="50dp"
             android:background="@color/white">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -852,7 +909,6 @@
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="70dp"
-
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -877,7 +933,6 @@
                             android:layout_gravity="center"
                             android:layout_marginHorizontal="15dp"
                             android:fontFamily="@font/poppins_bold"
-                            android:paddingVertical="1dp"
                             android:text="Pemrograman"
                             android:textColor="@color/white"
                             android:textSize="10dp" />

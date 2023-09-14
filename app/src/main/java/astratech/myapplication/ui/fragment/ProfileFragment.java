@@ -1,15 +1,21 @@
 package astratech.myapplication.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import astratech.myapplication.R;
+import astratech.myapplication.ui.activity.AddSertifikatActivity;
+import astratech.myapplication.ui.activity.EditProfileActivity;
+import astratech.myapplication.ui.activity.PoinActivity;
+import astratech.myapplication.ui.activity.XPActivty;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,9 +56,8 @@ public class ProfileFragment extends Fragment {
         constraintXP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                XPFragment fragment = new XPFragment();
-                FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.flFragment, fragment).addToBackStack(null).commit();
+                Intent intent = new Intent(getActivity(), XPActivty.class);
+                startActivity(intent);
             }
         });
 
@@ -60,9 +65,28 @@ public class ProfileFragment extends Fragment {
         constraintPoin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PoinFragment fragment = new PoinFragment();
-                FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.flFragment, fragment).addToBackStack(null).commit();
+                Intent intent = new Intent(getActivity(), PoinActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        ImageView iconEditProfile = view.findViewById(R.id.ic_edit_profile);
+        iconEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        ConstraintLayout constraintTambahSertifikat = view.findViewById(R.id.constrain_btn_tambah_sertifikat);
+        constraintTambahSertifikat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddSertifikatActivity.class);
+                startActivity(intent);
             }
         });
     }

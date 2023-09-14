@@ -13,5 +13,16 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:windowTranslucentStatus">true</item>
+
     </style>
+
+    <style name="DialogTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <item name="colorAccent">@color/orange</item>
+        <item name="materialButtonStyle">@style/OrangeDialogButton</item>
+    </style>
+
+    <style name="OrangeDialogButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/orange</item> <!-- Atur warna teks menjadi oranye -->
+    </style>
+
 </resources>
