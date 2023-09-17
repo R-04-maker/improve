@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Layoutassettersedia"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e8e8f9"
+    tools:context=".ui.activity.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/headerMenuAssetTersedia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/headerMenuAssetTersedia"
+        app:layout_constraintTop_toTopOf="@+id/headerMenuAssetTersedia"
+        app:srcCompat="@drawable/background_menu" />
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/backBarangList"-->
+    <!--        android:layout_width="30dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        app:srcCompat="@drawable/backk"-->
+    <!--        android:layout_marginStart="50dp"-->
+    <!--        android:layout_margin="30dp"/>-->
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backk" />
+
+    <TextView
+        android:id="@+id/balasan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="30dp"
+        android:autoSizeMinTextSize="10dp"
+        android:autoSizeTextType="uniform"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center_vertical"
+        android:text="Balasan"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/headerMenuAssetTersedia"
+        android:layout_width="422dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="419dp"
+        android:layout_height="844dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/headerMenuAssetTersedia">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="334dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageOrang_lb"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/img"
+                    tools:layout_editor_absoluteX="23dp" />
+
+                <TextView
+                    android:id="@+id/nama_orang_lb"
+                    android:layout_width="191dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:text="Nazwa Frida Fauziyyah"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@id/imageOrang_lb"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.232" />
+
+                <TextView
+                    android:id="@+id/XP_lb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="23 Ags 2023"
+                    android:textAllCaps="true"
+                    android:textColor="#B8B8B8"
+                    android:textSize="10dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageOrang_lb"
+                    app:layout_constraintTop_toBottomOf="@+id/nama_orang_lb"
+                    app:layout_constraintVertical_bias="0.222" />
+
+                <TextView
+                    android:id="@+id/capt"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeMinTextSize="8dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:maxLines="6"
+                    android:text="Share pengalamanku saat lomba dan menjadi finalis di Gemastik Perpusnas 2023,  Alhamdulillah dapat juara 1, terimakasih dukungannya teman-teman ! #Lomba "
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageOrang_lb"
+                    app:layout_constraintTop_toBottomOf="@+id/XP_lb" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:autoSizeMaxTextSize="10dp"
+                android:autoSizeMinTextSize="5dp"
+                android:background="@color/white"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/poppins"
+                android:textSize="15dp"
+                android:gravity="center_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+            <TextView
+                android:id="@+id/lineseparate"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="10dp"
+                android:background="#ececec"
+                android:gravity="center_vertical"
+                android:textAllCaps="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+                app:layout_constraintVertical_bias="0.239" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:layout_width="334dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineseparate">
+
+                <TextView
+                    android:id="@+id/textcomment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:text="10"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textkomen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:text="Balasan"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textcomment"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:layout_marginStart="50dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:text="10"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/textkomen"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textsuka"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:text="Suka"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/text10"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/lineseparate2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="10dp"
+                android:background="#ececec"
+                android:gravity="center_vertical"
+                android:textAllCaps="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout5"
+                android:layout_width="334dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineseparate2">
+
+                <ImageView
+                    android:id="@+id/imageOrang_lb1"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/otherpic"
+                    tools:layout_editor_absoluteX="23dp" />
+
+                <TextView
+                    android:id="@+id/nama_orang_lb1"
+                    android:layout_width="191dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:text="Gema Romadhon"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintStart_toEndOf="@id/imageOrang_lb1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.232" />
+
+                <TextView
+                    android:id="@+id/XP_lb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="28 Ags 2023"
+                    android:textAllCaps="true"
+                    android:textColor="#B8B8B8"
+                    android:textSize="10dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageOrang_lb1"
+                    app:layout_constraintTop_toBottomOf="@+id/nama_orang_lb1"
+                    app:layout_constraintVertical_bias="0.222" />
+
+                <TextView
+                    android:id="@+id/capt1"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeMinTextSize="8dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center_vertical"
+                    android:maxLines="6"
+                    android:text="Keren Banget!!!"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageOrang_lb1"
+                    app:layout_constraintTop_toBottomOf="@+id/XP_lb1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

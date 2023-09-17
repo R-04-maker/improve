@@ -66,6 +66,23 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.activity.HomeActivity" />
         </activity>
+
+        <activity
+            android:name=".ui.activity.PeminatanActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.activity.QuizActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.activity.ResultActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.activity.QuizSoalActivity"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>

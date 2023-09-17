@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginfragmentt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/img_7" />
+
+
+    <ImageView
+        android:id="@+id/loginbg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/bgloginlagi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.739" />
+
+    <Button
+        android:id="@+id/buttonloginya"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:autoSizeMaxTextSize="18dp"
+        android:autoSizeMinTextSize="10dp"
+        android:autoSizeTextType="uniform"
+        android:background="@drawable/rounded_button"
+        android:elevation="40dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:gravity="center"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        app:circularflow_radiusInDP="100dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/loginpass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tingkatkan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="20dp"
+        android:autoSizeMaxTextSize="30dp"
+        android:autoSizeMinTextSize="10dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:shadowColor="#90000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="2"
+        android:text="Selamat Datang, \n Improvers!"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Username"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/loginnim"
+        app:layout_constraintTop_toBottomOf="@+id/tingkatkan"
+        app:layout_constraintStart_toStartOf="@+id/loginnim" />
+    <TextView
+        android:id="@+id/required"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="80dp"
+        android:textSize="20dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="*"
+        android:textColor="#F44336"
+        app:layout_constraintBottom_toTopOf="@+id/loginnim"
+        app:layout_constraintTop_toBottomOf="@+id/tingkatkan"
+        app:layout_constraintStart_toStartOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Password"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="@+id/loginpass"
+        app:layout_constraintTop_toBottomOf="@+id/loginnim"
+
+        />
+
+    <TextView
+        android:id="@+id/required2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="80dp"
+        android:textSize="20dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="*"
+        android:textColor="#F44336"
+
+        app:layout_constraintBottom_toTopOf="@+id/loginpass"
+        app:layout_constraintTop_toBottomOf="@+id/loginnim"
+        app:layout_constraintStart_toStartOf="@+id/textView8"/>
+    <EditText
+        android:id="@+id/loginnim"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="45dp"
+        android:hint="0320XXXXXX"
+        android:paddingStart="10dp"
+        android:maxLines="1"
+        android:background="@drawable/rounded_border2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tingkatkan"
+        />
+
+    <EditText
+        android:id="@+id/loginpass"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:hint="*******"
+        android:maxLines="1"
+        android:paddingStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="238dp"
+        android:background="@drawable/rounded_border2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"/>
+
+    <ImageView
+        android:id="@+id/roundedImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/rounded_background"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/tingkatkan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

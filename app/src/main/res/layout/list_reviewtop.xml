@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="4dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="334dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageOrang_lb"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/img"
+                tools:layout_editor_absoluteX="23dp"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/api"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageOrang_lb"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.308"
+                app:srcCompat="@drawable/img_4" />
+
+            <TextView
+                android:id="@+id/nama_orang_lb"
+                android:layout_width="191dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="16dp"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="10dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:text="Nazwa Frida Fauziyyah"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageOrang_lb"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.232" />
+
+            <TextView
+                android:id="@+id/capt"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
+                android:autoSizeMaxTextSize="10dp"
+                android:autoSizeMinTextSize="8dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_vertical"
+                android:maxLines="6"
+                android:text="Share pengalamanku saat lomba dan menjadi finalis di Gemastik Perpusnas 2023,  Alhamdulillah dapat juara 1, terimakasih dukungannya teman-teman ! #Lomba "
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageOrang_lb"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.232" />
+
+            <TextView
+                android:id="@+id/XP_lb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="12dp"
+                android:autoSizeMinTextSize="10dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="23 Ags 2023"
+                android:textAllCaps="true"
+                android:textColor="#B8B8B8"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/nama_orang_lb"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.222" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/postingImage"
+            android:layout_width="251dp"
+            android:layout_height="135dp"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="105dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_1"
+            tools:layout_editor_absoluteX="23dp" />
+
+        <ImageView
+            android:id="@+id/likeImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="95dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_2"
+            tools:layout_editor_absoluteX="23dp" />
+        <TextView
+            android:id="@+id/textLike"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginTop="253dp"
+            android:layout_marginLeft="125dp"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="10dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:text="10"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageOrang_lb"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.232" />
+        <ImageView
+            android:id="@+id/commentimage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="195dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_3"
+            tools:layout_editor_absoluteX="23dp" />
+        <TextView
+            android:id="@+id/textcomment"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginTop="253dp"
+            android:layout_marginLeft="225dp"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="10dp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:text="10"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageOrang_lb"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.232" />
+        <TextView
+            android:id="@+id/lineseparate"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="293dp"
+            android:layout_marginBottom="10dp"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="10dp"
+            android:gravity="center_vertical"
+            android:background="#B8B8B8"
+            android:textAllCaps="false"
+            android:text="a"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageOrang_lb"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.232" />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
