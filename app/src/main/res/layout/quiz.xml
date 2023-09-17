@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/quiz">
+
+    <TextView
+        android:id="@+id/tingkatkan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="350dp"
+        android:autoSizeMaxTextSize="22dp"
+        android:autoSizeMinTextSize="10dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:shadowColor="#30000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="2"
+        android:text=" Kuis ini dibuat \n untuk mengetahui minat \n anda  dan rekomendasi, \n lanjutkan ? "
+        android:textAllCaps="false"
+        android:textColor="@color/biru_tua"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/quizbg"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:id="@+id/attention"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/attention"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/imageView8" />
+
+    <TextView
+        android:id="@+id/judulquiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="90dp"
+        android:autoSizeMaxTextSize="22dp"
+        android:autoSizeMinTextSize="10dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:shadowColor="#30000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="2"
+        android:text=" Kuis ini dibuat \n untuk mengetahui minat \n anda  dan rekomendasi, \n lanjutkan ? "
+        android:textAllCaps="false"
+        android:textColor="@color/biru_tua"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/attention"
+        app:layout_constraintEnd_toEndOf="@+id/tingkatkan"
+        app:layout_constraintStart_toStartOf="@+id/attention"
+        app:layout_constraintTop_toTopOf="@+id/attention" />
+
+    <TextView
+        android:id="@+id/tingkatkan4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:autoSizeMaxTextSize="90dp"
+        android:autoSizeMinTextSize="10dp"
+
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:shadowColor="#40000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="2"
+        android:text="Perhatian !"
+        android:textAllCaps="false"
+        android:textColor="#CC0D00"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/tingkatkan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tingkatkan2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:autoSizeMaxTextSize="22dp"
+        android:autoSizeMinTextSize="10dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_bold"
+
+        android:gravity="center"
+        android:text="Tidak"
+        android:textAllCaps="false"
+        android:textColor="#7A7474"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/attention"
+        app:layout_constraintTop_toBottomOf="@+id/judulquiz" />
+
+    <TextView
+        android:id="@+id/tingkatkan3"
+        android:layout_width="23dp"
+        android:layout_height="29dp"
+        android:autoSizeMaxTextSize="22dp"
+        android:autoSizeMinTextSize="10dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Ya"
+        android:textAllCaps="false"
+        android:textColor="#0C8C11"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/tingkatkan"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toEndOf="@+id/tingkatkan2"
+        app:layout_constraintTop_toBottomOf="@+id/judulquiz" />
+</androidx.constraintlayout.widget.ConstraintLayout>

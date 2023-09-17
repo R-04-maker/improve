@@ -17,6 +17,7 @@ import astratech.myapplication.R;
 import astratech.myapplication.ui.fragment.ProfileFragment;
 import astratech.myapplication.ui.fragment.HomeFragment;
 import astratech.myapplication.ui.fragment.LeaderBoardFragment;
+import astratech.myapplication.ui.fragment.ReviewFragment;
 
 public class HomeActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
 
@@ -27,6 +28,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
     HomeFragment mHomeFragment = new HomeFragment();
     LeaderBoardFragment thirdFragment = new LeaderBoardFragment();
 
+    ReviewFragment reviewFragment = new ReviewFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
                 return true;
             case R.id.home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, mHomeFragment).commit();
+                return true;
+            case R.id.review:
+                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, reviewFragment).commit();
                 return true;
             case R.id.leaderboard:
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, thirdFragment).commit();
