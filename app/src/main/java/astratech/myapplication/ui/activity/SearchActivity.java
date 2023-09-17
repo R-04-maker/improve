@@ -22,7 +22,6 @@ import astratech.myapplication.ui.fragment.ItemFilterSeminarFragment;
 public class SearchActivity extends AppCompatActivity {
 
     private static final String KEY_SEARCH = "search-value";
-
     private int selectedTab = 1;
     private EditText mSearchETxt;
     private LinearLayout mSemuaLayout, mLombaLayout, mSeminarLayout, mOrangLayout, mLainnyaLayout;

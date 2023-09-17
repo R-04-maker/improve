@@ -59,6 +59,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
             case R.id.leaderboard:
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, thirdFragment).commit();
                 return true;
+            case R.id.add:
+                Intent intent = new Intent(this, UploadActivity.class);
+                startActivity(intent);
+                return true;
         }
         return false;
     }
