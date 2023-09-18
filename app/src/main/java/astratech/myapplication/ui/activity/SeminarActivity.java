@@ -1,13 +1,5 @@
 package astratech.myapplication.ui.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.CompositePageTransformer;
-import androidx.viewpager2.widget.MarginPageTransformer;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,43 +12,35 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
+import androidx.viewpager2.widget.ViewPager2;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import astratech.myapplication.R;
 import astratech.myapplication.model.Lomba;
-import astratech.myapplication.ui.fragment.HomeFragment;
+import astratech.myapplication.model.Seminar;
 
-public class LombaActivity extends AppCompatActivity {
-    private ViewPager2 mViewPager2;
+public class SeminarActivity extends AppCompatActivity {
     private ImageView mBackBtn;
-    private RecyclerView mRVLomba, mRVLombaLain;
+    private ViewPager2 mViewPager2;
+    private RecyclerView mRVSeminar, mRVSeminarLain;
     private Handler slideHandler = new Handler();
-    private List<Lomba> mLomba;
-    private LombaAdapter mLombaAdapter;
-    private LombaLainAdapter mLombaLainAdapter;
+    private List<Seminar> mSeminars;
+    private SeminarAdapter mSeminarAdapter;
+    private SeminarLainAdapter mSeminarLainAdapter;
     private boolean showAllItems = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lomba);
-
-        mViewPager2 = findViewById(R.id.slider);
-        mViewPager2.setClipToPadding(false);
-        mViewPager2.setClipChildren(false);
-        mViewPager2.setOffscreenPageLimit(5);
-        mViewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
-
-        mRVLomba = findViewById(R.id.rv_lomba_lomba);
-        mRVLomba.setLayoutManager(new LinearLayoutManager(LombaActivity.this, LinearLayoutManager.HORIZONTAL, false));
-        mRVLomba.setAdapter(mLombaAdapter);
-
-        mRVLombaLain = findViewById(R.id.rv_lomba_lainnya);
-        mRVLombaLain.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        mRVLombaLain.setAdapter(mLombaLainAdapter);
-        mRVLombaLain.setItemAnimator(null);
-        mRVLombaLain.setOverScrollMode(mRVLombaLain.OVER_SCROLL_NEVER);
+        setContentView(R.layout.activity_seminar);
 
         mBackBtn = findViewById(R.id.back_buttonn);
 
@@ -66,6 +50,22 @@ public class LombaActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        mViewPager2 = findViewById(R.id.slider);
+        mViewPager2.setClipToPadding(false);
+        mViewPager2.setClipChildren(false);
+        mViewPager2.setOffscreenPageLimit(5);
+        mViewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+
+        mRVSeminar = findViewById(R.id.rv_lomba_lomba);
+        mRVSeminar.setLayoutManager(new LinearLayoutManager(SeminarActivity.this, LinearLayoutManager.HORIZONTAL, false));
+        mRVSeminar.setAdapter(mSeminarAdapter);
+
+        mRVSeminarLain = findViewById(R.id.rv_lomba_lainnya);
+        mRVSeminarLain.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        mRVSeminarLain.setAdapter(mSeminarLainAdapter);
+        mRVSeminarLain.setItemAnimator(null);
+        mRVSeminarLain.setOverScrollMode(mRVSeminarLain.OVER_SCROLL_NEVER);
 
         CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
         compositePageTransformer.addTransformer(new MarginPageTransformer(30));
@@ -87,7 +87,7 @@ public class LombaActivity extends AppCompatActivity {
                 slideHandler.postDelayed(sliderRunnable, 2000);
             }
         });
-        List<Lomba> lombas = dataLomba();
+        List<Seminar> lombas = dataLomba();
         updateSlider(lombas);
         updateLomba(lombas);
         updateLombaLain(lombas);
@@ -97,36 +97,36 @@ public class LombaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showAllItems = !showAllItems;
-                mLombaLainAdapter.notifyDataSetChanged();
+                mSeminarLainAdapter.notifyDataSetChanged();
                 if (showAllItems) {
                     textViewLihatLainnya.setVisibility(View.GONE);
                 }
             }
         });
     }
-    private void updateSlider(List<Lomba> lombaList){
-        mLomba = lombaList;
-        mViewPager2.setAdapter(new SliderAdapter(mLomba,mViewPager2));
+    private void updateSlider(List<Seminar> seminarList){
+        mSeminars = seminarList;
+        mViewPager2.setAdapter(new SliderAdapter(mSeminars,mViewPager2));
     }
-    private void updateLomba(List<Lomba> lombaList){
-        mLomba = lombaList;
-        mLombaAdapter = new LombaAdapter(mLomba);
-        mRVLomba.setAdapter(mLombaAdapter);
+    private void updateLomba(List<Seminar> seminarList){
+        mSeminars = seminarList;
+        mSeminarAdapter = new SeminarAdapter(mSeminars);
+        mRVSeminar.setAdapter(mSeminarAdapter);
     }
-    private void updateLombaLain(List<Lomba> lombaList){
-        mLomba = lombaList;
-        mLombaLainAdapter = new LombaLainAdapter(mLomba);
-        mRVLombaLain.setAdapter(mLombaLainAdapter);
+    private void updateLombaLain(List<Seminar> seminarList){
+        mSeminars = seminarList;
+        mSeminarLainAdapter = new SeminarLainAdapter(mSeminars);
+        mRVSeminarLain.setAdapter(mSeminarLainAdapter);
     }
-    public List<Lomba> dataLomba(){
-        List<Lomba> lombaList = new ArrayList<>();
+    public List<Seminar> dataLomba(){
+        List<Seminar> seminarList = new ArrayList<>();
         for(int i  = 0; i < 5; i++){
-            Lomba lomba = new Lomba();
-            lomba.setIdLomba("" + i + 1);
-            lomba.setNamaLomba("Lomba " + i);
-            lombaList.add(lomba);
+            Seminar seminar = new Seminar();
+            seminar.setIdSeminar("" + i + 1);
+            seminar.setNamaSeminar("Seminar " + i);
+            seminarList.add(seminar);
         }
-        return lombaList;
+        return seminarList;
     }
     private Runnable sliderRunnable = new Runnable() {
         @Override
@@ -135,37 +135,37 @@ public class LombaActivity extends AppCompatActivity {
         }
     };
     private class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderHolder>{
-        private List<Lomba> mLombas;
+        private List<Seminar> mSeminars;
         private ViewPager2 mViewPager2;
 
-        public SliderAdapter(List<Lomba> lombas, ViewPager2 viewPager2){
-            mLombas = lombas;
+        public SliderAdapter(List<Seminar> seminars, ViewPager2 viewPager2){
+            mSeminars = seminars;
             mViewPager2 = viewPager2;
         }
 
         @NonNull
         @Override
-        public SliderAdapter.SliderHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            LayoutInflater layoutInflater = LayoutInflater.from(LombaActivity.this);
+        public SliderHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            LayoutInflater layoutInflater = LayoutInflater.from(SeminarActivity.this);
 
-            return new SliderAdapter.SliderHolder(layoutInflater, parent);
+            return new SliderHolder(layoutInflater, parent);
         }
 
         @Override
-        public void onBindViewHolder(@NonNull SliderAdapter.SliderHolder holder, int position) {
-            Lomba lomba = mLombas.get(position);
-            holder.onBindViewHolder(lomba);
+        public void onBindViewHolder(@NonNull SliderHolder holder, int position) {
+            Seminar seminar = mSeminars.get(position);
+            holder.onBindViewHolder(seminar);
         }
 
         @Override
         public int getItemCount() {
-            return mLombas.size();
+            return mSeminars.size();
         }
 
         private class SliderHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
             private TextView mNamaLomba, mKategori, mTanggal;
             private ImageView mPoster;
-            private Lomba mLomba;
+            private Seminar mSeminar;
 
             public SliderHolder(LayoutInflater inflater, ViewGroup parent) {
                 super(inflater.inflate(R.layout.list_banner_card, parent, false));
@@ -176,52 +176,52 @@ public class LombaActivity extends AppCompatActivity {
 
                 itemView.setOnClickListener(this);
             }
-            public void onBindViewHolder(Lomba lomba){
-                mLomba = lomba;
-                mNamaLomba.setText(mLomba.getNamaLomba());
+            public void onBindViewHolder(Seminar seminar){
+                mSeminar = seminar;
+                mNamaLomba.setText(mSeminar.getNamaSeminar());
             }
             @Override
             public void onClick(View view){
-                Animation scaleDown = AnimationUtils.loadAnimation(LombaActivity.this, R.anim.scale_down);
+                Animation scaleDown = AnimationUtils.loadAnimation(SeminarActivity.this, R.anim.scale_down);
                 itemView.startAnimation(scaleDown);
-                Intent intent = new Intent(LombaActivity.this, DetailLombaActivity.class);
+                Intent intent = new Intent(SeminarActivity.this, DetailLombaActivity.class);
 //                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
                 startActivity(intent);            }
         }
     }
-    private class LombaAdapter extends RecyclerView.Adapter<LombaAdapter.LombaHolder>{
-        private List<Lomba> mLombas;
+    private class SeminarAdapter extends RecyclerView.Adapter<SeminarAdapter.SeminarHolder>{
+        private List<Seminar> mSeminars;
 
-        public LombaAdapter(List<Lomba> lombas){
-            mLombas = lombas;
+        public SeminarAdapter(List<Seminar> seminars){
+            mSeminars = seminars;
         }
 
         @NonNull
         @Override
-        public LombaAdapter.LombaHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            LayoutInflater layoutInflater = LayoutInflater.from(LombaActivity.this);
+        public SeminarHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            LayoutInflater layoutInflater = LayoutInflater.from(SeminarActivity.this);
 
-            return new LombaAdapter.LombaHolder(layoutInflater, parent);
+            return new SeminarHolder(layoutInflater, parent);
         }
         @Override
-        public void onBindViewHolder(@NonNull LombaAdapter.LombaHolder holder, int position) {
-            Lomba lomba = mLombas.get(position);
-            holder.bind(lomba);
+        public void onBindViewHolder(@NonNull SeminarHolder holder, int position) {
+            Seminar seminar = mSeminars.get(position);
+            holder.bind(seminar);
             Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), android.R.anim.fade_in);
             holder.itemView.startAnimation(animation);
         }
 
         @Override
         public int getItemCount() {
-            return mLombas.size();
+            return mSeminars.size();
         }
 
-        private class LombaHolder extends RecyclerView.ViewHolder{
+        private class SeminarHolder extends RecyclerView.ViewHolder{
             private ImageView mPoster;
             private TextView mNamaLomba;
-            private Lomba mLomba;
+            private Seminar mSeminar;
 
-            public LombaHolder(LayoutInflater inflater, ViewGroup parent) {
+            public SeminarHolder(LayoutInflater inflater, ViewGroup parent) {
                 super(inflater.inflate(R.layout.list_rekomendasi_home, parent, false));
 
                 mPoster = itemView.findViewById(R.id.cover_image);
@@ -229,47 +229,43 @@ public class LombaActivity extends AppCompatActivity {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Animation scaleDown = AnimationUtils.loadAnimation(LombaActivity.this, R.anim.scale_down);
+                        Animation scaleDown = AnimationUtils.loadAnimation(SeminarActivity.this, R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
-                        Intent intent = new Intent(LombaActivity.this, DetailLombaActivity.class);
+                        Intent intent = new Intent(SeminarActivity.this, DetailLombaActivity.class);
 //                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
                         startActivity(intent);
                     }
                 });
             }
-            public void bind(Lomba lomba){
-                mLomba = lomba;
-                mNamaLomba.setText(lomba.getNamaLomba());
+            public void bind(Seminar seminar){
+                mSeminar = seminar;
+                mNamaLomba.setText(seminar.getNamaSeminar());
             }
         }
     }
-    private class LombaLainAdapter extends RecyclerView.Adapter<LombaLainAdapter.LombaHolder>{
-        private List<Lomba> mLombas;
+    private class SeminarLainAdapter extends RecyclerView.Adapter<SeminarLainAdapter.SeminarHolder>{
+        private List<Seminar> mSeminars;
 
-        public LombaLainAdapter(List<Lomba> lombas){
-            mLombas = lombas;
+        public SeminarLainAdapter(List<Seminar> seminars){
+            mSeminars = seminars;
         }
 
         @NonNull
         @Override
-        public LombaLainAdapter.LombaHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            LayoutInflater layoutInflater = LayoutInflater.from(LombaActivity.this);
+        public SeminarHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            LayoutInflater layoutInflater = LayoutInflater.from(SeminarActivity.this);
 
-            return new LombaLainAdapter.LombaHolder(layoutInflater, parent);
+            return new SeminarHolder(layoutInflater, parent);
         }
         @Override
-        public void onBindViewHolder(@NonNull LombaLainAdapter.LombaHolder holder, int position) {
-/*            Lomba lomba = mLombas.get(position);
-            holder.bind(lomba);
-            Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), android.R.anim.fade_in);
-            holder.itemView.startAnimation(animation);*/
+        public void onBindViewHolder(@NonNull SeminarHolder holder, int position) {
 
             if (!showAllItems && position >= 3) {
                 holder.itemView.setVisibility(View.GONE);
                 holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
             } else {
-                Lomba lomba = mLombas.get(position);
-                holder.bind(lomba);
+                Seminar seminar = mSeminars.get(position);
+                holder.bind(seminar);
                 Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), android.R.anim.fade_in);
                 holder.itemView.startAnimation(animation);
                 holder.itemView.setVisibility(View.VISIBLE);
@@ -282,15 +278,15 @@ public class LombaActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return mLombas.size();
+            return mSeminars.size();
         }
 
-        private class LombaHolder extends RecyclerView.ViewHolder{
+        private class SeminarHolder extends RecyclerView.ViewHolder{
             private ImageView mPoster;
             private TextView mNamaLomba;
-            private Lomba mLomba;
+            private Seminar mSeminar;
 
-            public LombaHolder(LayoutInflater inflater, ViewGroup parent) {
+            public SeminarHolder(LayoutInflater inflater, ViewGroup parent) {
                 super(inflater.inflate(R.layout.list_card_event, parent, false));
 
                 mPoster = itemView.findViewById(R.id.cover_book_list_view);
@@ -298,17 +294,17 @@ public class LombaActivity extends AppCompatActivity {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Animation scaleDown = AnimationUtils.loadAnimation(LombaActivity.this, R.anim.scale_down);
+                        Animation scaleDown = AnimationUtils.loadAnimation(SeminarActivity.this, R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
-                        Intent intent = new Intent(LombaActivity.this, DetailLombaActivity.class);
+                        Intent intent = new Intent(SeminarActivity.this, DetailLombaActivity.class);
 //                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
                         startActivity(intent);
                     }
                 });
             }
-            public void bind(Lomba lomba){
-                mLomba = lomba;
-                mNamaLomba.setText(lomba.getNamaLomba());
+            public void bind(Seminar seminar){
+                mSeminar = seminar;
+                mNamaLomba.setText(seminar.getNamaSeminar());
             }
         }
     }

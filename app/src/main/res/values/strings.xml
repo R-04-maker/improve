@@ -5,12 +5,18 @@
     <string name="seminar">Seminar</string>
     <string name="lainnya">Lainnya</string>
     <string name="rekomendasi_lomba">Lomba Untukmu</string>
+    <string name="rekomendasi_seminar">Seminar Untukmu</string>
+    <string name="rekomendasi_lainnya">Event Untukmu</string>
     <string name="lihat_semua">Lihat Semua</string>
     <string name="rekomendasi_seminar_home">Mari Tingkatkan Dirimu</string>
-    <string name="mari_jelajah_home">Let\'s Discover</string>
+    <string name="mari_jelajah_home">Mari Jelajahi !</string>
     <string name="saved_lomba">Disimpan</string>
     <string name="sertifikat">Sertifikat</string>
     <string name="lombaLain">Lomba Lainnya</string>
+    <string name="seminarLain">Seminar Lainnya</string>
+    <string name="LainnyaLain">Event Lainnya</string>
+    <string name="konfirmasi_batal">Apakah anda yakin membatalkan unggahan ?</string>
+    <string name="konfirmasi">Konfirmasi</string>
 
 
     <string-array name="data_topik">

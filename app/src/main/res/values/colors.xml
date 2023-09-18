@@ -11,4 +11,8 @@
     <color name="orange">#F7893C</color>
     <color name="biru_muda">#BCD6E7</color>
     <color name="tab_layout_on">#BFD7EA</color>
+    <color name="tab_uncliked">#7C7C7C</color>
+    <color name="tab_licked">#F7893C</color>
+    <color name="tab_licked_terima">#3079AF</color>
+    <color name="tab_licked_tolak">#D66972</color>
 </resources>

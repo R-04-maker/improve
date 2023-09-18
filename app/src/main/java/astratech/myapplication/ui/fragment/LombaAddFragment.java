@@ -12,6 +12,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,25 +21,32 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import astratech.myapplication.R;
+import astratech.myapplication.ui.activity.DetailLombaActivity;
 import astratech.myapplication.ui.activity.HistoryPoinActivity;
 import astratech.myapplication.ui.activity.PoinActivity;
+import astratech.myapplication.ui.activity.UploadActivity;
+import astratech.myapplication.ui.activity.ViewPengajuanActivity;
 
 public class LombaAddFragment extends Fragment {
 
     private ConstraintLayout btnTglAwal;
-    private ConstraintLayout btnTglAkhir;
+    private ConstraintLayout btnTglAkhir, mBtnSimpan;
 
     private EditText mTglAwal;
     private EditText mTglAkhir;
 
     private DatePickerDialog datePickerDialog;
     private TimePickerDialog timePickerDialog;
+    private String jenis;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            jenis = bundle.getString("jenis");
+        }
+        Toast.makeText(getActivity(), "Value Jenis : " + jenis, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -52,6 +60,7 @@ public class LombaAddFragment extends Fragment {
         btnTglAkhir = view.findViewById(R.id.frame_add_tgl_akhir_lomba);
         mTglAwal = view.findViewById(R.id.tgl_mulai_add);
         mTglAkhir = view.findViewById(R.id.tgl_akhir_add);
+        mBtnSimpan = view.findViewById(R.id.constrain_save_lomba);
 
         btnTglAwal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +107,14 @@ public class LombaAddFragment extends Fragment {
         // Atur adapter ke Spinner
         spinnerTingkat.setAdapter(adapterTingkat);
 
+        mBtnSimpan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ViewPengajuanActivity.class);
+                intent.putExtra("jenis", jenis);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

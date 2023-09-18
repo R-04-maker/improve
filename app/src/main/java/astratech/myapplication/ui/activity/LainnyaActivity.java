@@ -1,13 +1,5 @@
 package astratech.myapplication.ui.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.CompositePageTransformer;
-import androidx.viewpager2.widget.MarginPageTransformer;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,14 +12,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
+import androidx.viewpager2.widget.ViewPager2;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import astratech.myapplication.R;
 import astratech.myapplication.model.Lomba;
-import astratech.myapplication.ui.fragment.HomeFragment;
 
-public class LombaActivity extends AppCompatActivity {
+public class LainnyaActivity extends AppCompatActivity {
     private ViewPager2 mViewPager2;
     private ImageView mBackBtn;
     private RecyclerView mRVLomba, mRVLombaLain;
@@ -40,23 +39,7 @@ public class LombaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lomba);
-
-        mViewPager2 = findViewById(R.id.slider);
-        mViewPager2.setClipToPadding(false);
-        mViewPager2.setClipChildren(false);
-        mViewPager2.setOffscreenPageLimit(5);
-        mViewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
-
-        mRVLomba = findViewById(R.id.rv_lomba_lomba);
-        mRVLomba.setLayoutManager(new LinearLayoutManager(LombaActivity.this, LinearLayoutManager.HORIZONTAL, false));
-        mRVLomba.setAdapter(mLombaAdapter);
-
-        mRVLombaLain = findViewById(R.id.rv_lomba_lainnya);
-        mRVLombaLain.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        mRVLombaLain.setAdapter(mLombaLainAdapter);
-        mRVLombaLain.setItemAnimator(null);
-        mRVLombaLain.setOverScrollMode(mRVLombaLain.OVER_SCROLL_NEVER);
+        setContentView(R.layout.activity_lainnya);
 
         mBackBtn = findViewById(R.id.back_buttonn);
 
@@ -66,6 +49,22 @@ public class LombaActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        mViewPager2 = findViewById(R.id.slider);
+        mViewPager2.setClipToPadding(false);
+        mViewPager2.setClipChildren(false);
+        mViewPager2.setOffscreenPageLimit(5);
+        mViewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+
+        mRVLomba = findViewById(R.id.rv_lomba_lomba);
+        mRVLomba.setLayoutManager(new LinearLayoutManager(LainnyaActivity.this, LinearLayoutManager.HORIZONTAL, false));
+        mRVLomba.setAdapter(mLombaAdapter);
+
+        mRVLombaLain = findViewById(R.id.rv_lomba_lainnya);
+        mRVLombaLain.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        mRVLombaLain.setAdapter(mLombaLainAdapter);
+        mRVLombaLain.setItemAnimator(null);
+        mRVLombaLain.setOverScrollMode(mRVLombaLain.OVER_SCROLL_NEVER);
 
         CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
         compositePageTransformer.addTransformer(new MarginPageTransformer(30));
@@ -145,14 +144,14 @@ public class LombaActivity extends AppCompatActivity {
 
         @NonNull
         @Override
-        public SliderAdapter.SliderHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            LayoutInflater layoutInflater = LayoutInflater.from(LombaActivity.this);
+        public SliderHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            LayoutInflater layoutInflater = LayoutInflater.from(LainnyaActivity.this);
 
-            return new SliderAdapter.SliderHolder(layoutInflater, parent);
+            return new SliderHolder(layoutInflater, parent);
         }
 
         @Override
-        public void onBindViewHolder(@NonNull SliderAdapter.SliderHolder holder, int position) {
+        public void onBindViewHolder(@NonNull SliderHolder holder, int position) {
             Lomba lomba = mLombas.get(position);
             holder.onBindViewHolder(lomba);
         }
@@ -182,11 +181,11 @@ public class LombaActivity extends AppCompatActivity {
             }
             @Override
             public void onClick(View view){
-                Animation scaleDown = AnimationUtils.loadAnimation(LombaActivity.this, R.anim.scale_down);
+                Animation scaleDown = AnimationUtils.loadAnimation(LainnyaActivity.this, R.anim.scale_down);
                 itemView.startAnimation(scaleDown);
-                Intent intent = new Intent(LombaActivity.this, DetailLombaActivity.class);
+                Intent intent = new Intent(LainnyaActivity.this, DetailLombaActivity.class);
 //                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
-                startActivity(intent);            }
+                startActivity(intent);                   }
         }
     }
     private class LombaAdapter extends RecyclerView.Adapter<LombaAdapter.LombaHolder>{
@@ -198,13 +197,13 @@ public class LombaActivity extends AppCompatActivity {
 
         @NonNull
         @Override
-        public LombaAdapter.LombaHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            LayoutInflater layoutInflater = LayoutInflater.from(LombaActivity.this);
+        public LombaHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            LayoutInflater layoutInflater = LayoutInflater.from(LainnyaActivity.this);
 
-            return new LombaAdapter.LombaHolder(layoutInflater, parent);
+            return new LombaHolder(layoutInflater, parent);
         }
         @Override
-        public void onBindViewHolder(@NonNull LombaAdapter.LombaHolder holder, int position) {
+        public void onBindViewHolder(@NonNull LombaHolder holder, int position) {
             Lomba lomba = mLombas.get(position);
             holder.bind(lomba);
             Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), android.R.anim.fade_in);
@@ -229,9 +228,9 @@ public class LombaActivity extends AppCompatActivity {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Animation scaleDown = AnimationUtils.loadAnimation(LombaActivity.this, R.anim.scale_down);
+                        Animation scaleDown = AnimationUtils.loadAnimation(LainnyaActivity.this, R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
-                        Intent intent = new Intent(LombaActivity.this, DetailLombaActivity.class);
+                        Intent intent = new Intent(LainnyaActivity.this, DetailLombaActivity.class);
 //                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
                         startActivity(intent);
                     }
@@ -252,13 +251,13 @@ public class LombaActivity extends AppCompatActivity {
 
         @NonNull
         @Override
-        public LombaLainAdapter.LombaHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            LayoutInflater layoutInflater = LayoutInflater.from(LombaActivity.this);
+        public LombaHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            LayoutInflater layoutInflater = LayoutInflater.from(LainnyaActivity.this);
 
-            return new LombaLainAdapter.LombaHolder(layoutInflater, parent);
+            return new LombaHolder(layoutInflater, parent);
         }
         @Override
-        public void onBindViewHolder(@NonNull LombaLainAdapter.LombaHolder holder, int position) {
+        public void onBindViewHolder(@NonNull LombaHolder holder, int position) {
 /*            Lomba lomba = mLombas.get(position);
             holder.bind(lomba);
             Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), android.R.anim.fade_in);
@@ -298,9 +297,9 @@ public class LombaActivity extends AppCompatActivity {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Animation scaleDown = AnimationUtils.loadAnimation(LombaActivity.this, R.anim.scale_down);
+                        Animation scaleDown = AnimationUtils.loadAnimation(LainnyaActivity.this, R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
-                        Intent intent = new Intent(LombaActivity.this, DetailLombaActivity.class);
+                        Intent intent = new Intent(LainnyaActivity.this, DetailLombaActivity.class);
 //                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
                         startActivity(intent);
                     }

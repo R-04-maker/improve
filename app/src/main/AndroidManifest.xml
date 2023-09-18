@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Improve"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.ViewPengajuanActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.UploadActivity"
             android:exported="false" />
         <activity
@@ -20,6 +23,14 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.LombaActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SeminarActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.LainnyaActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -66,23 +77,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.activity.HomeActivity" />
         </activity>
-
         <activity
             android:name=".ui.activity.PeminatanActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".ui.activity.QuizActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".ui.activity.ResultActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".ui.activity.QuizSoalActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

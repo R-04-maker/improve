@@ -27,8 +27,10 @@ import astratech.myapplication.R;
 import astratech.myapplication.model.Lomba;
 import astratech.myapplication.model.Seminar;
 import astratech.myapplication.ui.activity.DetailLombaActivity;
+import astratech.myapplication.ui.activity.LainnyaActivity;
 import astratech.myapplication.ui.activity.LombaActivity;
 import astratech.myapplication.ui.activity.SearchActivity;
+import astratech.myapplication.ui.activity.SeminarActivity;
 
 public class HomeFragment extends Fragment {
 
@@ -37,6 +39,7 @@ public class HomeFragment extends Fragment {
     private ImageButton mBtnSavedEvent, mBtnNotification;
     private ConstraintLayout mLombaMenu, mSeminarMenu, mLainnyaMenu;
     private EditText mSearchTxt;
+    private TextView mBtnSeeAllLomba, mBtnSeeAllSeminar;
     private LombaAdapter mLombaAdapter;
     private SeminarAdapter mSeminarAdapter;
 
@@ -54,6 +57,8 @@ public class HomeFragment extends Fragment {
         mSeminarMenu = view.findViewById(R.id.seminar);
         mLainnyaMenu = view.findViewById(R.id.lainnya);
         mSearchTxt = view.findViewById(R.id.search);
+        mBtnSeeAllLomba = view.findViewById(R.id.btn_seeAll_lomba);
+        mBtnSeeAllSeminar = view.findViewById(R.id.btn_seeAll_seminar);
 
         mRvRekomendasiLomba = view.findViewById(R.id.rv_lomba);
         mRvRekomendasiLomba.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
@@ -70,12 +75,46 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        mBtnSeeAllLomba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), LombaActivity.class);
+                startActivity(intent);
+            }
+        });
+        mBtnSeeAllSeminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SeminarActivity.class);
+                startActivity(intent);
+            }
+        });
         mLombaMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
                 mLombaMenu.startAnimation(scaleDown);
                 Intent intent = new Intent(getActivity(), LombaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mSeminarMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
+                mSeminarMenu.startAnimation(scaleDown);
+                Intent intent = new Intent(getActivity(), SeminarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mLainnyaMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
+                mLainnyaMenu.startAnimation(scaleDown);
+                Intent intent = new Intent(getActivity(), LainnyaActivity.class);
                 startActivity(intent);
             }
         });
