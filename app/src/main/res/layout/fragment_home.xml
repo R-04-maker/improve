@@ -402,154 +402,6 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/card_home"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/lomba"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/cardView4"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_margin="5dp"
-                            app:cardBackgroundColor="#245B82"
-                            app:cardCornerRadius="40dp"
-                            app:cardElevation="5dp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_marginEnd="8dp"
-                                android:scaleType="center"
-                                android:src="@drawable/medal_solid" />
-                        </androidx.cardview.widget.CardView>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:fontFamily="@font/poppins_bold"
-                            android:text="@string/lomba"
-                            android:textColor="#FFFFFF"
-                            android:textSize="14dp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView4" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/seminar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="50dp"
-                        android:layout_marginEnd="30dp"
-                        app:layout_constraintStart_toEndOf="@+id/lomba"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/cardView5"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_margin="5dp"
-                            app:cardBackgroundColor="#FE5929"
-                            app:cardCornerRadius="40dp"
-                            app:cardElevation="5dp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_marginEnd="8dp"
-                                android:scaleType="center"
-                                android:src="@drawable/book_atlas_solid" />
-                        </androidx.cardview.widget.CardView>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:fontFamily="@font/poppins_bold"
-                            android:text="@string/seminar"
-                            android:textColor="#FFFFFF"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView5" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/lainnya"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="50dp"
-                        app:layout_constraintStart_toEndOf="@+id/seminar"
-                        app:layout_constraintTop_toTopOf="parent">
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/cardView6"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_margin="5dp"
-                            app:cardBackgroundColor="#BCD6E7"
-                            app:cardCornerRadius="40dp"
-                            app:cardElevation="5dp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_marginEnd="8dp"
-                                android:scaleType="center"
-                                android:src="@drawable/arrow_up_right_dots_solid" />
-                        </androidx.cardview.widget.CardView>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:fontFamily="@font/poppins_bold"
-                            android:text="@string/lainnya"
-                            android:textColor="#FFFFFF"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView6" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>-->
-
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="0dp"
@@ -574,7 +426,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/card_lomba" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/btn_seeAll_lomba"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -631,7 +483,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/rv_lomba" />
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/btn_seeAll_seminar"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"

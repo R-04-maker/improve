@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,11 +27,21 @@ public class SearchActivity extends AppCompatActivity {
     private EditText mSearchETxt;
     private LinearLayout mSemuaLayout, mLombaLayout, mSeminarLayout, mOrangLayout, mLainnyaLayout;
     private TextView mSemuaTxt, mLombaTxt,  mSeminarTxt, mOrangTxt, mLainnyaTxt;
+    private ImageView mBackBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        mBackBtn = findViewById(R.id.back_button);
+
+        mBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         mSearchETxt = findViewById(R.id.search_edit_text);
 

@@ -119,9 +119,10 @@
                 app:layout_constraintTop_toBottomOf="@id/txt_tgl_seminar_add">
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/baseline_date_range_24"
+                    app:tint="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -345,6 +346,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
                         android:text="Unggah Poster"
+                        android:textColor="@color/white"
                         android:textSize="14dp"
                         android:layout_marginStart="15dp"
                         android:paddingEnd="15dp"
@@ -381,7 +383,7 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constrain_save_seminar"
+                android:id="@+id/constrain_save_lomba"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"

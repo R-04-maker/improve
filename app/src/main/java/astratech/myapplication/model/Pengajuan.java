@@ -7,12 +7,17 @@ public class Pengajuan {
     private String jenisPengajuan;
     private String tglPengajuan;
 
+    private String status;
+
     public Pengajuan() {
     }
 
-    public Pengajuan(String idPengajuan, String namaPengajuan) {
+    public Pengajuan(String idPengajuan, String namaPengajuan, String jenisPengajuan, String tglPengajuan, String status) {
         this.idPengajuan = idPengajuan;
         this.namaPengajuan = namaPengajuan;
+        this.jenisPengajuan = jenisPengajuan;
+        this.tglPengajuan = tglPengajuan;
+        this.status = status;
     }
 
     public String getIdPengajuan() {
@@ -45,5 +50,13 @@ public class Pengajuan {
 
     public void setTglPengajuan(String tglPengajuan) {
         this.tglPengajuan = tglPengajuan;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

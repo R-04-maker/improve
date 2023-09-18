@@ -36,14 +36,14 @@ public class AddActivity extends AppCompatActivity {
     SuratPengantarAddFragment suratPengantarAddFragment = new SuratPengantarAddFragment();
     KonsultasiAddFragment konsultasiAddFragment = new KonsultasiAddFragment();
     DanaAddFragment danaAddFragment = new DanaAddFragment();
-
+    Bundle bundle = new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.FragmentUpload, lombaAddFragment).commit();
+//        getSupportFragmentManager().beginTransaction().replace(R.id.FragmentUpload, lombaAddFragment).commit();
 
         Spinner spinner = findViewById(R.id.spinner_pilih_pengajuan);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -56,6 +56,7 @@ public class AddActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedPengajuan = parent.getItemAtPosition(position).toString();
                 mSelectedPengajuan = selectedPengajuan;
+                bundle.putString("jenis",selectedPengajuan);
                 updateFormPengajuan();
             }
 
@@ -113,18 +114,25 @@ public class AddActivity extends AppCompatActivity {
 
         if (mSelectedPengajuan.equals("Pilih Pengajuan")) {
             // Jika "Select One" dipilih, tampilkan semua data historis
-            getSupportFragmentManager().beginTransaction().replace(R.id.FragmentUpload, lombaAddFragment).commit();
+//            lombaAddFragment.setArguments(bundle);
+//            getSupportFragmentManager().beginTransaction().replace(R.id.FragmentUpload, lombaAddFragment).commit();
         } else if (mSelectedPengajuan.equals("Lomba")){
+            lombaAddFragment.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.FragmentUpload, lombaAddFragment).commit();
         } else if (mSelectedPengajuan.equals("Seminar")) {
+            seminarAddFragment.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.FragmentUpload, seminarAddFragment).commit();
         } else if (mSelectedPengajuan.equals("Lainnya")) {
+            lainnyaAddFragment.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.FragmentUpload, lainnyaAddFragment).commit();
         } else if (mSelectedPengajuan.equals("Surat Pengantar")) {
+            suratPengantarAddFragment.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.FragmentUpload, suratPengantarAddFragment).commit();
         } else if (mSelectedPengajuan.equals("Dana")) {
+            danaAddFragment.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.FragmentUpload, danaAddFragment).commit();
         } else if (mSelectedPengajuan.equals("Konsultasi")) {
+            konsultasiAddFragment.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.FragmentUpload, konsultasiAddFragment).commit();
         }
     }

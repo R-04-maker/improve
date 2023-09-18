@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <solid android:color="@color/biru_muda" /> <!-- Warna latar belakang -->
+    <solid android:color="#F7893C" /> <!-- Warna latar belakang -->
     <corners android:radius="10dp" /> <!-- Radius sudut melingkar -->
     <stroke
         android:width="0.8dp"
-        android:color="@color/biru_muda"/> <!-- Warna garis -->
+        android:color="#F7893C"/> <!-- Warna garis -->
 </shape>

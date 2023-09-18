@@ -1,5 +1,6 @@
 package astratech.myapplication.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,15 +10,22 @@ import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import astratech.myapplication.R;
+import astratech.myapplication.ui.activity.ViewPengajuanActivity;
 
 public class SuratPengantarAddFragment extends Fragment {
-
+    private String jenis;
+    private ConstraintLayout mBtnSimpan;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            jenis = bundle.getString("jenis");
+        }
     }
 
     @Override
@@ -45,6 +53,16 @@ public class SuratPengantarAddFragment extends Fragment {
 
         // Atur adapter ke Spinner
         spinnerDosen.setAdapter(adapterDosen);
+        mBtnSimpan = view.findViewById(R.id.constrain_save_lomba);
+
+        mBtnSimpan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ViewPengajuanActivity.class);
+                intent.putExtra("jenis", jenis);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

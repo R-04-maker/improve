@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, AddActivity.class);
+                Intent intent = new Intent(HomeActivity.this, UploadActivity.class);
                 startActivity(intent);
             }
         });
