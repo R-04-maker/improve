@@ -96,9 +96,17 @@
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
+            android:name=".ui.activity.QuizSoal2Activity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.MainActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity
@@ -109,11 +117,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.activity.HomeActivity" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.activity.PeminatanActivity"

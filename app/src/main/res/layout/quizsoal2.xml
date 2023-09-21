@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/quizsoalya"
+    android:id="@+id/quizsoalya2"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -46,7 +46,7 @@
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
-        android:text="Diantara kegiatan dibawah\n mana yang lebih anda\n sukai ?"
+        android:text="Seberapa tertarik anda \n dengan pembuatan dan \n perancangan perangkat\n lunak?"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -88,14 +88,13 @@
             android:layout_width="317dp"
             android:layout_height="40dp"
             android:autoSizeMaxTextSize="20dp"
-            android:paddingStart="15dp"
             android:autoSizeMinTextSize="10dp"
             android:autoSizeTextType="uniform"
             android:background="@drawable/bgkuis"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="left|center_vertical"
-            android:text="A.   Menghafal "
+            android:text="   A.   Tertarik "
             android:textAllCaps="false"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -108,14 +107,13 @@
             android:layout_height="40dp"
             android:layout_marginBottom="153dp"
             android:autoSizeMaxTextSize="20dp"
-            android:paddingStart="15dp"
             android:layout_marginTop="16dp"
             android:autoSizeMinTextSize="10dp"
             android:autoSizeTextType="uniform"
             android:background="@drawable/bgkuis"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="left|center_vertical"
-            android:text="C.  Menganalisis "
+            android:text="   C.   Tidak tertarik "
             android:textAllCaps="false"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -128,7 +126,6 @@
             android:layout_width="317dp"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
-            android:paddingStart="15dp"
             android:layout_marginBottom="210dp"
             android:autoSizeMaxTextSize="20dp"
             android:autoSizeMinTextSize="10dp"
@@ -136,7 +133,7 @@
             android:background="@drawable/bgkuis"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="left|center_vertical"
-            android:text="B.   Berfikir logika"
+            android:text="   B.   Mungkin tertarik"
             android:textAllCaps="false"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -184,7 +181,7 @@
                     android:textSize="24dp" />
 
 
-        </LinearLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/btnPengajuanAsset"
@@ -259,13 +256,13 @@
                 android:enabled="false"
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center"
-                android:text="1/5"
+                android:text="2/5"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="24dp" />
 
 
-            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 

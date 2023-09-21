@@ -56,16 +56,21 @@ public class LoginFragment extends Fragment {
     private boolean validate(EditText mTxtEmail,EditText mTxtPassword){
 
         boolean valid = true;
+        if(mTxtEmail.getText().toString().length() == 0 && mTxtPassword.getText().toString().length() == 0 ){
+            mTxtEmail.setError("Wajib diisi !");
+            mTxtPassword.setError("Wajib diisi !");
+            valid = false;
+        }
         if(mTxtEmail.getText().toString().length() != 0 && mTxtPassword.getText().toString().length() == 0 ){
-            mTxtPassword.setError("Required");
+            mTxtPassword.setError("Wajib diisi !");
             valid = false;
         }
         else if(mTxtEmail.getText().toString().length() == 0){
-            mTxtEmail.setError("Required");
+            mTxtEmail.setError("Wajib diisi !");
             valid = false;
         }
         else if(mTxtPassword.getText().toString().length() == 0){
-            mTxtPassword.setError("Required");
+            mTxtPassword.setError("Wajib diisi !");
             valid = false;
         }else{
             Intent intent = new Intent(getContext(), PeminatanActivity.class);

@@ -9,7 +9,10 @@ import android.os.Bundle;
 import astratech.myapplication.R;
 import astratech.myapplication.model.LeaderBoard;
 import astratech.myapplication.ui.fragment.LeaderBoardFragment;
+import astratech.myapplication.ui.fragment.LoginFragment;
 import astratech.myapplication.ui.fragment.OnBoardingFragment;
+import astratech.myapplication.ui.fragment.QuizSoal2Fragment;
+import astratech.myapplication.ui.fragment.QuizSoalFragment;
 
 public class MainActivity extends AppCompatActivity {
 
