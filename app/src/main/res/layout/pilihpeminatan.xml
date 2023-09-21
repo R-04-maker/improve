@@ -26,176 +26,294 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
-        android:id="@+id/caritahu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="-10dp"
-        android:autoSizeMaxTextSize="20dp"
-        android:autoSizeMinTextSize="10dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/poppins"
-        android:gravity="left"
-        android:shadowColor="#80A5A0A0"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="2"
-        android:text="Pilih sesuai minatmu"
-        android:textAllCaps="false"
-        android:textColor="#FE5929"
-        android:textSize="20dp"
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="-20dp"
+        android:src="@drawable/avatar_quiz"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
 
     <TextView
-        android:id="@+id/disini"
-        android:layout_width="78dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="-10dp"
-        android:autoSizeMaxTextSize="20dp"
-        android:autoSizeMinTextSize="10dp"
-        android:autoSizeTextType="uniform"
-        android:layout_marginStart="5dp"
-        android:fontFamily="@font/poppins_bold"
-        android:gravity="left"
-        android:shadowColor="#80A5A0A0"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="2"
-        android:textAllCaps="false"
-        android:textColor="#FE5929"
-        android:textSize="20dp"
-        android:textStyle="italic"
-        app:layout_constraintStart_toEndOf="@+id/caritahu"
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Belum tau minatmu ??"
+        android:textColor="#245B82"
+        android:textSize="18dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView15"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/buttonkuis"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/orange"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView23">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingHorizontal="20dp"
+            android:text="Cari Tahu Disini !"
+            android:textColor="@color/white" />
+    </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="8dp"
+        android:paddingBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/caritahu">
+        app:layout_constraintTop_toBottomOf="@+id/textView23">
+
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_kategori"
+            android:id="@+id/card2_kategori1"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
-            android:layout_marginStart="5dp"
-            app:cardBackgroundColor="#C1C1C1"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="15dp"
+            app:cardElevation="4dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_kategori1"
+            <TextView
+                android:id="@+id/txtminat2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:layout_margin="1dp"
-                android:layout_marginStart="40dp"
-                app:cardCornerRadius="15dp">
-
-                <TextView
-                    android:id="@+id/txtminat1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="27dp"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="15dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Pemrograman"
-                    android:textColor="#727272"
-                    android:textSize="16dp" />
-            </androidx.cardview.widget.CardView>
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Pemrograman"
+                android:textColor="#727272"
+                android:textSize="16dp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card2_kategori"
+            android:id="@+id/card3_kategori1"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
-            android:layout_marginStart="30dp"
-            app:cardBackgroundColor="#C1C1C1"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="15dp"
-            app:layout_constraintStart_toEndOf="@+id/card_kategori"
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card2_kategori1">
+
+            <TextView
+                android:id="@+id/txtminat5"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Basis Data"
+                android:textColor="#727272"
+                android:textSize="16dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card3_kategori3"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toEndOf="@+id/card2_kategori1"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card2_kategori1"
+            <TextView
+                android:id="@+id/txtminat3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:layout_margin="1dp"
-                android:layout_marginStart="40dp"
-                app:cardCornerRadius="15dp">
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Teknologi"
+                android:textColor="#727272"
+                android:textSize="16dp" />
 
-                <TextView
-                    android:id="@+id/txtminat2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="27dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="15dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="UI/UX"
-                    android:textColor="#727272"
-                    android:textSize="16dp" />
-            </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card3_kategori"
+            android:id="@+id/card4_kategori1"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
-            android:layout_marginTop="20dp"
-            android:autoSizeMaxTextSize="20dp"
-            android:autoSizeMinTextSize="10dp"
-            android:autoSizeTextType="uniform"
-            android:background="@drawable/btn_depan"
-            android:fontFamily="@font/poppins_bold"
-            android:gravity="center"
-            android:text="Network"
-            android:layout_marginStart="5dp"
-            android:textAllCaps="false"
-            android:textColor="@color/biru_tua"
-            app:cardBackgroundColor="#C1C1C1"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_kategori">
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toEndOf="@+id/card3_kategori1"
+            app:layout_constraintTop_toBottomOf="@+id/card3_kategori3">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card3_kategori1"
+            <TextView
+                android:id="@+id/txtminat4"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Internet Of Things"
+                android:textColor="#727272"
+                android:textSize="16dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView13"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card3_kategori1">
+
+            <TextView
+                android:id="@+id/txtminat6"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Desain Grafis"
+                android:textColor="#727272"
+                android:textSize="16dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView17"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toEndOf="@+id/cardView13"
+            app:layout_constraintTop_toBottomOf="@+id/card3_kategori1">
+
+            <TextView
+                android:id="@+id/txtminat7"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Desain 3D Model"
+                android:textColor="#727272"
+                android:textSize="16dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView18"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView13">
+
+            <TextView
+                android:id="@+id/txtminat8"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Ilmu Sains dan Penelitian"
+                android:textColor="#727272"
+                android:textSize="16dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView19"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:padding="5dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView18">
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txtminat9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:layout_margin="1dp"
-                android:layout_marginStart="40dp"
-                app:cardCornerRadius="15dp">
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Olahraga dan Kesenian"
+                android:textColor="#727272"
+                android:textSize="16dp" />
+        </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/txtminat3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="27dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="15dp"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:text="Basis Data"
-                    android:textColor="#727272"
-                    android:textSize="16dp" />
-            </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView20"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toEndOf="@+id/cardView19"
+            app:layout_constraintTop_toBottomOf="@+id/cardView18">
+
+            <TextView
+                android:id="@+id/txtminat10"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_marginHorizontal="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Bisnis"
+                android:textColor="#727272"
+                android:textSize="16dp" />
         </androidx.cardview.widget.CardView>
 
 
-        <androidx.cardview.widget.CardView
+        <!--<androidx.cardview.widget.CardView
             android:id="@+id/card5_kategori"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="24dp"
             android:autoSizeMaxTextSize="20dp"
             android:autoSizeMinTextSize="10dp"
             android:autoSizeTextType="uniform"
-            android:layout_marginStart="5dp"
             android:background="@drawable/btn_depan"
             android:fontFamily="@font/poppins_bold"
             android:gravity="center"
@@ -223,7 +341,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginHorizontal="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Data Sains"
+                    android:text="Desain Grafis"
                     android:textColor="#727272"
                     android:textSize="16dp" />
             </androidx.cardview.widget.CardView>
@@ -233,14 +351,13 @@
             android:id="@+id/card6_kategori"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
             android:autoSizeMaxTextSize="20dp"
             android:autoSizeMinTextSize="10dp"
             android:autoSizeTextType="uniform"
             android:background="@drawable/btn_white"
             android:fontFamily="@font/poppins_bold"
-
             android:gravity="center"
             android:text="Front End"
             android:textAllCaps="false"
@@ -266,7 +383,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginHorizontal="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Jaringan"
+                    android:text="UI/UX"
                     android:textColor="#727272"
                     android:textSize="16dp" />
             </androidx.cardview.widget.CardView>
@@ -277,13 +394,13 @@
             android:id="@+id/card7_kategori"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
             android:autoSizeMaxTextSize="20dp"
             android:autoSizeMinTextSize="10dp"
             android:autoSizeTextType="uniform"
             android:background="@drawable/btn_white"
             android:fontFamily="@font/poppins_bold"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="5dp"
             android:gravity="center"
             android:text="Front End"
             android:textAllCaps="false"
@@ -309,33 +426,23 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginHorizontal="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Analisis"
+                    android:text="Sains dan Penelitian"
                     android:textColor="#727272"
                     android:textSize="16dp" />
             </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card8_kategori"
+            android:id="@+id/card8_kategori1"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
             android:textColor="@color/biru_tua"
-            app:cardBackgroundColor="#C1C1C1"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="15dp"
-            app:layout_constraintStart_toEndOf="@+id/card3_kategori"
-            app:layout_constraintTop_toBottomOf="@+id/card2_kategori">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card8_kategori1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:layout_margin="1dp"
-                android:layout_marginStart="40dp"
-                app:cardCornerRadius="15dp">
-
+            app:cardElevation="8dp"
+            app:layout_constraintStart_toEndOf="@+id/card3_kategori">
                 <TextView
                     android:id="@+id/txtminat8"
                     android:layout_width="wrap_content"
@@ -343,18 +450,17 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginHorizontal="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Statistika"
+                    android:text="Internet of Things"
                     android:textColor="#727272"
                     android:textSize="16dp" />
-            </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card4_kategori"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
             app:cardBackgroundColor="#C1C1C1"
             app:cardCornerRadius="15dp"
             app:layout_constraintStart_toEndOf="@+id/card7_kategori"
@@ -376,11 +482,24 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginHorizontal="15dp"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Sistem Operasi"
+                    android:text="Olahraga"
                     android:textColor="#727272"
                     android:textSize="16dp" />
             </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtminat1"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Pemrograman"
+            android:textColor="#727272"
+            android:textSize="16dp"
+            tools:layout_editor_absoluteX="198dp"
+            tools:layout_editor_absoluteY="79dp" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -391,27 +510,9 @@
         tools:layout_editor_absoluteX="141dp">
 
         <Button
-            android:id="@+id/buttonkuis"
-            android:layout_width="170dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="30dp"
-            android:autoSizeMaxTextSize="18dp"
-            android:autoSizeMinTextSize="15dp"
-            android:autoSizeTextType="uniform"
-            android:background="@drawable/btn_abu"
-            android:fontFamily="@font/poppins_bold"
-            android:gravity="center"
-            android:text="Tes Minat"
-            android:textColor="#FFFFFF"
-            app:circularflow_radiusInDP="100dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
             android:id="@+id/button"
-            android:layout_width="150dp"
+            android:layout_width="300dp"
             android:layout_height="40dp"
-            android:layout_marginEnd="30dp"
             android:autoSizeMaxTextSize="18dp"
             android:autoSizeMinTextSize="15dp"
             android:autoSizeTextType="uniform"
@@ -425,7 +526,7 @@
             app:circularflow_radiusInDP="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="399dp" />
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

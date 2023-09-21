@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -18,7 +17,6 @@ import androidx.fragment.app.Fragment;
 
 import astratech.myapplication.R;
 import astratech.myapplication.ui.activity.HomeActivity;
-import astratech.myapplication.ui.activity.PeminatanActivity;
 import astratech.myapplication.ui.activity.QuizActivity;
 
 public class PeminatanFragment extends Fragment {
@@ -38,6 +36,7 @@ public class PeminatanFragment extends Fragment {
     private TextView text6;
     private TextView text7;
     private TextView text8;
+    private TextView text9;
     private CardView txt2;
     private CardView txt3;
     private CardView txt4;
@@ -45,9 +44,10 @@ public class PeminatanFragment extends Fragment {
     private CardView txt6;
     private CardView txt7;
     private CardView txt8;
+    private CardView txt9;
     private Button mBtnSimpan;
     private TextView disini;
-    private Button minat;
+    private CardView minat;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,27 +69,37 @@ public class PeminatanFragment extends Fragment {
 
         final Drawable newDrawable = getResources().getDrawable(R.drawable.changebutton); // Replace with the new drawable resource
         mBtnSimpan = (Button) view.findViewById(R.id.button);
-        minat = (Button) view.findViewById(R.id.buttonkuis);
-        txt1 = (CardView) view.findViewById(R.id.card_kategori1);
-        txt2 = (CardView) view.findViewById(R.id.card2_kategori1);
-        txt3 = (CardView) view.findViewById(R.id.card3_kategori1);
-        txt4 = (CardView) view.findViewById(R.id.card4_kategori1);
-        txt5 = (CardView) view.findViewById(R.id.card5_kategori1);
-        txt6 = (CardView) view.findViewById(R.id.card6_kategori1);
-        txt7 = (CardView) view.findViewById(R.id.cardA_kategori1);
-        txt8 = (CardView) view.findViewById(R.id.card8_kategori1);
-        text1 = (TextView) view.findViewById(R.id.txtminat1);
-        text2 = (TextView) view.findViewById(R.id.txtminat2);
+        minat = (CardView) view.findViewById(R.id.buttonkuis);
+        txt1 = (CardView) view.findViewById(R.id.card2_kategori1);
+        text1 = (TextView) view.findViewById(R.id.txtminat2);
+
+        txt2 = (CardView) view.findViewById(R.id.card3_kategori1);
+        text2 = (TextView) view.findViewById(R.id.txtminat5);
+
+        txt3 = (CardView) view.findViewById(R.id.card3_kategori3);
         text3 = (TextView) view.findViewById(R.id.txtminat3);
+
+        txt4 = (CardView) view.findViewById(R.id.card4_kategori1);
         text4 = (TextView) view.findViewById(R.id.txtminat4);
-        text5 = (TextView) view.findViewById(R.id.txtminat5);
-        text6 = (TextView) view.findViewById(R.id.txtminat6);
-        text7 = (TextView) view.findViewById(R.id.txtminat7);
-        text8 = (TextView) view.findViewById(R.id.txtminat8);
-        disini = (TextView) view.findViewById(R.id.disini);
+
+        txt5 = (CardView) view.findViewById(R.id.cardView13);
+        text5 = (TextView) view.findViewById(R.id.txtminat6);
+
+        txt6 = (CardView) view.findViewById(R.id.cardView17);
+        text6 = (TextView) view.findViewById(R.id.txtminat7);
+
+        txt7 = (CardView) view.findViewById(R.id.cardView18);
+        text7 = (TextView) view.findViewById(R.id.txtminat8);
+
+
+        txt8 = (CardView) view.findViewById(R.id.cardView19);
+        text8 = (TextView) view.findViewById(R.id.txtminat9);
+
+        txt9 = (CardView) view.findViewById(R.id.cardView20);
+        text9 = (TextView) view.findViewById(R.id.txtminat10);
 
         int orangeCount = 0;
-        CardView[] textViews = {txt1, txt2, txt3, txt4, txt5, txt6, txt7, txt8};
+        CardView[] textViews = {txt1, txt2, txt3, txt4, txt5, txt6, txt7, txt8, txt9};
         for (final CardView textView : textViews) {
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -271,6 +281,8 @@ public class PeminatanFragment extends Fragment {
                     text7.setTextColor(Color.parseColor("#FFFFFF"));
                     mBtnSimpan.setEnabled(true);
                 }
+                isClicked[0] = !isClicked[0];
+
             }
             });
 
@@ -291,14 +303,6 @@ public class PeminatanFragment extends Fragment {
 
                 // Toggle the state
                 isClicked[0] = !isClicked[0];
-            }
-        });
-        disini.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), QuizActivity.class);
-                startActivity(intent);
-
             }
         });
 
