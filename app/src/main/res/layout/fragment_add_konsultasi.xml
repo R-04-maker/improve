@@ -106,8 +106,9 @@
                 app:layout_constraintTop_toBottomOf="@id/txt_tgl_konsultasi">
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    app:tint="@color/white"
                     android:src="@drawable/baseline_date_range_24"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -161,8 +162,9 @@
                 app:layout_constraintTop_toBottomOf="@id/txt_waktu_konsultasi">
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    app:tint="@color/white"
                     android:src="@drawable/baseline_access_time_24"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

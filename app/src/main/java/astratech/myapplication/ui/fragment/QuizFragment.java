@@ -8,20 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 import astratech.myapplication.R;
-import astratech.myapplication.ui.activity.HomeActivity;
-import astratech.myapplication.ui.activity.PeminatanActivity;
-import astratech.myapplication.ui.activity.QuizActivity;
 import astratech.myapplication.ui.activity.QuizSoalActivity;
 
 public class QuizFragment extends Fragment {
@@ -57,8 +48,7 @@ public class QuizFragment extends Fragment {
         Tidak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), PeminatanActivity.class);
-                startActivity(intent);
+                getActivity().onBackPressed();
             }
         });
 

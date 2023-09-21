@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +38,7 @@ public class AddActivity extends AppCompatActivity {
     KonsultasiAddFragment konsultasiAddFragment = new KonsultasiAddFragment();
     DanaAddFragment danaAddFragment = new DanaAddFragment();
     Bundle bundle = new Bundle();
+    private ImageView mBackBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,44 +67,13 @@ public class AddActivity extends AppCompatActivity {
                 // Do nothing
             }
         });
-
-
-
-//        btnTglAwal = findViewById(R.id.frame_add_tgl_awal_lomba);
-//        btnTglAkhir = findViewById(R.id.frame_add_tgl_akhir_lomba);
-//        mTglAwal = findViewById(R.id.tgl_mulai_add);
-//        mTglAkhir = findViewById(R.id.tgl_akhir_add);
-//
-//        btnTglAwal.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                openDatePickerTglAwal();
-//            }
-//        });
-//
-//        btnTglAkhir.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                openDatePickerTglAkhir();
-//            }
-//        });
-
-//        ImageView mBackButton = findViewById(R.id.backBtnPoin);
-//        mBackButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
-//
-//        ConstraintLayout constraintHistoryPoin = findViewById(R.id.constrain_history_poin);
-//        constraintHistoryPoin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(PoinActivity.this, HistoryPoinActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        mBackBtn = findViewById(R.id.back_btn);
+        mBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 

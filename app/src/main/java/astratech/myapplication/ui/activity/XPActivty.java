@@ -11,7 +11,6 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -71,7 +70,6 @@ public class XPActivty extends AppCompatActivity {
             public boolean onChildClick(ExpandableListView parent, android.view.View v, int groupPosition, int childPosition, long id) {
                 // Tindakan yang akan diambil saat item child ditekan
                 String selectedItem = expandableListAdapter.getChild(groupPosition, childPosition).toString();
-                Toast.makeText(getApplicationContext(), "Selected: " + selectedItem, Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
