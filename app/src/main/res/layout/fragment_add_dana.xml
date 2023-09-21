@@ -197,6 +197,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
                         android:text="Unggah Bukti"
+                        android:textColor="@color/white"
                         android:textSize="14dp"
                         android:layout_marginStart="15dp"
                         android:paddingEnd="15dp"

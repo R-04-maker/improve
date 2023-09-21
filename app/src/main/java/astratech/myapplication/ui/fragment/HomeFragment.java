@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,13 +32,14 @@ import astratech.myapplication.ui.activity.DetailLombaActivity;
 import astratech.myapplication.ui.activity.LainnyaActivity;
 import astratech.myapplication.ui.activity.LombaActivity;
 import astratech.myapplication.ui.activity.NotifikasiActivity;
+import astratech.myapplication.ui.activity.QuizActivity;
 import astratech.myapplication.ui.activity.SearchActivity;
 import astratech.myapplication.ui.activity.SeminarActivity;
+import astratech.myapplication.ui.activity.SimpanActivity;
 import smartdevelop.ir.eram.showcaseviewlib.GuideView;
 import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
 import smartdevelop.ir.eram.showcaseviewlib.config.Gravity;
 import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener;
-import astratech.myapplication.ui.activity.SimpanActivity;
 
 public class HomeFragment extends Fragment {
 
@@ -232,6 +232,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        mCardQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), QuizActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
     private void scrollToPosition(final int x, final int y) {
@@ -400,7 +407,9 @@ public class HomeFragment extends Fragment {
                     public void onClick(View v) {
                         Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
-                        Toast.makeText(getActivity(), "Clicked " + mSeminar.getNamaSeminar(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), DetailLombaActivity.class);
+//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        startActivity(intent);
                     }
                 });
             }

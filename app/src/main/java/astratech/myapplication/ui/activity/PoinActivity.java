@@ -11,7 +11,6 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -77,7 +76,6 @@ public class PoinActivity extends AppCompatActivity {
             public boolean onChildClick(ExpandableListView parent, android.view.View v, int groupPosition, int childPosition, long id) {
                 // Tindakan yang akan diambil saat item child ditekan
                 String selectedItem = expandableListAdapter.getChild(groupPosition, childPosition).toString();
-                Toast.makeText(getApplicationContext(), "Selected: " + selectedItem, Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
@@ -107,10 +105,10 @@ public class PoinActivity extends AppCompatActivity {
         child1.add("Poin didapatkan dengan melakukan pengajuan kegiatan pada menu pengajuan.");
 
         List<String> child2 = new ArrayList<>();
-        child2.add("Perbedaan XP dan Poin terletak pada cara mendapatkannya. Selain itu poin dapat dikonversikan ke Jam Plus");
+        child2.add("Perbedaan XP dan Poin terletak pada cara mendapatkannya. Selain itu poin dapat dikonversikan menjadi Jam Plus");
 
         List<String> child3 = new ArrayList<>();
-        child3.add("Jam plus dan Jam Minus merupakan implementasi dari praktik industri yang diterapkan di perkuliahan. Jam Plus merupakan poin yang didapat ketika mahasiswa melakukan kontibusi di perkuliahan sepert proyek. Jam Minus merupakan poin yang didapat ketika mahasiswa melanggar aturan");
+        child3.add("Jam plus dan Jam Minus merupakan implementasi dari praktik industri yang diterapkan di perkuliahan. Jam Plus merupakan poin yang didapat ketika mahasiswa melakukan kontribusi di perkuliahan seperti proyek. Jam Minus merupakan poin yang didapat ketika mahasiswa melanggar aturan");
 
         listDataChild.put(listDataHeader.get(0), child1);
         listDataChild.put(listDataHeader.get(1), child2);

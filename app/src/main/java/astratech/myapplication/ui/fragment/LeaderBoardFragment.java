@@ -1,6 +1,7 @@
 package astratech.myapplication.ui.fragment;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +24,6 @@ import java.util.List;
 import astratech.myapplication.R;
 import astratech.myapplication.model.LeaderBoard;
 import astratech.myapplication.ui.activity.ProfileOrangActivity;
-import astratech.myapplication.ui.activity.SimpanActivity;
 
 
 public class LeaderBoardFragment extends Fragment {
@@ -157,6 +157,10 @@ public class LeaderBoardFragment extends Fragment {
                 mNomor.setText(String.valueOf(leaderBoard.getIdLeaderBoard()));
                 mNamaOrang.setText(leaderBoard.getNamaOrang());
                 mXP.setText(String.valueOf(leaderBoard.getJumlahXP()));
+                if(leaderBoard.getNamaOrang().equals("Nazwa Frida (You)")){
+                    Typeface boldTypeface = Typeface.defaultFromStyle(Typeface.BOLD);
+                    mNamaOrang.setTypeface(boldTypeface);
+                }
             }
             @Override
             public void onClick(View v) {
