@@ -11,7 +11,7 @@
         android:id="@+id/imageView10"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="220dp"
         android:src="@drawable/img_9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +22,7 @@
         android:id="@+id/imageView11"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="400dp"
         android:layout_marginBottom="-40dp"
         android:src="@drawable/btn_orange"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,12 +44,31 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tingkatkan5"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:autoSizeMaxTextSize="18dp"
+        android:autoSizeMinTextSize="10dp"
+        android:layout_marginTop="-20dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="Yay!, selamat kamu sudah punya peminatan sekarang !"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tingkatkan3" />
+
+    <TextView
         android:id="@+id/tingkatkan3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:autoSizeMaxTextSize="50dp"
+        android:autoSizeMaxTextSize="35dp"
         android:autoSizeMinTextSize="10dp"
         android:autoSizeTextType="uniform"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:text="PROGRAMMING"
@@ -61,33 +80,35 @@
         app:layout_constraintTop_toBottomOf="@+id/layoutMenuAtas" />
 
     <TextView
-        android:id="@+id/tingkatkan5"
+        android:id="@+id/tingkatkan7"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoSizeMaxTextSize="20dp"
+        android:layout_height="100dp"
+        android:autoSizeMaxTextSize="18dp"
         android:autoSizeMinTextSize="10dp"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
-        android:text="Yay!, selamat kamu sudah punya peminatan sekarang !"
+        android:text="Peminatanmu adalah"
         android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="32dp"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/tingkatkan3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tingkatkan3" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutMenuAtas" />
 
 
     <LinearLayout
         android:id="@+id/layoutMenuAtas1"
-        android:layout_width="220dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:elevation="0dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tingkatkan5">
+        app:layout_constraintTop_toBottomOf="@+id/imageView10">
 
 
         <LinearLayout
@@ -124,9 +145,9 @@
     <LinearLayout
         android:id="@+id/layoutMenuAtas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:elevation="4dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="330dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -146,10 +167,9 @@
 
                 <ImageView
                     android:id="@+id/btn_PengajuanRuangan"
-                    android:layout_width="140dp"
+                    android:layout_width="0dp"
                     android:layout_marginRight="0dp"
-                    android:layout_height="120dp"
-                    app:srcCompat="@drawable/img_11" />
+                    android:layout_height="120dp" />
 
 
             </RelativeLayout>
@@ -169,11 +189,10 @@
 
                 <ImageView
                     android:id="@+id/btn_PengajuanAset"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                    android:layout_width="0dp"
+                    android:layout_height="00dp"
                     android:layout_marginLeft="90dp"
-                    android:scaleX="-1"
-                    app:srcCompat="@drawable/img_11" />
+                    android:scaleX="-1" />
 
             </RelativeLayout>
 

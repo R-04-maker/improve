@@ -2,137 +2,206 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/judulquiz"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/quiz">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tingkatkan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginBottom="350dp"
-        android:autoSizeMaxTextSize="22dp"
-        android:autoSizeMinTextSize="10dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/poppins_bold"
-        android:gravity="center"
-        android:shadowColor="#30000000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="2"
-        android:text=" Kuis ini dibuat \n untuk mengetahui minat \n anda  dan rekomendasi, \n lanjutkan ? "
-        android:textAllCaps="false"
-        android:textColor="@color/biru_tua"
-        android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/imageView10"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="220dp"
+        android:src="@drawable/newiconkuis"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/quizbg"
-        android:scaleType="fitXY"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/attention"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/attention"
-        app:flow_horizontalAlign="center"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintTop_toTopOf="@+id/imageView8" />
-
-    <TextView
-        android:id="@+id/judulquiz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="90dp"
-        android:autoSizeMaxTextSize="22dp"
-        android:autoSizeMinTextSize="10dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/poppins_bold"
-        android:gravity="center"
-        android:shadowColor="#30000000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="2"
-        android:text=" Kuis ini dibuat \n untuk mengetahui minat \n anda  dan rekomendasi, \n lanjutkan ? "
-        android:textAllCaps="false"
-        android:textColor="@color/biru_tua"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="@+id/attention"
-        app:layout_constraintEnd_toEndOf="@+id/tingkatkan"
-        app:layout_constraintStart_toStartOf="@+id/attention"
-        app:layout_constraintTop_toTopOf="@+id/attention" />
-
-    <TextView
-        android:id="@+id/tingkatkan4"
+        android:id="@+id/imageView11"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
-        android:autoSizeMaxTextSize="90dp"
-        android:autoSizeMinTextSize="10dp"
-
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/poppins_bold"
-        android:gravity="center"
-        android:shadowColor="#40000000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="2"
-        android:text="Perhatian !"
-        android:textAllCaps="false"
-        android:textColor="#CC0D00"
-        android:textSize="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/tingkatkan"
+        android:layout_height="match_parent"
+        android:layout_marginTop="400dp"
+        android:layout_marginBottom="-40dp"
+        android:src="@drawable/btn_birutua"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.443"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tingkatkan2"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/btnPengajuanRuangan"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:autoSizeMaxTextSize="22dp"
-        android:autoSizeMinTextSize="10dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/poppins_bold"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView10">
 
-        android:gravity="center"
-        android:text="Tidak"
-        android:textAllCaps="false"
-        android:textColor="#7A7474"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/attention"
-        app:layout_constraintTop_toBottomOf="@+id/judulquiz" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tingkatkan3"
-        android:layout_width="23dp"
-        android:layout_height="29dp"
-        android:autoSizeMaxTextSize="22dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="35dp"
         android:autoSizeMinTextSize="10dp"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
-        android:text="Ya"
+        android:text="Tes Minat Anda"
         android:textAllCaps="false"
-        android:textColor="#0C8C11"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/tingkatkan"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toEndOf="@+id/tingkatkan2"
-        app:layout_constraintTop_toBottomOf="@+id/judulquiz" />
+        android:textColor="@color/biru_tua"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutMenuAtas" />
+
+    <TextView
+        android:id="@+id/tingkatkan5"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:autoSizeMaxTextSize="18dp"
+        android:autoSizeMinTextSize="10dp"
+        android:layout_marginTop="-20dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text=" Kuis ini dibuat untuk mengetahui \n minat anda,  lanjutkan ? " android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tingkatkan3" />
+
+
+    <LinearLayout
+        android:id="@+id/layoutMenuAtas1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:elevation="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/btnPengajuanAsset1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/save"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:autoSizeMaxTextSize="20dp"
+                android:autoSizeMinTextSize="10dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/btn_orange"
+                android:enabled="false"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Tidak"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/btnPengajuanAsset2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/saveya"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:autoSizeMaxTextSize="20dp"
+                android:autoSizeMinTextSize="10dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/btn_orange"
+                android:enabled="false"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Ya"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutMenuAtas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="4dp"
+        android:layout_marginTop="330dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnPengajuanRuangan">
+
+        <LinearLayout
+            android:id="@+id/btnPengajuanRuangan2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/btn_PengajuanRuangan"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_height="120dp" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnPengajuanAsset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/btn_PengajuanAset"
+                    android:layout_width="0dp"
+                    android:layout_height="00dp"
+                    android:layout_marginLeft="90dp"
+                    android:scaleX="-1" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

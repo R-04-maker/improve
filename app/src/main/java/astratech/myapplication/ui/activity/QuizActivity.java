@@ -16,10 +16,10 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quiz);
         FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.quiz);
+        Fragment fragment = fm.findFragmentById(R.id.judulquiz);
         if (fragment == null) {
             fragment = new QuizFragment().newInstance();
-            fm.beginTransaction().replace(R.id.quiz, fragment).commit();
+            fm.beginTransaction().replace(R.id.judulquiz, fragment).commit();
         }
     }
 }
