@@ -26,7 +26,6 @@ public class HistoryXPActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private HistoryXPAdapter adapter;
-//    private List<HistoryXP> itemList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +36,8 @@ public class HistoryXPActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.history_xp_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        List<HistoryXP> itemList = dataHistoryXP(); // Inisialisasi daftar item sejarah XP
-
+        // Inisialisasi daftar item sejarah XP
+        List<HistoryXP> itemList = dataHistoryXP();
 
         // Inisialisasi adapter
         adapter = new HistoryXPAdapter(itemList);
@@ -60,7 +59,7 @@ public class HistoryXPActivity extends AppCompatActivity {
             HistoryXP historyXP = new HistoryXP();
             historyXP.setIdHistoryXP(i + 4);
             historyXP.setNamaKegiatan("Juara 1 Lomba Gemastik UI dan UX");
-            historyXP.setTanggalKegiatan("20/08/2023");
+            historyXP.setTanggalKegiatan("20 Agustus 2023 . 00:30");
             historyXP.setJumlahXP(20);
             historyXPList.add(historyXP);
         }
@@ -115,9 +114,9 @@ public class HistoryXPActivity extends AppCompatActivity {
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
 
-                mTanggal = itemView.findViewById(R.id.tanggal_history_xp);
-                mNamaOrang = itemView.findViewById(R.id.nama_history_xp);
-                mXP = itemView.findViewById(R.id.history_jumlah_xp);
+                mTanggal = itemView.findViewById(R.id.tanggal_history_poin);
+                mNamaOrang = itemView.findViewById(R.id.nama_history_poin);
+                mXP = itemView.findViewById(R.id.history_jumlah_poin);
                 itemView.setOnClickListener(this);
 
                 // Inisialisasi elemen-elemen tampilan di sini

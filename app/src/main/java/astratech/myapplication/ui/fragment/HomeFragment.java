@@ -32,12 +32,14 @@ import astratech.myapplication.model.Seminar;
 import astratech.myapplication.ui.activity.DetailLombaActivity;
 import astratech.myapplication.ui.activity.LainnyaActivity;
 import astratech.myapplication.ui.activity.LombaActivity;
+import astratech.myapplication.ui.activity.NotifikasiActivity;
 import astratech.myapplication.ui.activity.SearchActivity;
 import astratech.myapplication.ui.activity.SeminarActivity;
 import smartdevelop.ir.eram.showcaseviewlib.GuideView;
 import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
 import smartdevelop.ir.eram.showcaseviewlib.config.Gravity;
 import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener;
+import astratech.myapplication.ui.activity.SimpanActivity;
 
 public class HomeFragment extends Fragment {
 
@@ -51,6 +53,9 @@ public class HomeFragment extends Fragment {
     private CardView mCardPeminatan;
     private ScrollView mScrollView;
     private ImageView mCardQuiz;
+
+    private ImageView BtnImageViewDisimpan;
+    private ImageView BtnImageViewNotifikasi;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,6 +73,10 @@ public class HomeFragment extends Fragment {
         mSearchTxt = view.findViewById(R.id.search);
         mBtnSeeAllLomba = view.findViewById(R.id.btn_seeAll_lomba);
         mBtnSeeAllSeminar = view.findViewById(R.id.btn_seeAll_seminar);
+
+
+        BtnImageViewDisimpan = view.findViewById(R.id.btn_ic_disimpan);
+        BtnImageViewNotifikasi = view.findViewById(R.id.btn_ic_notifikasi);
 
         mRvRekomendasiLomba = view.findViewById(R.id.rv_lomba);
         mRvRekomendasiLomba.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
@@ -206,6 +215,24 @@ public class HomeFragment extends Fragment {
                 })
                 .build()
                 .show();
+        BtnImageViewDisimpan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SimpanActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        BtnImageViewNotifikasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), NotifikasiActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
     private void scrollToPosition(final int x, final int y) {
         new Handler().post(new Runnable() {

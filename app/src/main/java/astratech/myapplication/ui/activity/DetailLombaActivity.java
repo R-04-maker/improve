@@ -9,8 +9,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -22,6 +22,8 @@ public class DetailLombaActivity extends AppCompatActivity {
     private CardView mBackButton, mShareButton;
     private FloatingActionButton mSavedBtn;
     String fullText = "Assalamualaikum wr wb ✨ \n\nHallo Sobat Informatika 🙌🏻 \nGet Ready to NovAstech 2023! \nSaatnya tunjukkan potensi dalam dirimu, mari berprestasi bersama NovAstech! NovAstech merupakan lomba internal Politeknik Astra";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,5 +102,23 @@ public class DetailLombaActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
+
+
+        ImageView imageView = findViewById(R.id.imageViewDetailLomba);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailLombaActivity.this, PosterActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
+
+
 }

@@ -1,5 +1,6 @@
 package astratech.myapplication.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +22,8 @@ import java.util.List;
 
 import astratech.myapplication.R;
 import astratech.myapplication.model.LeaderBoard;
+import astratech.myapplication.ui.activity.ProfileOrangActivity;
+import astratech.myapplication.ui.activity.SimpanActivity;
 
 
 public class LeaderBoardFragment extends Fragment {
@@ -43,6 +47,36 @@ public class LeaderBoardFragment extends Fragment {
         mRvLeaderBoard.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         mRvLeaderBoard.setAdapter(mLeaderBoardAdapter);
 
+
+        ConstraintLayout constraintRank1 = view.findViewById(R.id.constraint_rank_1);
+        constraintRank1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ProfileOrangActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ConstraintLayout constraintRank2 = view.findViewById(R.id.constraint_rank_2);
+        constraintRank2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ProfileOrangActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        ConstraintLayout constraintRank3 = view.findViewById(R.id.constraint_rank_3);
+        constraintRank3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ProfileOrangActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         return view;
     }
 
@@ -64,7 +98,7 @@ public class LeaderBoardFragment extends Fragment {
             lomba.setIdLeaderBoard(i + 4);
                 lomba.setNamaOrang("Muhammad Gema");
             if (i == 5){
-                lomba.setNamaOrang("Dewi Sonya (You)");
+                lomba.setNamaOrang("Nazwa Frida (You)");
             }
             lomba.setJumlahXP(19997 - i);
             leaderboardList.add(lomba);
@@ -126,9 +160,8 @@ public class LeaderBoardFragment extends Fragment {
             }
             @Override
             public void onClick(View v) {
-    /*                Intent intent = new Intent(getActivity(), BookDetailActivity.class);
-                    intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
-                    startActivity(intent);*/
+                Intent intent = new Intent(getActivity(), ProfileOrangActivity.class);
+                startActivity(intent);
             }
         }
     }

@@ -3,13 +3,13 @@
 
     <item
         android:id="@+id/home"
-        android:title=""
+        android:title="Beranda"
         android:icon="@drawable/ic_baseline_home" />
 
     <item
         android:id="@+id/review"
-        android:title=""
-        android:icon="@drawable/ic_baseline_review" />
+        android:title="Ulasan"
+        android:icon="@drawable/ic_baseline_review"/>
 
     <item
         android:id="@+id/add"
@@ -17,12 +17,12 @@
 
     <item
         android:id="@+id/leaderboard"
-        android:title=""
-        android:icon="@drawable/ic_baseline_leaderboard" />
+        android:title="Peringkat"
+        android:icon="@drawable/ic_baseline_leaderboard"/>
 
     <item
         android:id="@+id/profile"
-        android:title=""
-        android:icon="@drawable/ic_baseline_profile" />
+        android:title="Profil"
+        android:icon="@drawable/ic_baseline_profile"/>
 
 </menu>

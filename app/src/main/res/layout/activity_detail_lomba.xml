@@ -44,11 +44,11 @@
                 app:layout_constraintTop_toTopOf="parent ">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/imageViewDetailLomba"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/poster_dummy" />
+                    android:src="@drawable/poster_dummy"/>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView

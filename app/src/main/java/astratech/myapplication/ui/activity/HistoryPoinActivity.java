@@ -58,17 +58,17 @@ public class HistoryPoinActivity extends AppCompatActivity {
             HistoryPoin historyPoin = new HistoryPoin();
             historyPoin.setIdHistoryPoin(i + 4);
             historyPoin.setNamaKegiatan("Memberikan Review Seminar");
-            historyPoin.setTanggalKegiatan("12/11/2023");
+            historyPoin.setTanggalKegiatan("20 Agustus 2023 . 00:30");
             historyPoin.setJumlahPoin(10);
             historyPoinList.add(historyPoin);
         }
         return historyPoinList;
     }
 
-    private void updateHistoryPoin(List<HistoryPoin> historyPoinLists){
-        adapter = new HistoryPoinAdapter(historyPoinLists);
-        recyclerView.setAdapter(adapter);
-    }
+//    private void updateHistoryPoin(List<HistoryPoin> historyPoinLists){
+//        adapter = new HistoryPoinAdapter(historyPoinLists);
+//        recyclerView.setAdapter(adapter);
+//    }
 
     public class HistoryPoinAdapter extends RecyclerView.Adapter<HistoryPoinAdapter.ViewHolder> {
 
@@ -104,7 +104,6 @@ public class HistoryPoinActivity extends AppCompatActivity {
             // Deklarasikan elemen-elemen tampilan di sini
             // Misalnya, TextView textView;
             private HistoryPoin mHistoryPoin;
-
             private TextView mTanggal;
             private ImageView mFotoOrang;
             private TextView mNamaOrang;

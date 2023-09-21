@@ -243,6 +243,7 @@ public class LombaActivity extends AppCompatActivity {
             }
         }
     }
+
     private class LombaLainAdapter extends RecyclerView.Adapter<LombaLainAdapter.LombaHolder>{
         private List<Lomba> mLombas;
 
@@ -312,4 +313,6 @@ public class LombaActivity extends AppCompatActivity {
             }
         }
     }
+
+
 }

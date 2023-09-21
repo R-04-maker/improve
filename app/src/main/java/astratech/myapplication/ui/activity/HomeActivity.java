@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(this);
-        bottomNavigationView.setSelectedItemId(R.id.profile);
+        bottomNavigationView.setSelectedItemId(R.id.home);
 
         btnAdd = findViewById(R.id.fab);
         btnAdd.setOnClickListener(new View.OnClickListener() {

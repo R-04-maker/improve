@@ -11,7 +11,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import astratech.myapplication.R;
+import astratech.myapplication.ui.activity.AddReviewActivity;
 import astratech.myapplication.ui.activity.AddSertifikatActivity;
+import astratech.myapplication.ui.activity.DetailSertifikatActivity;
 import astratech.myapplication.ui.activity.EditProfileActivity;
 import astratech.myapplication.ui.activity.PoinActivity;
 import astratech.myapplication.ui.activity.XPActivty;
@@ -101,5 +103,24 @@ public class ProfileFragment extends Fragment {
             .setDismissType(DismissType.anywhere)
             .build()
             .show();
+
+
+        ConstraintLayout constraintSertifikat = view.findViewById(R.id.cardSertifikat1);
+        constraintSertifikat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), DetailSertifikatActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ConstraintLayout constraintUlasan = view.findViewById(R.id.constrain_tambah_ulasan_pf);
+        constraintUlasan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddReviewActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

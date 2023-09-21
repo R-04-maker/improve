@@ -1,0 +1,164 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/constraint_wadah_sertifikat"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/txt_judul_sertifikat"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_full_sertif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_bingkai_sertifikat"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_sertifikat"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/rounded_border_biru_tua">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardNamaSertif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    app:cardBackgroundColor="@color/orange"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="70dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="15dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingVertical="1dp"
+                        android:text="Database"
+                        android:textColor="@color/white"
+                        android:textSize="10dp" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/TextNamaLomba"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Seminar Menjadi Data Analis"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:padding="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardNamaSertif"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardSertifikat1"
+                android:layout_width="130dp"
+                android:layout_height="90dp"
+                android:background="@drawable/rounded_border_sertifikat"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_bingkai_sertifikat2"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            app:layout_constraintStart_toEndOf="@id/constraint_bingkai_sertifikat"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_sertifikat2"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/rounded_border_biru_tua">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardNamaSertif1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    app:cardBackgroundColor="@color/orange"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="70dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="15dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Pemrograman"
+                        android:textColor="@color/white"
+                        android:textSize="10dp" />
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/TextNamaLomba1"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Lomba Gemastik Pemrograman 4"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:padding="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardNamaSertif1"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardSertifikat2"
+                android:layout_width="130dp"
+                android:layout_height="90dp"
+                android:background="@drawable/rounded_border_sertifikat"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:scaleType="fitXY"-->
+    <!--        android:src="@drawable/header_bg"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:text="Balasan"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintStart_toEndOf="@id/backBtn"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/lineseparate1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:autoSizeMaxTextSize="12dp"
+        android:autoSizeMinTextSize="10dp"
+        android:gravity="center_vertical"
+        android:background="#ececec"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backBtn" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_review_balasan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineseparate1">
+
+        <ImageView
+            android:id="@+id/imageOrang_lb"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img"
+            tools:layout_editor_absoluteX="23dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_review"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="75dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintStart_toEndOf="@id/imageOrang_lb"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/nama_orang_lb"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:maxWidth="200dp"
+                android:maxLines="1"
+                android:text="Nazwa Frida Fauziyyah"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/caption_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_vertical"
+                android:maxLines="6"
+                android:paddingEnd="5dp"
+                android:text="Share pengalamanku saat lomba dan menjadi finalis di Gemastik Perpusnas 2023, Proses yang cukup panjang dan seru yang pada akhirnya Alhamdulillah dapat juara 1, terimakasih dukungannya teman-teman ! #Lomba "
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nama_orang_lb" />
+
+            <TextView
+                android:id="@+id/tgl_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:autoSizeMaxTextSize="11dp"
+                android:autoSizeMinTextSize="10dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/poppins"
+                android:text="23 Agu 2023"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@id/nama_orang_lb"
+                app:layout_constraintStart_toEndOf="@id/nama_orang_lb"
+                app:layout_constraintTop_toTopOf="@id/nama_orang_lb" />
+
+            <ImageView
+                android:id="@+id/ic_titik_tiga_review"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/baseline_more_horiz_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/nama_orang_lb"
+                app:tint="#B0B0B0" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPostingImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/caption_review">
+
+                <ImageView
+                    android:id="@+id/img_review"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/img_review" />
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <ImageView
+                android:id="@+id/commentimage"
+                android:layout_width="20dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/img_2" />
+
+            <TextView
+                android:id="@+id/textcomment"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:text="12"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintStart_toEndOf="@id/commentimage"
+                app:layout_constraintTop_toBottomOf="@id/cardPostingImage"
+                app:layout_constraintVertical_bias="0.232" />
+
+
+            <ImageView
+                android:id="@+id/likeImage"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textcomment"
+                app:srcCompat="@drawable/img_3"
+                app:tint="@android:color/holo_red_dark" />
+
+            <TextView
+                android:id="@+id/textLike"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:text="12"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/likeImage"
+                app:layout_constraintStart_toEndOf="@id/likeImage"
+                app:layout_constraintTop_toTopOf="@id/likeImage" />
+
+            <ImageView
+                android:id="@+id/shareReview"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textLike"
+                app:srcCompat="@drawable/baseline_share_24"
+                app:tint="@android:color/holo_red_dark" />
+
+            <TextView
+                android:id="@+id/textShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:text="12"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/shareReview"
+                app:layout_constraintStart_toEndOf="@id/shareReview"
+                app:layout_constraintTop_toTopOf="@id/shareReview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/lineseparate"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="10dp"
+            android:background="#ececec"
+            android:gravity="center_vertical"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraint_review" />
+
+        <TextView
+            android:id="@+id/spasi_kebawah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:textAllCaps="false"
+            android:textSize="70dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lineseparate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+<!--    BATASSSSSS-->
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint_review_balasan"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+            android:id="@+id/imageOrang_br"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img"
+            tools:layout_editor_absoluteX="23dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint__balasan_review"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="75dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageOrang_br">
+
+            <TextView
+                android:id="@+id/nama_orang_rb"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:maxLines="1"
+                android:text="Nazwa Frida Fauziyyah"
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                android:maxWidth="200dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/caption_balasan_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_vertical"
+                android:maxLines="6"
+                android:text="Mantaapp kak, doain kak aku tahun depan bisa seperti kakak"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                android:paddingEnd="5dp"
+                android:layout_marginTop="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nama_orang_rb" />
+
+            <TextView
+                android:id="@+id/tgl_balasan_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="11dp"
+                android:autoSizeMinTextSize="10dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/poppins"
+                android:text="23 Agu 2023"
+                android:textSize="10dp"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@id/nama_orang_rb"
+                app:layout_constraintTop_toTopOf="@id/nama_orang_rb"
+                app:layout_constraintBottom_toBottomOf="@id/nama_orang_rb" />
+
+            <ImageView
+                android:id="@+id/ic_titik_tiga_br"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/baseline_more_horiz_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/nama_orang_rb"
+                app:tint="#B0B0B0"/>
+
+
+            <ImageView
+                android:id="@+id/commentimageBR"
+                android:layout_width="20dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:srcCompat="@drawable/img_2"/>
+
+            <TextView
+                android:id="@+id/textcommentBR"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:text="12"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintStart_toEndOf="@id/commentimageBR"
+                app:layout_constraintTop_toBottomOf="@id/caption_balasan_review"
+                app:layout_constraintVertical_bias="0.232" />
+
+
+            <ImageView
+                android:id="@+id/likeImageBR"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintStart_toEndOf="@id/textcommentBR"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:srcCompat="@drawable/img_3"
+                app:tint="@android:color/holo_red_dark"/>
+
+            <TextView
+                android:id="@+id/textLikeBR"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:text="12"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintTop_toTopOf="@id/likeImageBR"
+                app:layout_constraintBottom_toBottomOf="@id/likeImageBR"
+                app:layout_constraintStart_toEndOf="@id/likeImageBR" />
+
+            <ImageView
+                android:id="@+id/shareReviewBR"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                app:layout_constraintStart_toEndOf="@id/textLikeBR"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:srcCompat="@drawable/baseline_share_24"
+                app:tint="@android:color/holo_red_dark"/>
+
+            <TextView
+                android:id="@+id/textShareBR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:text="12"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="10dp"
+                app:layout_constraintTop_toTopOf="@id/shareReviewBR"
+                app:layout_constraintBottom_toBottomOf="@id/shareReviewBR"
+                app:layout_constraintStart_toEndOf="@id/shareReviewBR" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/lineseparateBR"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="10dp"
+            android:gravity="center_vertical"
+            android:background="#ececec"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraint__balasan_review" />
+
+        <TextView
+            android:id="@+id/spasi_kebawahBR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="70dp"
+            android:background="@color/white"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lineseparateBR"
+            android:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <TextView
+        android:id="@+id/lineseparate11"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="10dp"
+        android:autoSizeMaxTextSize="12dp"
+        android:autoSizeMinTextSize="10dp"
+        android:gravity="center_vertical"
+        android:background="#ececec"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/constraint_review_balasan1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_review_balasan1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/imageOrang_lb1"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img"
+            tools:layout_editor_absoluteX="23dp" />
+
+
+        <TextView
+            android:id="@+id/nama_orang_lb1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:maxLines="1"
+            android:text="Nazwa Frida Fauziyyah"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:maxWidth="200dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/imageOrang_lb1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/ediTeksBagikan1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tuliskan ulasan kegiatan di sini... "
+            android:fontFamily="@font/poppins"
+            android:textSize="14dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintStart_toEndOf="@id/imageOrang_lb1"
+            app:layout_constraintTop_toBottomOf="@id/nama_orang_lb1"
+            android:background="@null" /> <!-- Menghapus garis bawah dengan mengatur background ke null -->
+
+        <ImageView
+            android:id="@+id/ic_kirim_komentar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/baseline_send_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:tint="@color/orange"/>
+
+        <TextView
+            android:id="@+id/lineseparate12"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="10dp"
+            android:background="#ececec"
+            android:gravity="center_vertical"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ediTeksBagikan1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

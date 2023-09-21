@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:scaleType="fitXY"-->
+    <!--        android:src="@drawable/header_bg"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:text="Tambah Ulasan"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintStart_toEndOf="@id/backBtn"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constrain_tambah_ulasan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:padding="5dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/rounded_border_orange">
+
+        <TextView
+            android:id="@+id/txt_tambah_ulasan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bagikan Ulasan"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/lineseparate1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:autoSizeMaxTextSize="12dp"
+        android:autoSizeMinTextSize="10dp"
+        android:gravity="center_vertical"
+        android:background="#ececec"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backBtn" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_review_balasan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineseparate1">
+
+        <ImageView
+            android:id="@+id/imageOrang_lb"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img"
+            tools:layout_editor_absoluteX="23dp" />
+
+
+        <TextView
+            android:id="@+id/nama_orang_lb"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:maxLines="1"
+            android:text="Nazwa Frida Fauziyyah"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            android:maxWidth="200dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/imageOrang_lb"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/ediTeksBagikan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tuliskan ulasan kegiatan di sini... "
+            android:fontFamily="@font/poppins"
+            android:textSize="14dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintStart_toEndOf="@id/imageOrang_lb"
+            app:layout_constraintTop_toBottomOf="@id/nama_orang_lb"
+            android:background="@null" /> <!-- Menghapus garis bawah dengan mengatur background ke null -->
+
+
+        <TextView
+            android:id="@+id/lineseparate"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="10dp"
+            android:background="#ececec"
+            android:gravity="center_vertical"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ediTeksBagikan" />
+
+        <TextView
+            android:id="@+id/spasi_kebawah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:textAllCaps="false"
+            android:textSize="70dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lineseparate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint_review_balasan">
+
+        <ImageView
+            android:id="@+id/ic_img_review"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/ic_img_review"
+            tools:layout_editor_absoluteX="23dp" />
+
+
+        <ImageView
+            android:id="@+id/ic_gif_review"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/ic_gif_review"
+            tools:layout_editor_absoluteX="23dp" />
+
+
+        <ImageView
+            android:id="@+id/ic_lokasi_review"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/icons8_location_96"
+            tools:layout_editor_absoluteX="23dp" />
+
+        <TextView
+            android:id="@+id/lineseparate1232"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:autoSizeMaxTextSize="12dp"
+            android:autoSizeMinTextSize="10dp"
+            android:background="#ececec"
+            android:gravity="center_vertical"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ic_img_review" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
