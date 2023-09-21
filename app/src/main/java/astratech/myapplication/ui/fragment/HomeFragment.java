@@ -198,7 +198,7 @@ public class HomeFragment extends Fragment {
                                                                 .setGuideListener(new GuideListener() {
                                                                     @Override
                                                                     public void onDismiss(View view) {
-                                                                        animateScrollToPosition(0,500);
+                                                                        animateScrollToPosition(0,1000);
                                                                     }
                                                                 })
                                                                 .build()
