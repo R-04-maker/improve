@@ -2,7 +2,6 @@ package astratech.myapplication.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.service.controls.actions.FloatAction;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -14,9 +13,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
 import astratech.myapplication.R;
-import astratech.myapplication.ui.fragment.ProfileFragment;
 import astratech.myapplication.ui.fragment.HomeFragment;
 import astratech.myapplication.ui.fragment.LeaderBoardFragment;
+import astratech.myapplication.ui.fragment.ProfileFragment;
 import astratech.myapplication.ui.fragment.ReviewFragment;
 
 public class HomeActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
@@ -27,7 +26,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
     ProfileFragment firstFragment = new ProfileFragment();
     HomeFragment mHomeFragment = new HomeFragment();
     LeaderBoardFragment thirdFragment = new LeaderBoardFragment();
-
     ReviewFragment reviewFragment = new ReviewFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +51,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
         switch (item.getItemId()){
             case R.id.profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, firstFragment).commit();
-                setTitle("Profile");
                 return true;
             case R.id.home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, mHomeFragment).commit();
@@ -63,10 +60,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
                 return true;
             case R.id.leaderboard:
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, thirdFragment).commit();
-                return true;
-            case R.id.add:
-                Intent intent = new Intent(this, UploadActivity.class);
-                startActivity(intent);
                 return true;
         }
         return false;

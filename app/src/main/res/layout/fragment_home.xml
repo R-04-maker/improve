@@ -211,6 +211,7 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
         <ScrollView
+            android:id="@+id/sv_1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="135dp"
@@ -224,7 +225,7 @@
                 android:layout_height="wrap_content">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/card_lomba"
+                    android:id="@+id/all_card"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -413,7 +414,7 @@
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/card_lomba" />
+                    app:layout_constraintTop_toBottomOf="@+id/all_card" />
 
                 <ImageView
                     android:id="@+id/imageView4"
@@ -423,7 +424,7 @@
                     android:layout_marginTop="8dp"
                     android:src="@drawable/emoji_medal"
                     app:layout_constraintStart_toEndOf="@+id/textView4"
-                    app:layout_constraintTop_toBottomOf="@+id/card_lomba" />
+                    app:layout_constraintTop_toBottomOf="@+id/all_card" />
 
                 <TextView
                     android:id="@+id/btn_seeAll_lomba"
@@ -435,7 +436,7 @@
                     android:textColor="@color/black"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toStartOf="@+id/imageView5"
-                    app:layout_constraintTop_toBottomOf="@+id/card_lomba" />
+                    app:layout_constraintTop_toBottomOf="@+id/all_card" />
 
                 <ImageView
                     android:id="@+id/imageView5"
@@ -445,7 +446,7 @@
                     android:layout_marginEnd="8dp"
                     android:src="@drawable/see_all_icon"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/card_lomba" />
+                    app:layout_constraintTop_toBottomOf="@+id/all_card" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_lomba"

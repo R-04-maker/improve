@@ -1,20 +1,23 @@
 package astratech.myapplication.ui.fragment;
 
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -31,17 +34,23 @@ import astratech.myapplication.ui.activity.LainnyaActivity;
 import astratech.myapplication.ui.activity.LombaActivity;
 import astratech.myapplication.ui.activity.SearchActivity;
 import astratech.myapplication.ui.activity.SeminarActivity;
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
+import smartdevelop.ir.eram.showcaseviewlib.config.Gravity;
+import smartdevelop.ir.eram.showcaseviewlib.listener.GuideListener;
 
 public class HomeFragment extends Fragment {
 
     private static final String TAG = "HomeFragment";
     private RecyclerView mRvRekomendasiLomba, mRvRekomendasiSeminar;
-    private ImageButton mBtnSavedEvent, mBtnNotification;
-    private ConstraintLayout mLombaMenu, mSeminarMenu, mLainnyaMenu;
+    private ConstraintLayout mLombaMenu, mSeminarMenu, mLainnyaMenu, mCardAll;
     private EditText mSearchTxt;
     private TextView mBtnSeeAllLomba, mBtnSeeAllSeminar;
     private LombaAdapter mLombaAdapter;
     private SeminarAdapter mSeminarAdapter;
+    private CardView mCardPeminatan;
+    private ScrollView mScrollView;
+    private ImageView mCardQuiz;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,6 +76,12 @@ public class HomeFragment extends Fragment {
         mRvRekomendasiSeminar = view.findViewById(R.id.rv_seminar);
         mRvRekomendasiSeminar.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         mRvRekomendasiSeminar.setAdapter(mSeminarAdapter);
+
+        mCardPeminatan = view.findViewById(R.id.cardView);
+        mCardAll = view.findViewById(R.id.all_card);
+
+        mScrollView = view.findViewById(R.id.sv_1);
+        mCardQuiz = view.findViewById(R.id.card_quiz);
 
         return view;
     }
@@ -138,8 +153,99 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        new GuideView.Builder(getContext())
+                .setTitle("Peminatan")
+                .setContentText("Sesuaikan peminatanmu agar \n rekomendasi yang diberikan sesuai ")
+                .setTargetView(mCardPeminatan)
+                .setGravity(Gravity.auto)
+                .setDismissType(DismissType.anywhere)
+                .setGuideListener(new GuideListener() {
+                    @Override
+                    public void onDismiss(View view) {
+                        new GuideView.Builder(getContext())
+                                .setTitle("Menu")
+                                .setContentText("Akan menampilkan kegiatan rekomendasi \n yang sesuai dengan peminatan anda ")
+                                .setTargetView(mCardAll)
+                                .setGravity(Gravity.auto)
+                                .setDismissType(DismissType.anywhere)
+                                .setGuideListener(new GuideListener() {
+                                    @Override
+                                    public void onDismiss(View view) {
+                                        new GuideView.Builder(getContext())
+                                                .setTitle("Rekomendasi Lomba")
+                                                .setContentText("Rekomendasi Lomba berdasarkan minatmu")
+                                                .setTargetView(mRvRekomendasiLomba)
+                                                .setGravity(Gravity.auto)
+                                                .setDismissType(DismissType.anywhere)
+                                                .setGuideListener(new GuideListener() {
+                                                    @Override
+                                                    public void onDismiss(View view) {
+                                                        new GuideView.Builder(getContext())
+                                                                .setTitle("Rekomendasi Seminar")
+                                                                .setContentText("Rekomendasi Seminar berdasarkan minatmu")
+                                                                .setTargetView(mRvRekomendasiSeminar)
+                                                                .setGravity(Gravity.auto)
+                                                                .setDismissType(DismissType.anywhere)
+                                                                .setGuideListener(new GuideListener() {
+                                                                    @Override
+                                                                    public void onDismiss(View view) {
+                                                                        animateScrollToPosition(0,500);
+                                                                    }
+                                                                })
+                                                                .build()
+                                                                .show();
+                                                    }
+                                                })
+                                                .build()
+                                                .show();
+                                    }
+                                })
+                                .build()
+                                .show();
+                    }
+                })
+                .build()
+                .show();
     }
+    private void scrollToPosition(final int x, final int y) {
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                mScrollView.scrollTo(x, y);
+            }
+        });
+    }
+    private void animateScrollToPosition(int x, final int y) {
+        final int startY = mScrollView.getScrollY();
+        final ValueAnimator animator = ValueAnimator.ofInt(startY, y);
+        animator.setDuration(500); // Durasi animasi (ms)
 
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int currentValue = (int) animation.getAnimatedValue();
+                mScrollView.scrollTo(x, currentValue);
+            }
+        });
+
+        animator.start();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showGuideView();
+            }
+        }, 500);
+    }
+    private void showGuideView(){
+        new GuideView.Builder(getContext())
+                .setTitle("Improove Choice")
+                .setContentText("Fitur untuk menemukan pemintananmu \n melalui kuiz interaktif")
+                .setTargetView(mCardQuiz)
+                .setGravity(Gravity.auto)
+                .setDismissType(DismissType.anywhere)
+                .build()
+                .show();
+    }
     private void updateLomba(List<Lomba> lombas){
         mLombaAdapter = new LombaAdapter(lombas);
         mRvRekomendasiLomba.setAdapter(mLombaAdapter);

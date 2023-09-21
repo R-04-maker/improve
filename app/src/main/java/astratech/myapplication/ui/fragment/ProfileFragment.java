@@ -9,13 +9,15 @@ import android.widget.ImageView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import astratech.myapplication.R;
 import astratech.myapplication.ui.activity.AddSertifikatActivity;
 import astratech.myapplication.ui.activity.EditProfileActivity;
 import astratech.myapplication.ui.activity.PoinActivity;
 import astratech.myapplication.ui.activity.XPActivty;
+import smartdevelop.ir.eram.showcaseviewlib.GuideView;
+import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
+import smartdevelop.ir.eram.showcaseviewlib.config.Gravity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -89,5 +91,15 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        ConstraintLayout layoutXpPoint = view.findViewById(R.id.constrain_profile_xp_point);
+        new GuideView.Builder(getContext())
+            .setTitle("XP dan Poin")
+            .setContentText("Dapatkan XP dan Poin  \n dengan mengunggah kegiatan \n atau berbagi pengalaman mu")
+            .setTargetView(layoutXpPoint)
+            .setGravity(Gravity.auto)
+            .setDismissType(DismissType.anywhere)
+            .build()
+            .show();
     }
 }
