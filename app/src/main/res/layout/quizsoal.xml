@@ -79,22 +79,22 @@
         android:id="@+id/constraintLayout2"
         android:layout_width="407dp"
         android:layout_height="389dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        tools:layout_editor_absoluteX="1dp">
+        app:layout_constraintTop_toBottomOf="@+id/imageView10">
 
         <TextView
             android:id="@+id/myEditText"
             android:layout_width="317dp"
             android:layout_height="40dp"
+            android:layout_marginTop="40dp"
             android:autoSizeMaxTextSize="20dp"
-            android:paddingStart="15dp"
             android:autoSizeMinTextSize="10dp"
             android:autoSizeTextType="uniform"
             android:background="@drawable/bgkuis"
-            android:layout_marginTop="40dp"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="left|center_vertical"
+            android:paddingStart="15dp"
             android:text="A.   Menghafal "
             android:textAllCaps="false"
             android:textColor="@color/black"
@@ -106,15 +106,15 @@
             android:id="@+id/myEditText2"
             android:layout_width="317dp"
             android:layout_height="40dp"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="153dp"
             android:autoSizeMaxTextSize="20dp"
-            android:paddingStart="15dp"
-            android:layout_marginTop="16dp"
             android:autoSizeMinTextSize="10dp"
             android:autoSizeTextType="uniform"
             android:background="@drawable/bgkuis"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="left|center_vertical"
+            android:paddingStart="15dp"
             android:text="C.  Menganalisis "
             android:textAllCaps="false"
             android:textColor="@color/black"
@@ -128,7 +128,6 @@
             android:layout_width="317dp"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
-            android:paddingStart="15dp"
             android:layout_marginBottom="210dp"
             android:autoSizeMaxTextSize="20dp"
             android:autoSizeMinTextSize="10dp"
@@ -136,6 +135,7 @@
             android:background="@drawable/bgkuis"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="left|center_vertical"
+            android:paddingStart="15dp"
             android:text="B.   Berfikir logika"
             android:textAllCaps="false"
             android:textColor="@color/black"
@@ -148,11 +148,14 @@
             android:id="@+id/layoutMenuAtas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:layout_marginBottom="0dp"
+            android:layout_margin="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="25dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="12dp">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:id="@+id/btnPengajuanRuangan"
@@ -184,7 +187,7 @@
                     android:textSize="24dp" />
 
 
-        </LinearLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/btnPengajuanAsset"

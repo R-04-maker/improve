@@ -1,15 +1,19 @@
 package astratech.myapplication.ui.fragment;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -30,6 +34,9 @@ public class QuizSoalFragment extends Fragment {
 
     private static final String TAG = "QuizSoalFragment";
 
+    private Dialog dialog;
+    private Dialog dialog1;
+    private Button ShowDialog;
     private TextView txt1;
     private TextView txt2;
     private TextView txt3;
@@ -50,6 +57,7 @@ public class QuizSoalFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -70,6 +78,60 @@ public class QuizSoalFragment extends Fragment {
         gradientDrawable1.setColor(Color.parseColor("#FFFFFF")); // Warna latar belakang menjadi biru
         gradientDrawable1.setCornerRadius(60);
         final boolean[] isClicked = {false};
+
+
+        dialog = new Dialog(requireContext());
+        dialog.setContentView(R.layout.custom_dialog_layout);
+        dialog.setCancelable(false);
+        dialog1 = new Dialog(requireContext());
+        dialog1.setContentView(R.layout.custom_dialog_layout);
+        dialog1.setCancelable(false);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            dialog.getWindow().setBackgroundDrawableResource(R.drawable.custom_dialog_background);
+        } else {
+            dialog.getWindow().setBackgroundDrawableResource(R.drawable.custom_dialog_background);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            dialog1.getWindow().setBackgroundDrawableResource(R.drawable.custom_dialog_background);
+        } else {
+            dialog1.getWindow().setBackgroundDrawableResource(R.drawable.custom_dialog_background);
+        }
+        Button okayButton = dialog.findViewById(R.id.btn_okay);
+        Button cancelButton = dialog.findViewById(R.id.btn_cancel);
+        Button okayButton1 = dialog1.findViewById(R.id.btn_okay);
+        Button cancelButton1 = dialog1.findViewById(R.id.btn_cancel);
+        okayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ResultActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        okayButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), PeminatanActivity.class);
+                startActivity(intent);
+            }
+        });
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(requireContext(), "Tidak", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+        cancelButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(requireContext(), "Tidak", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+
+
         txt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,21 +194,22 @@ public class QuizSoalFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (currentIndex == 2 ) {
+                    dialog.show();
                     // Open the desired activity here
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                    builder.setTitle("Konfirmasi");
-                    builder.setMessage("Apakah anda yakin ingin mengakhiri tes ini?");
-                    builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Intent intent = new Intent(getActivity(), ResultActivity.class);
-                            startActivity(intent);
-//                            mSessionManager.logout();
-//                            closefragment();
-                        }
-                    });
-                    builder.setNegativeButton("Tidak", null);
-                    builder.show();
+//                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+//                    builder.setTitle("Konfirmasi");
+//                    builder.setMessage("Apakah anda yakin ingin mengakhiri tes ini?");
+//                    builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            Intent intent = new Intent(getActivity(), ResultActivity.class);
+//                            startActivity(intent);
+////                            mSessionManager.logout();
+////                            closefragment();
+//                        }
+//                    });
+//                    builder.setNegativeButton("Tidak", null);
+//                    builder.show();
                 }else {
                     textangka.setText(textnomor[currentIndex]);
 
@@ -179,22 +242,23 @@ public class QuizSoalFragment extends Fragment {
         sebelum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (currentIndex == 1) {
+                if (currentIndex == 0) {
                     // Open the desired activity here
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                    builder.setTitle("Konfirmasi");
-                    builder.setMessage("Apakah anda yakin ingin keluar dari tes ini?");
-                    builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Intent intent = new Intent(getActivity(), PeminatanActivity.class);
-                            startActivity(intent);
-//                            mSessionManager.logout();
-//                            closefragment();
-                        }
-                    });
-                    builder.setNegativeButton("Tidak", null);
-                    builder.show();
+                    dialog1.show();
+//                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+//                    builder.setTitle("Konfirmasi");
+//                    builder.setMessage("Apakah anda yakin ingin keluar dari tes ini?");
+//                    builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            Intent intent = new Intent(getActivity(), PeminatanActivity.class);
+//                            startActivity(intent);
+////                            mSessionManager.logout();
+////                            closefragment();
+//                        }
+//                    });
+//                    builder.setNegativeButton("Tidak", null);
+//                    builder.show();
                 }else {
                     textangka.setText(textnomor[currentIndex]);
 
