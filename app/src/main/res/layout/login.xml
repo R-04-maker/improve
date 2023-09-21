@@ -69,7 +69,7 @@
         android:id="@+id/constraintLayout6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
@@ -83,7 +83,6 @@
             android:autoSizeTextType="uniform"
             android:fontFamily="@font/poppins_bold"
             android:gravity="center"
-            android:layout_marginTop="10dp"
             android:text="Silahkan masuk dengan akun SIA anda"
             android:textAllCaps="false"
             android:textColor="#F6883C"
@@ -100,6 +99,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="Nama Akun"
             android:textColor="#445FD1"
+            android:layout_marginTop="20dp"
 
             app:layout_constraintStart_toStartOf="@+id/loginnim"
             app:layout_constraintTop_toBottomOf="@+id/tingkatkan" />
@@ -180,7 +180,7 @@
         android:fontFamily="@font/poppins_extrabold"
         android:gravity="center"
         android:text="Masuk"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="60dp"
         android:textColor="#FFFFFF"
         app:circularflow_radiusInDP="100dp"
         app:layout_constraintEnd_toEndOf="parent"

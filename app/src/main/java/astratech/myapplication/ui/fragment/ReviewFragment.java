@@ -1,6 +1,7 @@
 package astratech.myapplication.ui.fragment;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
@@ -51,32 +52,62 @@ public class ReviewFragment extends Fragment {
         ImageView imgSeparatorTop = view.findViewById(R.id.separatororangeTeratas);
 
         TextView txtFyp = view.findViewById(R.id.FYPtxt);
+        TextView txtTeratas = view.findViewById(R.id.reviewteratastxt);
 
         txtFyp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mSelectedReview = "FYP";
                 updateFilteredReview();
+                Typeface boldTypeface = Typeface.defaultFromStyle(Typeface.BOLD);
+                Typeface normalTypeface = Typeface.defaultFromStyle(Typeface.NORMAL);
+
+                txtFyp.setTypeface(boldTypeface);
+                txtTeratas.setTypeface(normalTypeface);
 
                 imgSeparatorFYP.setVisibility(View.VISIBLE);
                 imgSeparatorTop.setVisibility(View.INVISIBLE);
-
-
-
             }
         });
 
-        TextView txtTeratas = view.findViewById(R.id.reviewteratastxt);
+
         txtTeratas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mSelectedReview = "TOP";
                 updateFilteredReview();
 
+                Typeface boldTypeface = Typeface.defaultFromStyle(Typeface.BOLD);
+                Typeface normalTypeface = Typeface.defaultFromStyle(Typeface.NORMAL);
+
+                txtFyp.setTypeface(normalTypeface);
+                txtTeratas.setTypeface(boldTypeface);
+
                 imgSeparatorFYP.setVisibility(View.INVISIBLE);
                 imgSeparatorTop.setVisibility(View.VISIBLE);
 
 
+            }
+        });
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                // dx adalah perubahan horizontal dan dy adalah perubahan vertikal saat RecyclerView digeser.
+
+                if (dy > 0) {
+                    ImageView spasiImg = view.findViewById(R.id.spasi_kebawah_rv);
+                    spasiImg.setVisibility(View.VISIBLE);
+                    // RecyclerView sedang digeser ke bawah (scroll down)
+                    // Tambahkan kode yang ingin dijalankan saat scroll down di sini
+                } else if (dy < 0) {
+                    ImageView spasiImg = view.findViewById(R.id.spasi_kebawah_rv);
+                    spasiImg.setVisibility(View.GONE);
+                    // RecyclerView sedang digeser ke atas (scroll up)
+                    // Tambahkan kode yang ingin dijalankan saat scroll up di sini
+                }
             }
         });
 

@@ -75,7 +75,7 @@ public class LoginFragment extends Fragment {
         }else{
             Intent intent = new Intent(getContext(), PeminatanActivity.class);
             startActivity(intent);
-            Toast.makeText(getContext(), "Selamat Datang, Nazwa", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getContext(), "Selamat Datang, Nazwa", Toast.LENGTH_SHORT).show();
         }
         return valid;
     }

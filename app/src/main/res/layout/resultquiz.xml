@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="match_parent"
@@ -30,45 +29,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/btnPengajuanRuangan"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView10">
-
-
-    </LinearLayout>
 
     <TextView
-        android:id="@+id/tingkatkan5"
+        android:id="@+id/tingkatkan7"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:autoSizeMaxTextSize="18dp"
         android:autoSizeMinTextSize="10dp"
-        android:layout_marginTop="-20dp"
+        android:layout_marginTop="30dp"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
-        android:text="Yay!, selamat kamu sudah punya peminatan sekarang !"
+        android:text="Peminatanmu adalah"
         android:textAllCaps="false"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tingkatkan3" />
+        app:layout_constraintTop_toTopOf="@+id/imageView11" />
 
     <TextView
         android:id="@+id/tingkatkan3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:autoSizeMaxTextSize="35dp"
+        android:autoSizeMaxTextSize="25dp"
         android:autoSizeMinTextSize="10dp"
         android:autoSizeTextType="uniform"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
         android:text="PROGRAMMING"
@@ -77,71 +64,57 @@
         android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutMenuAtas" />
+        app:layout_constraintTop_toBottomOf="@+id/tingkatkan7" />
+
 
     <TextView
-        android:id="@+id/tingkatkan7"
+        android:id="@+id/tingkatkan5"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:autoSizeMaxTextSize="18dp"
         android:autoSizeMinTextSize="10dp"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/poppins_bold"
         android:gravity="center"
-        android:text="Peminatanmu adalah"
+        android:text="Yay!, selamat kamu sudah punya peminatan sekarang !"
         android:textAllCaps="false"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/tingkatkan3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutMenuAtas" />
-
+        app:layout_constraintTop_toBottomOf="@+id/tingkatkan3" />
 
     <LinearLayout
-        android:id="@+id/layoutMenuAtas1"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:elevation="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10">
-
-
-        <LinearLayout
-            android:id="@+id/btnPengajuanAsset1"
+            android:id="@+id/btnSimpanQuiz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/tingkatkan5">
 
             <TextView
                 android:id="@+id/save"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:autoSizeMaxTextSize="20dp"
-                android:autoSizeMinTextSize="10dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginEnd="70dp"
                 android:autoSizeTextType="uniform"
-                android:background="@drawable/btn_orangetua"
+                android:background="@drawable/btn_putih"
                 android:enabled="false"
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center"
                 android:text="Simpan"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="20dp" />
-
+                android:textAllCaps="true"
+                android:textColor="@color/orange"
+                android:textSize="12dp" />
 
         </LinearLayout>
 
-    </LinearLayout>
+
+
     <LinearLayout
         android:id="@+id/layoutMenuAtas"
         android:layout_width="match_parent"
@@ -170,8 +143,6 @@
                     android:layout_width="0dp"
                     android:layout_marginRight="0dp"
                     android:layout_height="120dp" />
-
-
             </RelativeLayout>
 
         </LinearLayout>

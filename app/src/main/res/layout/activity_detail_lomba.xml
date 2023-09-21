@@ -26,7 +26,7 @@
                 android:layout_height="450dp"
                 android:alpha="0.2"
                 android:scaleType="fitXY"
-                android:src="@drawable/poster_dummy"
+                android:src="@drawable/lomba1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +48,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:src="@drawable/poster_dummy"/>
+                    android:src="@drawable/lomba1"/>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView

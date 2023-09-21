@@ -45,7 +45,7 @@ public class QuizSoalFragment extends Fragment {
 
     private TextView soal;
     private TextView textangka;
-    String[] textnomor = {"2/5",  "3/5", "3/5", "5/5",  "5/5"};
+    String[] textnomor = {"2/2",  "2/2", "2/2", "2/2",  "2/2"};
     String[] soal1 = {"Seberapa tertarik anda \n dengan aspek keamanan \n jaringan dan perlindungan\n data?",
             "Apakah anda tertarik \n dengan bahasa  \ntertentu, seperti Java, \n C++, atau bahasa lainnya?",   "Apakah anda tertarik \n dengan bahasa  \ntertentu, seperti Java, \n C++, atau bahasa lainnya?", "Seberapa tertarik anda \n dengan aspek keamanan \n jaringan dan perlindungan\n data?"};
 
@@ -81,10 +81,10 @@ public class QuizSoalFragment extends Fragment {
 
 
         dialog = new Dialog(requireContext());
-        dialog.setContentView(R.layout.custom_dialog_layout);
+        dialog.setContentView(R.layout.custom_dialog_layout_question);
         dialog.setCancelable(false);
         dialog1 = new Dialog(requireContext());
-        dialog1.setContentView(R.layout.custom_dialog_layout);
+        dialog1.setContentView(R.layout.custom_dialog_layout_question);
         dialog1.setCancelable(false);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             dialog.getWindow().setBackgroundDrawableResource(R.drawable.custom_dialog_background);
@@ -103,7 +103,7 @@ public class QuizSoalFragment extends Fragment {
         okayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), ResultActivity.class);
+                Intent intent = new Intent(getActivity(), ResultActivity.class);
                 startActivity(intent);
             }
         });
@@ -111,22 +111,22 @@ public class QuizSoalFragment extends Fragment {
         okayButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), PeminatanActivity.class);
+                Intent intent = new Intent(getActivity(), PeminatanActivity.class);
                 startActivity(intent);
             }
         });
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(requireContext(), "Tidak", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(requireContext(), "Tidak", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });
         cancelButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(requireContext(), "Tidak", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
+//                Toast.makeText(requireContext(), "Tidak", Toast.LENGTH_SHORT).show();
+                dialog1.dismiss();
             }
         });
 

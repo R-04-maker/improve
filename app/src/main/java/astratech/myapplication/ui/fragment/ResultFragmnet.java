@@ -34,7 +34,7 @@ public class ResultFragmnet extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.resultquiz, container, false);
-        txt1 = (LinearLayout) view.findViewById(R.id.layoutMenuAtas1);
+        txt1 = (LinearLayout) view.findViewById(R.id.btnSimpanQuiz);
         txt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

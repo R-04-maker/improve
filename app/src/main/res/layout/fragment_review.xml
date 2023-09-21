@@ -77,7 +77,8 @@
         android:layout_height="25dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="24dp"
-        android:fontFamily="@font/poppins_bold"
+        android:fontFamily="@font/poppins"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:gravity="center"
         android:text="Untuk Anda"
@@ -102,7 +103,7 @@
         android:layout_width="0dp"
         android:layout_height="25dp"
         android:layout_marginTop="25dp"
-        android:fontFamily="@font/poppins_semibold"
+        android:fontFamily="@font/poppins"
         android:gravity="center"
         android:textColor="@color/black"
         android:layout_marginStart="-20dp"
@@ -138,27 +139,42 @@
         app:layout_constraintTop_toBottomOf="@id/FYPtxt" />
 
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lineseparate1">
+        android:layout_marginTop="150dp"
+        app:layout_constraintTop_toBottomOf="@id/lineseparate1">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/review_recycler_view"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/separatororange">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="wrap_content">
 
-    </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/review_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <ImageView
+                android:id="@+id/spasi_kebawah_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
+                android:background="@android:color/transparent"
+                android:textAllCaps="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/review_recycler_view" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </ScrollView>
 
 
 
