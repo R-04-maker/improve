@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|top"
         tools:listitem="@layout/list_card_orang"
-        tools:itemCount="8"/>
+        tools:itemCount="1"/>
 
     <include
         android:id="@+id/layout_empty_data_con_lomba"

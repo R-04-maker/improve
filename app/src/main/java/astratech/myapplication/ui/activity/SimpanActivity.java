@@ -25,6 +25,7 @@ import java.util.List;
 import astratech.myapplication.R;
 import astratech.myapplication.model.Lomba;
 import astratech.myapplication.model.Simpan;
+import astratech.myapplication.model.Simpan;
 
 public class SimpanActivity extends AppCompatActivity {
 
@@ -222,6 +223,25 @@ public class SimpanActivity extends AppCompatActivity {
             public void bind(Simpan lomba){
                 mSimpan = lomba;
                 mNamaLomba.setText(lomba.getNamaLomba());
+                if(lomba.getIdLomba().equals("1")){
+                    mPoster.setImageResource(R.drawable.lomba1);
+                } else if (lomba.getIdLomba().equals("2")) {
+                    mPoster.setImageResource(R.drawable.lomba2);
+                } else if (lomba.getIdLomba().equals("3")) {
+                    mPoster.setImageResource(R.drawable.lomba3);
+                } else if (lomba.getIdLomba().equals("4")) {
+                    mPoster.setImageResource(R.drawable.seminar1);
+                } else if (lomba.getIdLomba().equals("5")) {
+                    mPoster.setImageResource(R.drawable.seminar4);
+                }else if (lomba.getIdLomba().equals("6")) {
+                    mPoster.setImageResource(R.drawable.seminar5);
+                } else if (lomba.getIdLomba().equals("7")) {
+                    mPoster.setImageResource(R.drawable.lomba4);
+                } else if (lomba.getIdLomba().equals("8")) {
+                    mPoster.setImageResource(R.drawable.lomba5);
+                } else if (lomba.getIdLomba().equals("9")) {
+                    mPoster.setImageResource(R.drawable.lomba1);
+                }
             }
         }
     }
@@ -234,8 +254,72 @@ public class SimpanActivity extends AppCompatActivity {
         mRVSimpan.setAdapter(mSimpanAdapter);
     }
 
-    List<Simpan> lombas = dataSimpan();
+    List<Simpan> lombas = dataSimpan1();
 
+    public List<Simpan> dataSimpan1(){
+        List<Simpan> simpanList = new ArrayList<>();
+
+        Simpan simpan1 = new Simpan();
+        simpan1.setIdLomba("1");
+        simpan1.setNamaLomba("Amikom Video Competition");
+        simpan1.setJenisDisimpan("Lomba");
+        simpanList.add(simpan1);
+
+        Simpan simpan2 = new Simpan();
+        simpan2.setIdLomba("2");
+        simpan2.setNamaLomba("Teknologi Zaman Now");
+        simpan2.setJenisDisimpan("Lomba");
+        simpanList.add(simpan2);
+
+        Simpan simpan3 = new Simpan();
+        simpan3.setIdLomba("3");
+        simpan3.setNamaLomba("Robonec");
+        simpan3.setJenisDisimpan("Lomba");
+        simpanList.add(simpan3);
+
+        Simpan simpan4 = new Simpan();
+        simpan4.setIdLomba("4");
+        simpan4.setJenisDisimpan("Seminar");
+        simpan4.setNamaLomba("First Step");
+        simpanList.add(simpan4);
+
+        Simpan simpan5 = new Simpan();
+        simpan5.setIdLomba("5");
+        simpan5.setJenisDisimpan("Seminar");
+        simpan5.setNamaLomba("Start Up");
+        simpanList.add(simpan5);
+
+        Simpan simpan6 = new Simpan();
+        simpan6.setIdLomba("6");
+        simpan6.setJenisDisimpan("Seminar");
+        simpan6.setNamaLomba("Let Secure Your Code");
+        simpanList.add(simpan6);
+
+        Simpan simpan7 = new Simpan();
+        simpan7.setIdLomba("7");
+        simpan7.setJenisDisimpan("Lainnya");
+        simpan7.setNamaLomba("Sertifikasi Huawei");
+        simpanList.add(simpan7);
+
+        Simpan simpan8 = new Simpan();
+        simpan8.setIdLomba("8");
+        simpan8.setJenisDisimpan("Lainnya");
+        simpan8.setNamaLomba("MSIB Program Magang");
+        simpanList.add(simpan8);
+
+        Simpan simpan9 = new Simpan();
+        simpan9.setIdLomba("9");
+        simpan9.setJenisDisimpan("Lainnya");
+        simpan9.setNamaLomba("Magang Kampus Merdeka");
+        simpanList.add(simpan9);
+//        for(int i  = 0; i < 5; i++){
+//            Seminar seminar = new Seminar();
+//            seminar.setIdSeminar("" + i + 1);
+//            seminar.setNamaSeminar("Seminar " + i);
+//            seminarList.add(seminar);
+//        }
+        return simpanList;
+    }
 
     public List<Simpan> dataSimpan(){
         List<Simpan> lombaList = new ArrayList<>();
