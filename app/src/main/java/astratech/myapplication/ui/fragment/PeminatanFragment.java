@@ -131,14 +131,14 @@ public class PeminatanFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), HomeActivity.class);
                 startActivity(intent);
-                text1.setTextColor(Color.parseColor("#FFFFFF"));
-                text2.setTextColor(Color.parseColor("#FFFFFF"));
-                text3.setTextColor(Color.parseColor("#FFFFFF"));
-                text4.setTextColor(Color.parseColor("#FFFFFF"));
-                text5.setTextColor(Color.parseColor("#FFFFFF"));
-                text6.setTextColor(Color.parseColor("#FFFFFF"));
-                text7.setTextColor(Color.parseColor("#FFFFFF"));
-                text8.setTextColor(Color.parseColor("#FFFFFF"));
+                text1.setTextColor(Color.parseColor("#727272"));
+                text2.setTextColor(Color.parseColor("#727272"));
+                text3.setTextColor(Color.parseColor("#727272"));
+                text4.setTextColor(Color.parseColor("#727272"));
+                text5.setTextColor(Color.parseColor("#727272"));
+                text6.setTextColor(Color.parseColor("#727272"));
+                text7.setTextColor(Color.parseColor("#727272"));
+                text8.setTextColor(Color.parseColor("#727272"));
                 txt1.setBackground(gradientDrawable1);
                 txt2.setBackground(gradientDrawable1);
                 txt3.setBackground(gradientDrawable1);
