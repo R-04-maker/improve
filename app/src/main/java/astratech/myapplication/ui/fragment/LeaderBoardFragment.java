@@ -160,6 +160,7 @@ public class LeaderBoardFragment extends Fragment {
                 if(leaderBoard.getNamaOrang().equals("Nazwa Frida (You)")){
                     Typeface boldTypeface = Typeface.defaultFromStyle(Typeface.BOLD);
                     mNamaOrang.setTypeface(boldTypeface);
+                    mFotoOrang.setImageResource(R.drawable.img);
                 }
             }
             @Override

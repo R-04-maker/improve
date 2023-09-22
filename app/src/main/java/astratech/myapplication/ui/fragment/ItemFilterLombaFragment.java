@@ -72,12 +72,37 @@ public class ItemFilterLombaFragment extends Fragment {
     }
     public List<Lomba> dataLomba(){
         List<Lomba> lombaList = new ArrayList<>();
-        for(int i  = 0; i < 5; i++){
-            Lomba lomba = new Lomba();
-            lomba.setIdLomba("" + i + 1);
-            lomba.setNamaLomba("Lomba " + i);
-            lombaList.add(lomba);
-        }
+
+        Lomba lomba = new Lomba();
+        lomba.setIdLomba("1");
+        lomba.setNamaLomba("Amikom Video Competition");
+        lomba.setGambarPoster("lomba1");
+        lombaList.add(lomba);
+
+        Lomba lomba1 = new Lomba();
+        lomba1.setIdLomba("2");
+        lomba1.setNamaLomba("Teknologi Zaman Now");
+        lomba1.setGambarPoster("lomba2");
+        lombaList.add(lomba1);
+
+        Lomba lomba2 = new Lomba();
+        lomba2.setIdLomba("3");
+        lomba2.setNamaLomba("Robonec");
+        lomba2.setGambarPoster("lomba3");
+        lombaList.add(lomba2);
+
+        Lomba lomba3 = new Lomba();
+        lomba3.setIdLomba("4");
+        lomba3.setNamaLomba("E-Time");
+        lomba3.setGambarPoster("lomba4");
+        lombaList.add(lomba3);
+
+        Lomba lomba4 = new Lomba();
+        lomba4.setIdLomba("5");
+        lomba4.setNamaLomba("Today Competition");
+        lomba4.setGambarPoster("lomba5");
+        lombaList.add(lomba4);
+
         return lombaList;
     }
     private void updateUI(List<Lomba> lombaList){
@@ -138,6 +163,18 @@ public class ItemFilterLombaFragment extends Fragment {
             public void bind(Lomba lomba){
                 mLomba = lomba;
                 mNamaLomba.setText(lomba.getNamaLomba());
+
+                if(lomba.getIdLomba().equals("1")){
+                    mPoster.setImageResource(R.drawable.lomba1);
+                } else if (lomba.getIdLomba().equals("2")) {
+                    mPoster.setImageResource(R.drawable.lomba2);
+                } else if (lomba.getIdLomba().equals("3")) {
+                    mPoster.setImageResource(R.drawable.lomba3);
+                } else if (lomba.getIdLomba().equals("4")) {
+                    mPoster.setImageResource(R.drawable.lomba4);
+                } else if (lomba.getIdLomba().equals("5")) {
+                    mPoster.setImageResource(R.drawable.lomba5);
+                }
             }
         }
     }

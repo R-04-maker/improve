@@ -81,7 +81,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/foto"
+                        android:src="@drawable/foto2"
                         app:layout_constraintStart_toEndOf="@id/imageLomba2"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -96,7 +96,7 @@
                         android:fontFamily="@font/poppins"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:text="Sapri Indra Rhomadhon"
+                        android:text="Cyndy Putri Rahayu"
                         android:textAllCaps="true"
                         android:textSize="14dp"
                         android:textStyle="bold"
@@ -164,7 +164,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/foto"
+                        android:src="@drawable/foto1"
                         app:layout_constraintStart_toEndOf="@id/imageLomba1"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -179,7 +179,7 @@
                         android:fontFamily="@font/poppins"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:text="Akbar Rhomadhon"
+                        android:text="Citra Lestari"
                         android:textAllCaps="true"
                         android:textSize="14dp"
                         android:textStyle="bold"
@@ -246,7 +246,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/foto"
+                        android:src="@drawable/foto3"
                         app:layout_constraintStart_toEndOf="@id/imageLomba3"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -315,6 +315,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
             tools:listitem="@layout/list_item_leaderboard"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

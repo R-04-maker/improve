@@ -23,6 +23,7 @@ import astratech.myapplication.R;
 import astratech.myapplication.model.Lomba;
 import astratech.myapplication.model.Orang;
 import astratech.myapplication.ui.activity.DetailLombaActivity;
+import astratech.myapplication.ui.activity.ProfileOrangActivity;
 
 public class ItemFilterOrangFragment extends Fragment {
     private static final String KEY_SEARCH = "search-value";
@@ -126,7 +127,7 @@ public class ItemFilterOrangFragment extends Fragment {
                     public void onClick(View v) {
                         Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
-                        Intent intent = new Intent(getContext(), DetailLombaActivity.class);
+                        Intent intent = new Intent(getContext(), ProfileOrangActivity.class);
 //                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
                         startActivity(intent);
                     }
@@ -135,6 +136,15 @@ public class ItemFilterOrangFragment extends Fragment {
             public void bind(Orang orang){
                 mOrang = orang;
                 mNamaOrang.setText(orang.getNamaOrang());
+                if(orang.getIdOrang().equals("1")){
+                    mPoster.setImageResource(R.drawable.foto);
+                } else if (orang.getIdOrang().equals("2")) {
+                    mPoster.setImageResource(R.drawable.foto1);
+                } else if (orang.getIdOrang().equals("3")) {
+                    mPoster.setImageResource(R.drawable.foto2);
+                } else if (orang.getIdOrang().equals("4")) {
+                    mPoster.setImageResource(R.drawable.foto3);
+                }
             }
         }
     }

@@ -41,7 +41,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                app:srcCompat="@drawable/img"
+                app:srcCompat="@drawable/foto"
                 app:layout_constraintStart_toEndOf="@id/nomor_lb"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>

@@ -21,6 +21,7 @@ import java.util.List;
 
 import astratech.myapplication.R;
 import astratech.myapplication.model.Event;
+import astratech.myapplication.model.Seminar;
 import astratech.myapplication.ui.activity.DetailLombaActivity;
 
 public class ItemFilterLainnyaFragment extends Fragment {
@@ -73,14 +74,34 @@ public class ItemFilterLainnyaFragment extends Fragment {
     }
 
     public List<Event> dataEvent() {
-        List<Event> eventList = new ArrayList<>();
-        for(int i  = 0; i < 5; i++){
-            Event event = new Event();
-            event.setIdEvent("" + i + 1);
-            event.setNamaEvent("Lomba " + i);
-            eventList.add(event);
-        }
-        return eventList;
+        List<Event> eventArrayList = new ArrayList<>();
+
+        Event event = new Event();
+        event.setIdEvent("1");
+        event.setNamaEvent("First Step");
+        eventArrayList.add(event);
+
+        Event event1 = new Event();
+        event1.setIdEvent("2");
+        event1.setNamaEvent("Start Up");
+        eventArrayList.add(event1);
+
+        Event event2 = new Event();
+        event2.setIdEvent("3");
+        event2.setNamaEvent("Let Secure Your Code");
+        eventArrayList.add(event2);
+
+        Event event3 = new Event();
+        event3.setIdEvent("4");
+        event3.setNamaEvent("First Step");
+        eventArrayList.add(event3);
+
+        Event event4 = new Event();
+        event4.setIdEvent("5");
+        event4.setNamaEvent("Let Secure Your Code");
+        eventArrayList.add(event4);
+
+        return eventArrayList;
     }
     private class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventHolder>{
         private List<Event> mEvents;
@@ -133,6 +154,18 @@ public class ItemFilterLainnyaFragment extends Fragment {
             public void bind(Event event){
                 mEvent = event;
                 mNamaEvent.setText(event.getNamaEvent());
+
+                if(event.getIdEvent().equals("1")){
+                    mPoster.setImageResource(R.drawable.seminar1);
+                } else if (event.getIdEvent().equals("2")) {
+                    mPoster.setImageResource(R.drawable.lomba1);
+                } else if (event.getIdEvent().equals("3")) {
+                    mPoster.setImageResource(R.drawable.seminar5);
+                } else if (event.getIdEvent().equals("4")) {
+                    mPoster.setImageResource(R.drawable.lomba3);
+                } else if (event.getIdEvent().equals("5")) {
+                    mPoster.setImageResource(R.drawable.seminar4);
+                }
             }
         }
     }

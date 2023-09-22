@@ -35,6 +35,8 @@ public class ReviewFragment extends Fragment {
     private List<Review> mReview;
     private String mSelectedReview = "FYP";
 
+    public int Status = 0;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -65,6 +67,13 @@ public class ReviewFragment extends Fragment {
                 txtFyp.setTypeface(boldTypeface);
                 txtTeratas.setTypeface(normalTypeface);
 
+                Status = 0;
+  /*              if (Status == 1){
+                    Status = 0;
+                } else {
+                    Status= 1;
+                }*/
+
                 imgSeparatorFYP.setVisibility(View.VISIBLE);
                 imgSeparatorTop.setVisibility(View.INVISIBLE);
             }
@@ -86,6 +95,7 @@ public class ReviewFragment extends Fragment {
                 imgSeparatorFYP.setVisibility(View.INVISIBLE);
                 imgSeparatorTop.setVisibility(View.VISIBLE);
 
+                Status = 1;
 
             }
         });
@@ -220,7 +230,7 @@ public class ReviewFragment extends Fragment {
             private TextView mTanggal;
             private TextView mCaption;
             private ImageView imgTitikTiga;
-            private ImageView photoReview;
+            private ImageView photoReview, imageView;
             private TextView space;
 
 
@@ -234,6 +244,15 @@ public class ReviewFragment extends Fragment {
                 imgTitikTiga = itemView.findViewById(R.id.ic_titik_tiga_review);
                 photoReview = itemView.findViewById(R.id.img_review);
                 space = itemView.findViewById(R.id.spasi_kebawah);
+
+                if(Status == 0){
+                    imageView = itemView.findViewById(R.id.api_review1);
+                    imageView.setVisibility(View.GONE);
+                }else {
+                    imageView = itemView.findViewById(R.id.api_review1);
+                    imageView.setVisibility(View.VISIBLE);
+                }
+
 
                 itemView.setOnClickListener(this);
             }
