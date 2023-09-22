@@ -44,6 +44,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationBarView
                 startActivity(intent);
             }
         });
+
     }
 
     @Override

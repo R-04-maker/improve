@@ -414,7 +414,9 @@ public class HomeFragment extends Fragment {
                         Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(getActivity(), DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mLomba.getIdLomba());
+                        intent.putExtra("nama", mLomba.getNamaLomba());
+                        intent.putExtra("jenis_kegiatan", "Lomba");
                         startActivity(intent);
                     }
                 });
@@ -481,7 +483,9 @@ public class HomeFragment extends Fragment {
                         Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(getActivity(), DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mSeminar.getIdSeminar());
+                        intent.putExtra("nama", mSeminar.getNamaSeminar());
+                        intent.putExtra("jenis_kegiatan", "Seminar");
                         startActivity(intent);
                     }
                 });

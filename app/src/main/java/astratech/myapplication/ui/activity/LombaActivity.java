@@ -1,13 +1,5 @@
 package astratech.myapplication.ui.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.CompositePageTransformer;
-import androidx.viewpager2.widget.MarginPageTransformer;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,16 +8,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
+import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import astratech.myapplication.R;
 import astratech.myapplication.model.Lomba;
-import astratech.myapplication.ui.fragment.HomeFragment;
 
 public class LombaActivity extends AppCompatActivity {
     private ViewPager2 mViewPager2;
@@ -33,6 +32,7 @@ public class LombaActivity extends AppCompatActivity {
     private RecyclerView mRVLomba, mRVLombaLain;
     private Handler slideHandler = new Handler();
     private List<Lomba> mLomba;
+    private EditText mSearchTxt;
     private LombaAdapter mLombaAdapter;
     private LombaLainAdapter mLombaLainAdapter;
     private boolean showAllItems = false;
@@ -64,6 +64,18 @@ public class LombaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        mSearchTxt = findViewById(R.id.search);
+
+        mSearchTxt.setFocusable(false);
+        mSearchTxt.setClickable(false);
+        mSearchTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LombaActivity.this, SearchActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -120,12 +132,37 @@ public class LombaActivity extends AppCompatActivity {
     }
     public List<Lomba> dataLomba(){
         List<Lomba> lombaList = new ArrayList<>();
-        for(int i  = 0; i < 5; i++){
-            Lomba lomba = new Lomba();
-            lomba.setIdLomba("" + i + 1);
-            lomba.setNamaLomba("Lomba " + i);
-            lombaList.add(lomba);
-        }
+
+        Lomba lomba = new Lomba();
+        lomba.setIdLomba("1");
+        lomba.setNamaLomba("Amikom Video Competition");
+        lomba.setGambarPoster("lomba1");
+        lombaList.add(lomba);
+
+        Lomba lomba1 = new Lomba();
+        lomba1.setIdLomba("2");
+        lomba1.setNamaLomba("Teknologi Zaman Now");
+        lomba1.setGambarPoster("lomba2");
+        lombaList.add(lomba1);
+
+        Lomba lomba2 = new Lomba();
+        lomba2.setIdLomba("3");
+        lomba2.setNamaLomba("Robonec");
+        lomba2.setGambarPoster("lomba3");
+        lombaList.add(lomba2);
+
+        Lomba lomba3 = new Lomba();
+        lomba3.setIdLomba("4");
+        lomba3.setNamaLomba("E-Time");
+        lomba3.setGambarPoster("lomba4");
+        lombaList.add(lomba3);
+
+        Lomba lomba4 = new Lomba();
+        lomba4.setIdLomba("5");
+        lomba4.setNamaLomba("Today Competition");
+        lomba4.setGambarPoster("lomba5");
+        lombaList.add(lomba4);
+
         return lombaList;
     }
     private Runnable sliderRunnable = new Runnable() {
@@ -179,14 +216,28 @@ public class LombaActivity extends AppCompatActivity {
             public void onBindViewHolder(Lomba lomba){
                 mLomba = lomba;
                 mNamaLomba.setText(mLomba.getNamaLomba());
+                if(lomba.getIdLomba().equals("1")){
+                    mPoster.setImageResource(R.drawable.lomba1);
+                } else if (lomba.getIdLomba().equals("2")) {
+                    mPoster.setImageResource(R.drawable.lomba2);
+                } else if (lomba.getIdLomba().equals("3")) {
+                    mPoster.setImageResource(R.drawable.lomba3);
+                } else if (lomba.getIdLomba().equals("4")) {
+                    mPoster.setImageResource(R.drawable.lomba4);
+                } else if (lomba.getIdLomba().equals("5")) {
+                    mPoster.setImageResource(R.drawable.lomba5);
+                }
             }
             @Override
             public void onClick(View view){
                 Animation scaleDown = AnimationUtils.loadAnimation(LombaActivity.this, R.anim.scale_down);
                 itemView.startAnimation(scaleDown);
                 Intent intent = new Intent(LombaActivity.this, DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
-                startActivity(intent);            }
+                intent.putExtra("id", mLomba.getIdLomba());
+                intent.putExtra("nama", mLomba.getNamaLomba());
+                intent.putExtra("jenis_kegiatan", "Lomba");
+                startActivity(intent);
+            }
         }
     }
     private class LombaAdapter extends RecyclerView.Adapter<LombaAdapter.LombaHolder>{
@@ -232,7 +283,9 @@ public class LombaActivity extends AppCompatActivity {
                         Animation scaleDown = AnimationUtils.loadAnimation(LombaActivity.this, R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(LombaActivity.this, DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mLomba.getIdLomba());
+                        intent.putExtra("nama", mLomba.getNamaLomba());
+                        intent.putExtra("jenis_kegiatan", "Lomba");
                         startActivity(intent);
                     }
                 });
@@ -240,10 +293,20 @@ public class LombaActivity extends AppCompatActivity {
             public void bind(Lomba lomba){
                 mLomba = lomba;
                 mNamaLomba.setText(lomba.getNamaLomba());
+                if(lomba.getIdLomba().equals("1")){
+                    mPoster.setImageResource(R.drawable.lomba1);
+                } else if (lomba.getIdLomba().equals("2")) {
+                    mPoster.setImageResource(R.drawable.lomba2);
+                } else if (lomba.getIdLomba().equals("3")) {
+                    mPoster.setImageResource(R.drawable.lomba3);
+                } else if (lomba.getIdLomba().equals("4")) {
+                    mPoster.setImageResource(R.drawable.lomba4);
+                } else if (lomba.getIdLomba().equals("5")) {
+                    mPoster.setImageResource(R.drawable.lomba5);
+                }
             }
         }
     }
-
     private class LombaLainAdapter extends RecyclerView.Adapter<LombaLainAdapter.LombaHolder>{
         private List<Lomba> mLombas;
 
@@ -260,10 +323,6 @@ public class LombaActivity extends AppCompatActivity {
         }
         @Override
         public void onBindViewHolder(@NonNull LombaLainAdapter.LombaHolder holder, int position) {
-/*            Lomba lomba = mLombas.get(position);
-            holder.bind(lomba);
-            Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), android.R.anim.fade_in);
-            holder.itemView.startAnimation(animation);*/
 
             if (!showAllItems && position >= 3) {
                 holder.itemView.setVisibility(View.GONE);
@@ -302,7 +361,9 @@ public class LombaActivity extends AppCompatActivity {
                         Animation scaleDown = AnimationUtils.loadAnimation(LombaActivity.this, R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(LombaActivity.this, DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mLomba.getIdLomba());
+                        intent.putExtra("nama", mLomba.getNamaLomba());
+                        intent.putExtra("jenis_kegiatan", "Lomba");
                         startActivity(intent);
                     }
                 });
@@ -310,6 +371,17 @@ public class LombaActivity extends AppCompatActivity {
             public void bind(Lomba lomba){
                 mLomba = lomba;
                 mNamaLomba.setText(lomba.getNamaLomba());
+                if(lomba.getIdLomba().equals("1")){
+                    mPoster.setImageResource(R.drawable.lomba1);
+                } else if (lomba.getIdLomba().equals("2")) {
+                    mPoster.setImageResource(R.drawable.lomba2);
+                } else if (lomba.getIdLomba().equals("3")) {
+                    mPoster.setImageResource(R.drawable.lomba3);
+                } else if (lomba.getIdLomba().equals("4")) {
+                    mPoster.setImageResource(R.drawable.lomba4);
+                } else if (lomba.getIdLomba().equals("5")) {
+                    mPoster.setImageResource(R.drawable.lomba5);
+                }
             }
         }
     }

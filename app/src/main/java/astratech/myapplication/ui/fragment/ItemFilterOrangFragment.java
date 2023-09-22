@@ -20,10 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import astratech.myapplication.R;
-import astratech.myapplication.model.Lomba;
 import astratech.myapplication.model.Orang;
-import astratech.myapplication.model.Seminar;
-import astratech.myapplication.ui.activity.DetailLombaActivity;
 import astratech.myapplication.ui.activity.ProfileOrangActivity;
 
 public class ItemFilterOrangFragment extends Fragment {
@@ -134,7 +131,8 @@ public class ItemFilterOrangFragment extends Fragment {
                         Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(getContext(), ProfileOrangActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mOrang.getIdOrang());
+                        intent.putExtra("nama", mOrang.getNamaOrang());
                         startActivity(intent);
                     }
                 });

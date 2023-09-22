@@ -152,10 +152,12 @@ public class ItemFilterLombaFragment extends Fragment {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
+                        Animation scaleDown = AnimationUtils.loadAnimation(getContext(), R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(getContext(), DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mLomba.getIdLomba());
+                        intent.putExtra("nama", mLomba.getNamaLomba());
+                        intent.putExtra("jenis_kegiatan", "Lomba");
                         startActivity(intent);
                     }
                 });

@@ -23,16 +23,29 @@
             android:layout_height="match_parent"
             android:layout_marginTop="290dp">
 
+            <ImageView
+                android:id="@+id/back_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
             <TextView
                 android:id="@+id/textView18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="Pengajuan Baru"
                 android:textColor="@color/white"
                 android:textSize="25dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:gravity="top"
+                app:layout_constraintStart_toEndOf="@+id/back_btn"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView

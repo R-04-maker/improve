@@ -150,10 +150,12 @@ public class ItemFilterSeminarFragment extends Fragment {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
+                        Animation scaleDown = AnimationUtils.loadAnimation(getContext(), R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(getContext(), DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mSeminar.getIdSeminar());
+                        intent.putExtra("nama", mSeminar.getNamaSeminar());
+                        intent.putExtra("jenis_kegiatan", "Seminar");
                         startActivity(intent);
                     }
                 });

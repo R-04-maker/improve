@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +32,7 @@ public class LainnyaActivity extends AppCompatActivity {
     private RecyclerView mRVLomba, mRVLombaLain;
     private Handler slideHandler = new Handler();
     private List<Lomba> mLomba;
+    private EditText mSearchTxt;
     private LombaAdapter mLombaAdapter;
     private LombaLainAdapter mLombaLainAdapter;
     private boolean showAllItems = false;
@@ -102,6 +103,17 @@ public class LainnyaActivity extends AppCompatActivity {
                 }
             }
         });
+        mSearchTxt = findViewById(R.id.search);
+
+        mSearchTxt.setFocusable(false);
+        mSearchTxt.setClickable(false);
+        mSearchTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LainnyaActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     private void updateSlider(List<Lomba> lombaList){
         mLomba = lombaList;
@@ -119,12 +131,37 @@ public class LainnyaActivity extends AppCompatActivity {
     }
     public List<Lomba> dataLomba(){
         List<Lomba> lombaList = new ArrayList<>();
-        for(int i  = 0; i < 5; i++){
-            Lomba lomba = new Lomba();
-            lomba.setIdLomba("" + i + 1);
-            lomba.setNamaLomba("Lomba " + i);
-            lombaList.add(lomba);
-        }
+
+        Lomba lomba = new Lomba();
+        lomba.setIdLomba("1");
+        lomba.setNamaLomba("Teknologi Zaman Now");
+        lomba.setGambarPoster("lomba1");
+        lombaList.add(lomba);
+
+        Lomba lomba1 = new Lomba();
+        lomba1.setIdLomba("2");
+        lomba1.setNamaLomba("Start Up");
+        lomba1.setGambarPoster("lomba2");
+        lombaList.add(lomba1);
+
+        Lomba lomba2 = new Lomba();
+        lomba2.setIdLomba("3");
+        lomba2.setNamaLomba("E-Time");
+        lomba2.setGambarPoster("lomba3");
+        lombaList.add(lomba2);
+
+        Lomba lomba3 = new Lomba();
+        lomba3.setIdLomba("4");
+        lomba3.setNamaLomba("First Step");
+        lomba3.setGambarPoster("lomba4");
+        lombaList.add(lomba3);
+
+        Lomba lomba4 = new Lomba();
+        lomba4.setIdLomba("5");
+        lomba4.setNamaLomba("Let Secure Your Code");
+        lomba4.setGambarPoster("lomba5");
+        lombaList.add(lomba4);
+
         return lombaList;
     }
     private Runnable sliderRunnable = new Runnable() {
@@ -177,15 +214,29 @@ public class LainnyaActivity extends AppCompatActivity {
             }
             public void onBindViewHolder(Lomba lomba){
                 mLomba = lomba;
-                mNamaLomba.setText(mLomba.getNamaLomba());
+                mNamaLomba.setText(lomba.getNamaLomba());
+                if(lomba.getIdLomba().equals("1")){
+                    mPoster.setImageResource(R.drawable.lomba2);
+                } else if (lomba.getIdLomba().equals("2")) {
+                    mPoster.setImageResource(R.drawable.seminar4);
+                } else if (lomba.getIdLomba().equals("3")) {
+                    mPoster.setImageResource(R.drawable.lomba4);
+                } else if (lomba.getIdLomba().equals("4")) {
+                    mPoster.setImageResource(R.drawable.seminar1);
+                } else if (lomba.getIdLomba().equals("5")) {
+                    mPoster.setImageResource(R.drawable.seminar5);
+                }
             }
             @Override
             public void onClick(View view){
                 Animation scaleDown = AnimationUtils.loadAnimation(LainnyaActivity.this, R.anim.scale_down);
                 itemView.startAnimation(scaleDown);
                 Intent intent = new Intent(LainnyaActivity.this, DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
-                startActivity(intent);                   }
+                intent.putExtra("id", mLomba.getIdLomba());
+                intent.putExtra("nama", mLomba.getNamaLomba());
+                intent.putExtra("jenis_kegiatan", "Lainnya");
+                startActivity(intent);
+            }
         }
     }
     private class LombaAdapter extends RecyclerView.Adapter<LombaAdapter.LombaHolder>{
@@ -231,7 +282,9 @@ public class LainnyaActivity extends AppCompatActivity {
                         Animation scaleDown = AnimationUtils.loadAnimation(LainnyaActivity.this, R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(LainnyaActivity.this, DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mLomba.getIdLomba());
+                        intent.putExtra("nama", mLomba.getNamaLomba());
+                        intent.putExtra("jenis_kegiatan", "Lainnya");
                         startActivity(intent);
                     }
                 });
@@ -239,6 +292,17 @@ public class LainnyaActivity extends AppCompatActivity {
             public void bind(Lomba lomba){
                 mLomba = lomba;
                 mNamaLomba.setText(lomba.getNamaLomba());
+                if(lomba.getIdLomba().equals("1")){
+                    mPoster.setImageResource(R.drawable.lomba2);
+                } else if (lomba.getIdLomba().equals("2")) {
+                    mPoster.setImageResource(R.drawable.seminar4);
+                } else if (lomba.getIdLomba().equals("3")) {
+                    mPoster.setImageResource(R.drawable.lomba4);
+                } else if (lomba.getIdLomba().equals("4")) {
+                    mPoster.setImageResource(R.drawable.seminar1);
+                } else if (lomba.getIdLomba().equals("5")) {
+                    mPoster.setImageResource(R.drawable.seminar5);
+                }
             }
         }
     }
@@ -300,7 +364,9 @@ public class LainnyaActivity extends AppCompatActivity {
                         Animation scaleDown = AnimationUtils.loadAnimation(LainnyaActivity.this, R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(LainnyaActivity.this, DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mLomba.getIdLomba());
+                        intent.putExtra("nama", mLomba.getNamaLomba());
+                        intent.putExtra("jenis_kegiatan", "Lainnya");
                         startActivity(intent);
                     }
                 });
@@ -308,6 +374,17 @@ public class LainnyaActivity extends AppCompatActivity {
             public void bind(Lomba lomba){
                 mLomba = lomba;
                 mNamaLomba.setText(lomba.getNamaLomba());
+                if(lomba.getIdLomba().equals("1")){
+                    mPoster.setImageResource(R.drawable.lomba2);
+                } else if (lomba.getIdLomba().equals("2")) {
+                    mPoster.setImageResource(R.drawable.seminar4);
+                } else if (lomba.getIdLomba().equals("3")) {
+                    mPoster.setImageResource(R.drawable.lomba4);
+                } else if (lomba.getIdLomba().equals("4")) {
+                    mPoster.setImageResource(R.drawable.seminar1);
+                } else if (lomba.getIdLomba().equals("5")) {
+                    mPoster.setImageResource(R.drawable.seminar5);
+                }
             }
         }
     }

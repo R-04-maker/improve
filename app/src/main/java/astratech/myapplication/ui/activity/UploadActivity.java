@@ -1,12 +1,5 @@
 package astratech.myapplication.ui.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -20,6 +13,12 @@ import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +30,7 @@ public class UploadActivity extends AppCompatActivity {
     private RecyclerView mRVPengajuan;
     private UploadAdapter mUploadAdapter;
     private ConstraintLayout mLayoutRiwayat, mLayoutPengajuan, mLayoutDiterima, mLayoutDitolak;
-    private ImageView mImgRiwayat, mImgPengajuan, mImgDiterima, mImgDitolak;
+    private ImageView mImgRiwayat, mImgPengajuan, mImgDiterima, mImgDitolak, mBackBtn;
     private ConstraintLayout mUploadBtn;
     private TextView mTxtRiwayat, mTxtPengajuan, mTxtDitrima, mTxtDitolak;
     private List<Pengajuan> mPengajuan;
@@ -59,6 +58,14 @@ public class UploadActivity extends AppCompatActivity {
         mLayoutDitolak = findViewById(R.id.ditolak_layout);
         mImgDitolak = findViewById(R.id.iv_ditolak);
         mTxtDitolak = findViewById(R.id.txt_ditolak);
+
+        mBackBtn = findViewById(R.id.back_btn);
+        mBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         mLayoutPengajuan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,6 +144,14 @@ public class UploadActivity extends AppCompatActivity {
 
         update(loadDataPengajuan());
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        // Menambahkan animasi slide-down saat menutup activity
+        finish();
+    }
+
     public void update(List<Pengajuan> list){
         mPengajuan = list;
         mUploadAdapter = new UploadAdapter(mPengajuan);
