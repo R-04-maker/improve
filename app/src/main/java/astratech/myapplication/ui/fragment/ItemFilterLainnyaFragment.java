@@ -21,7 +21,6 @@ import java.util.List;
 
 import astratech.myapplication.R;
 import astratech.myapplication.model.Event;
-import astratech.myapplication.model.Seminar;
 import astratech.myapplication.ui.activity.DetailLombaActivity;
 
 public class ItemFilterLainnyaFragment extends Fragment {
@@ -78,7 +77,7 @@ public class ItemFilterLainnyaFragment extends Fragment {
 
         Event event = new Event();
         event.setIdEvent("1");
-        event.setNamaEvent("First Step");
+        event.setNamaEvent("Teknologi Zaman Now");
         eventArrayList.add(event);
 
         Event event1 = new Event();
@@ -88,7 +87,7 @@ public class ItemFilterLainnyaFragment extends Fragment {
 
         Event event2 = new Event();
         event2.setIdEvent("3");
-        event2.setNamaEvent("Let Secure Your Code");
+        event2.setNamaEvent("E-Time");
         eventArrayList.add(event2);
 
         Event event3 = new Event();
@@ -143,10 +142,12 @@ public class ItemFilterLainnyaFragment extends Fragment {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
+                        Animation scaleDown = AnimationUtils.loadAnimation(getContext(), R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(getContext(), DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mEvent.getIdEvent());
+                        intent.putExtra("nama", mEvent.getNamaEvent());
+                        intent.putExtra("jenis_kegiatan", "Lainnya");
                         startActivity(intent);
                     }
                 });
@@ -156,15 +157,15 @@ public class ItemFilterLainnyaFragment extends Fragment {
                 mNamaEvent.setText(event.getNamaEvent());
 
                 if(event.getIdEvent().equals("1")){
-                    mPoster.setImageResource(R.drawable.seminar1);
+                    mPoster.setImageResource(R.drawable.lomba2);
                 } else if (event.getIdEvent().equals("2")) {
-                    mPoster.setImageResource(R.drawable.lomba1);
-                } else if (event.getIdEvent().equals("3")) {
-                    mPoster.setImageResource(R.drawable.seminar5);
-                } else if (event.getIdEvent().equals("4")) {
-                    mPoster.setImageResource(R.drawable.lomba3);
-                } else if (event.getIdEvent().equals("5")) {
                     mPoster.setImageResource(R.drawable.seminar4);
+                } else if (event.getIdEvent().equals("3")) {
+                    mPoster.setImageResource(R.drawable.lomba4);
+                } else if (event.getIdEvent().equals("4")) {
+                    mPoster.setImageResource(R.drawable.seminar1);
+                } else if (event.getIdEvent().equals("5")) {
+                    mPoster.setImageResource(R.drawable.seminar5);
                 }
             }
         }

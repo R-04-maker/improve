@@ -14,26 +14,56 @@ public class PosterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poster_event);
+        String mId = getIntent().getStringExtra("id");
+        String mJenis = getIntent().getStringExtra("jenis_kegiatan");
 
         ImageView mBackButton = findViewById(R.id.backBtn);
+        ImageView mPoster = findViewById(R.id.photoViewDetailLomba);
+
+        if(mJenis.equals("Lomba")){
+            if(mId.equals("1")){
+                mPoster.setImageResource(R.drawable.lomba1);
+            } else if (mId.equals("2")) {
+                mPoster.setImageResource(R.drawable.lomba2);
+            } else if (mId.equals("3")) {
+                mPoster.setImageResource(R.drawable.lomba3);
+            } else if (mId.equals("4")) {
+                mPoster.setImageResource(R.drawable.lomba4);
+            } else if (mId.equals("5")) {
+                mPoster.setImageResource(R.drawable.lomba5);
+            }
+        } else if (mJenis.equals("Seminar")) {
+            if(mId.equals("1")){
+                mPoster.setImageResource(R.drawable.seminar1);
+            } else if (mId.equals("2")) {
+                mPoster.setImageResource(R.drawable.seminar4);
+            } else if (mId.equals("3")) {
+                mPoster.setImageResource(R.drawable.seminar5);
+            } else if (mId.equals("4")) {
+                mPoster.setImageResource(R.drawable.seminar1);
+            } else if (mId.equals("5")) {
+                mPoster.setImageResource(R.drawable.seminar4);
+            }
+        }  else if (mJenis.equals("Lainnya")) {
+            if(mId.equals("1")){
+                mPoster.setImageResource(R.drawable.lomba2);
+            } else if (mId.equals("2")) {
+                mPoster.setImageResource(R.drawable.seminar4);
+            } else if (mId.equals("3")) {
+                mPoster.setImageResource(R.drawable.lomba4);
+            } else if (mId.equals("4")) {
+                mPoster.setImageResource(R.drawable.seminar1);
+            } else if (mId.equals("5")) {
+                mPoster.setImageResource(R.drawable.seminar5);
+            }
+        }
+
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-
-//        ConstraintLayout constraintHistoryXP = findViewById(R.id.constrain_history_XP);
-//        constraintHistoryXP.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(XPActivty.this, HistoryXPActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
-
-
     }
 
 }

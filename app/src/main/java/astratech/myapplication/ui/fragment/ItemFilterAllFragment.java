@@ -2,13 +2,6 @@ package astratech.myapplication.ui.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +9,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +24,8 @@ import astratech.myapplication.model.Lomba;
 import astratech.myapplication.model.Orang;
 import astratech.myapplication.model.Seminar;
 import astratech.myapplication.ui.activity.DetailLombaActivity;
-import astratech.myapplication.ui.activity.LombaActivity;
 import astratech.myapplication.ui.activity.ProfileOrangActivity;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * A fragment representing a list of Items.
@@ -166,29 +165,69 @@ public class ItemFilterAllFragment extends Fragment {
         return seminarList;
     }
     public List<Orang> dataOrang(){
-        List<Orang> orangs = new ArrayList<>();
-        for(int i  = 0; i < 5; i++){
-            Orang orang = new Orang();
-            orang.setIdOrang("" + i + 1);
-            orang.setNamaOrang("Orang " + i);
-            orangs.add(orang);
-        }
-        return orangs;
+        List<Orang> orangList = new ArrayList<>();
+
+        Orang orang1 = new Orang();
+        orang1.setIdOrang("1");
+        orang1.setNamaOrang("Irfan Muhammad");
+        orangList.add(orang1);
+
+        Orang orang2 = new Orang();
+        orang2.setIdOrang("2");
+        orang2.setNamaOrang("Nazwa Frida");
+        orangList.add(orang2);
+
+        Orang orang3 = new Orang();
+        orang3.setIdOrang("3");
+        orang3.setNamaOrang("Robby Fahsya");
+        orangList.add(orang3);
+
+        Orang orang4 = new Orang();
+        orang4.setIdOrang("4");
+        orang4.setNamaOrang("Daniel Dwiki");
+        orangList.add(orang4);
+
+        Orang orang5 = new Orang();
+        orang5.setIdOrang("5");
+        orang5.setNamaOrang("Atika Nur");
+        orangList.add(orang5);
+
+        Orang orang6 = new Orang();
+        orang6.setIdOrang("6");
+        orang6.setNamaOrang("Robby Fahsya");
+        orangList.add(orang6);
+
+        Orang orang7 = new Orang();
+        orang7.setIdOrang("7");
+        orang7.setNamaOrang("Gema Ramadhan");
+        orangList.add(orang7);
+
+        Orang orang8 = new Orang();
+        orang8.setIdOrang("8");
+        orang8.setNamaOrang("Nadiva Syifa");
+        orangList.add(orang8);
+//        for(int i  = 0; i < 5; i++){
+//            Seminar seminar = new Seminar();
+//            seminar.setIdSeminar("" + i + 1);
+//            seminar.setNamaSeminar("Seminar " + i);
+//            seminarList.add(seminar);
+//        }
+        return orangList;
     }
     private void updateUI(List<Lomba> lombaList){
-        mLombaAdapter = new LombaAdapter(mLombaList);
+        mLombaAdapter = new LombaAdapter(lombaList);
         mRvFilterLomba.setAdapter(mLombaAdapter);
     }
     private void updateUI2(List<Seminar> seminarList){
         mSeminarAdapter = new SeminarAdapter(seminarList);
-        mRvFilterSeminar.setAdapter(mLombaAdapter);
+        mRvFilterSeminar.setAdapter(mSeminarAdapter);
     }
     private void updateUI3(List<Orang> orangList){
         mOrangAdapter = new OrangAdapter(orangList);
         mRvFilterOrang.setAdapter(mOrangAdapter);
     }
     private void updateUI4(List<Lomba> lombaList){
-        mLombaAdapter = new LombaAdapter(mLombaList);
+        mLombaAdapter = new LombaAdapter(lombaList);
         mRvFilterLainnya.setAdapter(mLombaAdapter);
     }
     private class LombaAdapter extends RecyclerView.Adapter<LombaAdapter.LombaHolder>{
@@ -231,10 +270,12 @@ public class ItemFilterAllFragment extends Fragment {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
+                        Animation scaleDown = AnimationUtils.loadAnimation(getContext(), R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(getContext(), DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mLomba.getIdLomba());
+                        intent.putExtra("nama", mLomba.getNamaLomba());
+                        intent.putExtra("jenis_kegiatan", "Lomba");
                         startActivity(intent);
                     }
                 });
@@ -297,10 +338,12 @@ public class ItemFilterAllFragment extends Fragment {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
+                        Animation scaleDown = AnimationUtils.loadAnimation(getContext(), R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(getContext(), DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mSeminar.getIdSeminar());
+                        intent.putExtra("nama", mSeminar.getNamaSeminar());
+                        intent.putExtra("jenis_kegiatan", "Seminar");
                         startActivity(intent);
                     }
                 });
@@ -351,13 +394,13 @@ public class ItemFilterAllFragment extends Fragment {
         }
 
         private class OrangHolder extends RecyclerView.ViewHolder{
-            private ImageView mPoster;
+            private CircleImageView mPoster;
             private TextView mNamaOrang;
             private Orang mOrang;
 
             public OrangHolder(LayoutInflater inflater, ViewGroup parent) {
                 super(inflater.inflate(R.layout.list_card_orang, parent, false));
-
+                mPoster = itemView.findViewById(R.id.foto_profile);
                 mNamaOrang = itemView.findViewById(R.id.nama_lomba);
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -365,7 +408,8 @@ public class ItemFilterAllFragment extends Fragment {
                         Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(getContext(), ProfileOrangActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mOrang.getIdOrang());
+                        intent.putExtra("nama", mOrang.getNamaOrang());
                         startActivity(intent);
                     }
                 });
@@ -373,6 +417,23 @@ public class ItemFilterAllFragment extends Fragment {
             public void bind(Orang orang){
                 mOrang = orang;
                 mNamaOrang.setText(orang.getNamaOrang());
+                if(orang.getIdOrang().equals("1")){
+                    mPoster.setImageResource(R.drawable.foto3);
+                } else if (orang.getIdOrang().equals("2")) {
+                    mPoster.setImageResource(R.drawable.foto1);
+                } else if (orang.getIdOrang().equals("3")) {
+                    mPoster.setImageResource(R.drawable.foto2);
+                } else if (orang.getIdOrang().equals("4")) {
+                    mPoster.setImageResource(R.drawable.foto3);
+                }  else if (orang.getIdOrang().equals("5")) {
+                    mPoster.setImageResource(R.drawable.foto1);
+                } else if (orang.getIdOrang().equals("6")) {
+                    mPoster.setImageResource(R.drawable.foto2);
+                } else if (orang.getIdOrang().equals("7")) {
+                    mPoster.setImageResource(R.drawable.foto3);
+                }else if (orang.getIdOrang().equals("8")) {
+                    mPoster.setImageResource(R.drawable.foto1);
+                }
             }
         }
     }
@@ -416,10 +477,12 @@ public class ItemFilterAllFragment extends Fragment {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Animation scaleDown = AnimationUtils.loadAnimation(getActivity(), R.anim.scale_down);
+                        Animation scaleDown = AnimationUtils.loadAnimation(getContext(), R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(getContext(), DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mLomba.getIdLomba());
+                        intent.putExtra("nama", mLomba.getNamaLomba());
+                        intent.putExtra("jenis_kegiatan", "Lainnya");
                         startActivity(intent);
                     }
                 });
@@ -427,6 +490,17 @@ public class ItemFilterAllFragment extends Fragment {
             public void bind(Lomba lomba){
                 mLomba = lomba;
                 mNamaLomba.setText(lomba.getNamaLomba());
+                if(lomba.getIdLomba().equals("1")){
+                    mPoster.setImageResource(R.drawable.lomba1);
+                } else if (lomba.getIdLomba().equals("2")) {
+                    mPoster.setImageResource(R.drawable.lomba2);
+                } else if (lomba.getIdLomba().equals("3")) {
+                    mPoster.setImageResource(R.drawable.lomba3);
+                } else if (lomba.getIdLomba().equals("4")) {
+                    mPoster.setImageResource(R.drawable.lomba4);
+                } else if (lomba.getIdLomba().equals("5")) {
+                    mPoster.setImageResource(R.drawable.lomba5);
+                }
             }
         }
     }

@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import astratech.myapplication.R;
-import astratech.myapplication.model.Lomba;
 import astratech.myapplication.model.Seminar;
 
 public class SeminarActivity extends AppCompatActivity {
@@ -33,6 +32,7 @@ public class SeminarActivity extends AppCompatActivity {
     private RecyclerView mRVSeminar, mRVSeminarLain;
     private Handler slideHandler = new Handler();
     private List<Seminar> mSeminars;
+    private EditText mSearchTxt;
     private SeminarAdapter mSeminarAdapter;
     private SeminarLainAdapter mSeminarLainAdapter;
     private boolean showAllItems = false;
@@ -103,6 +103,17 @@ public class SeminarActivity extends AppCompatActivity {
                 }
             }
         });
+        mSearchTxt = findViewById(R.id.search);
+
+        mSearchTxt.setFocusable(false);
+        mSearchTxt.setClickable(false);
+        mSearchTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SeminarActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     private void updateSlider(List<Seminar> seminarList){
         mSeminars = seminarList;
@@ -120,12 +131,31 @@ public class SeminarActivity extends AppCompatActivity {
     }
     public List<Seminar> dataLomba(){
         List<Seminar> seminarList = new ArrayList<>();
-        for(int i  = 0; i < 5; i++){
-            Seminar seminar = new Seminar();
-            seminar.setIdSeminar("" + i + 1);
-            seminar.setNamaSeminar("Seminar " + i);
-            seminarList.add(seminar);
-        }
+
+        Seminar seminar1 = new Seminar();
+        seminar1.setIdSeminar("1");
+        seminar1.setNamaSeminar("First Step");
+        seminarList.add(seminar1);
+
+        Seminar seminar2 = new Seminar();
+        seminar2.setIdSeminar("2");
+        seminar2.setNamaSeminar("Start Up");
+        seminarList.add(seminar2);
+
+        Seminar seminar3 = new Seminar();
+        seminar3.setIdSeminar("3");
+        seminar3.setNamaSeminar("Let Secure Your Code");
+        seminarList.add(seminar3);
+
+        Seminar seminar4 = new Seminar();
+        seminar4.setIdSeminar("4");
+        seminar4.setNamaSeminar("First Step");
+        seminarList.add(seminar4);
+
+        Seminar seminar5 = new Seminar();
+        seminar5.setIdSeminar("5");
+        seminar5.setNamaSeminar("Let Secure Your Code");
+        seminarList.add(seminar3);
         return seminarList;
     }
     private Runnable sliderRunnable = new Runnable() {
@@ -179,14 +209,27 @@ public class SeminarActivity extends AppCompatActivity {
             public void onBindViewHolder(Seminar seminar){
                 mSeminar = seminar;
                 mNamaLomba.setText(mSeminar.getNamaSeminar());
+                if(seminar.getIdSeminar().equals("1")){
+                    mPoster.setImageResource(R.drawable.seminar1);
+                } else if (seminar.getIdSeminar().equals("2")) {
+                    mPoster.setImageResource(R.drawable.seminar4);
+                } else if (seminar.getIdSeminar().equals("3")) {
+                    mPoster.setImageResource(R.drawable.seminar5);
+                } else if (seminar.getIdSeminar().equals("4")) {
+                    mPoster.setImageResource(R.drawable.seminar1);
+                } else if (seminar.getIdSeminar().equals("5")) {
+                    mPoster.setImageResource(R.drawable.seminar4);
+                }
             }
             @Override
             public void onClick(View view){
                 Animation scaleDown = AnimationUtils.loadAnimation(SeminarActivity.this, R.anim.scale_down);
                 itemView.startAnimation(scaleDown);
                 Intent intent = new Intent(SeminarActivity.this, DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
-                startActivity(intent);            }
+                intent.putExtra("id", mSeminar.getIdSeminar());
+                intent.putExtra("nama", mSeminar.getNamaSeminar());
+                intent.putExtra("jenis_kegiatan", "Seminar");
+                startActivity(intent);          }
         }
     }
     private class SeminarAdapter extends RecyclerView.Adapter<SeminarAdapter.SeminarHolder>{
@@ -232,7 +275,9 @@ public class SeminarActivity extends AppCompatActivity {
                         Animation scaleDown = AnimationUtils.loadAnimation(SeminarActivity.this, R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(SeminarActivity.this, DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mSeminar.getIdSeminar());
+                        intent.putExtra("nama", mSeminar.getNamaSeminar());
+                        intent.putExtra("jenis_kegiatan", "Seminar");
                         startActivity(intent);
                     }
                 });
@@ -240,6 +285,17 @@ public class SeminarActivity extends AppCompatActivity {
             public void bind(Seminar seminar){
                 mSeminar = seminar;
                 mNamaLomba.setText(seminar.getNamaSeminar());
+                if(seminar.getIdSeminar().equals("1")){
+                    mPoster.setImageResource(R.drawable.seminar1);
+                } else if (seminar.getIdSeminar().equals("2")) {
+                    mPoster.setImageResource(R.drawable.seminar4);
+                } else if (seminar.getIdSeminar().equals("3")) {
+                    mPoster.setImageResource(R.drawable.seminar5);
+                } else if (seminar.getIdSeminar().equals("4")) {
+                    mPoster.setImageResource(R.drawable.seminar1);
+                } else if (seminar.getIdSeminar().equals("5")) {
+                    mPoster.setImageResource(R.drawable.seminar4);
+                }
             }
         }
     }
@@ -297,7 +353,9 @@ public class SeminarActivity extends AppCompatActivity {
                         Animation scaleDown = AnimationUtils.loadAnimation(SeminarActivity.this, R.anim.scale_down);
                         itemView.startAnimation(scaleDown);
                         Intent intent = new Intent(SeminarActivity.this, DetailLombaActivity.class);
-//                        intent.putExtra(KEY_EXTRA, mKoleksi.getIdKoleksi());
+                        intent.putExtra("id", mSeminar.getIdSeminar());
+                        intent.putExtra("nama", mSeminar.getNamaSeminar());
+                        intent.putExtra("jenis_kegiatan", "Seminar");
                         startActivity(intent);
                     }
                 });
@@ -305,6 +363,17 @@ public class SeminarActivity extends AppCompatActivity {
             public void bind(Seminar seminar){
                 mSeminar = seminar;
                 mNamaLomba.setText(seminar.getNamaSeminar());
+                if(seminar.getIdSeminar().equals("1")){
+                    mPoster.setImageResource(R.drawable.seminar1);
+                } else if (seminar.getIdSeminar().equals("2")) {
+                    mPoster.setImageResource(R.drawable.seminar4);
+                } else if (seminar.getIdSeminar().equals("3")) {
+                    mPoster.setImageResource(R.drawable.seminar5);
+                } else if (seminar.getIdSeminar().equals("4")) {
+                    mPoster.setImageResource(R.drawable.seminar1);
+                } else if (seminar.getIdSeminar().equals("5")) {
+                    mPoster.setImageResource(R.drawable.seminar4);
+                }
             }
         }
     }
