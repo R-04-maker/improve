@@ -27,11 +27,10 @@ import astratech.myapplication.ui.activity.AddReviewActivity;
 import astratech.myapplication.ui.activity.AddSertifikatActivity;
 import astratech.myapplication.ui.activity.DetailSertifikatActivity;
 import astratech.myapplication.ui.activity.EditProfileActivity;
+import astratech.myapplication.ui.activity.MainActivity;
+import astratech.myapplication.ui.activity.PeminatanActivity;
 import astratech.myapplication.ui.activity.PoinActivity;
 import astratech.myapplication.ui.activity.XPActivty;
-import smartdevelop.ir.eram.showcaseviewlib.GuideView;
-import smartdevelop.ir.eram.showcaseviewlib.config.DismissType;
-import smartdevelop.ir.eram.showcaseviewlib.config.Gravity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -39,7 +38,6 @@ import smartdevelop.ir.eram.showcaseviewlib.config.Gravity;
  * create an instance of this fragment.
  */
 public class ProfileFragment extends Fragment {
-
 
     ExpandableListView expandableListView;
     ExpandableListAdapter expandableListAdapter;
@@ -102,6 +100,15 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        ImageView iconEditMinat = view.findViewById(R.id.ic_edit_minat);
+        iconEditMinat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), PeminatanActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         ConstraintLayout constraintTambahSertifikat = view.findViewById(R.id.constrain_btn_tambah_sertifikat);
         constraintTambahSertifikat.setOnClickListener(new View.OnClickListener() {
@@ -136,7 +143,8 @@ public class ProfileFragment extends Fragment {
         imageBtnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
             }
         });
 

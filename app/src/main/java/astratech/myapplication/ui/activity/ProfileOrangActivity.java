@@ -21,24 +21,32 @@ public class ProfileOrangActivity extends AppCompatActivity {
         CardView mBackButton = findViewById(R.id.backBtn);
         TextView mNamaOrang = findViewById(R.id.nama_orang);
         CircleImageView mFotoProfil = findViewById(R.id.foto_profile);
-        mNamaOrang.setText(mNama);
-        if(mId.equals("1")){
-            mFotoProfil.setImageResource(R.drawable.foto3);
-        } else if (mId.equals("2")) {
-            mFotoProfil.setImageResource(R.drawable.foto1);
-        } else if (mId.equals("3")) {
-            mFotoProfil.setImageResource(R.drawable.foto2);
-        } else if (mId.equals("4")) {
-            mFotoProfil.setImageResource(R.drawable.foto3);
-        }  else if (mId.equals("5")) {
-            mFotoProfil.setImageResource(R.drawable.foto1);
-        } else if (mId.equals("6")) {
-            mFotoProfil.setImageResource(R.drawable.foto2);
-        } else if (mId.equals("7")) {
-            mFotoProfil.setImageResource(R.drawable.foto3);
-        }else if (mId.equals("8")) {
-            mFotoProfil.setImageResource(R.drawable.foto1);
+
+        try {
+            if(!mId.equals(null)){
+                mNamaOrang.setText(mNama);
+                if(mId.equals("1")){
+                    mFotoProfil.setImageResource(R.drawable.foto3);
+                } else if (mId.equals("2")) {
+                    mFotoProfil.setImageResource(R.drawable.foto1);
+                } else if (mId.equals("3")) {
+                    mFotoProfil.setImageResource(R.drawable.foto2);
+                } else if (mId.equals("4")) {
+                    mFotoProfil.setImageResource(R.drawable.foto3);
+                }  else if (mId.equals("5")) {
+                    mFotoProfil.setImageResource(R.drawable.foto1);
+                } else if (mId.equals("6")) {
+                    mFotoProfil.setImageResource(R.drawable.foto2);
+                } else if (mId.equals("7")) {
+                    mFotoProfil.setImageResource(R.drawable.foto3);
+                }else if (mId.equals("8")) {
+                    mFotoProfil.setImageResource(R.drawable.foto1);
+                }
+            }
+        }catch (Exception e){
+
         }
+
 
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

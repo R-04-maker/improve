@@ -644,14 +644,14 @@
                     app:layout_constraintTop_toTopOf="@id/nama_orang_lb"
                     app:layout_constraintBottom_toBottomOf="@id/nama_orang_lb" />
 
-                <ImageView
-                    android:id="@+id/ic_titik_tiga_review"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/baseline_more_horiz_24"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/nama_orang_lb"
-                    app:tint="#B0B0B0"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/ic_titik_tiga_review"-->
+<!--                    android:layout_width="20dp"-->
+<!--                    android:layout_height="20dp"-->
+<!--                    android:src="@drawable/baseline_more_horiz_24"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/nama_orang_lb"-->
+<!--                    app:tint="#B0B0B0"/>-->
 
 
                 <androidx.cardview.widget.CardView

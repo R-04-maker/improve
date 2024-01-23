@@ -19,16 +19,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="90dp"
-        android:src="@drawable/bgkuislagi"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
-    <ImageView
         android:id="@+id/imageView9"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -36,24 +26,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/quizbg" />
-
-    <TextView
-        android:id="@+id/tingkatkan3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoSizeMaxTextSize="22dp"
-        android:autoSizeMinTextSize="10dp"
-        android:autoSizeTextType="uniform"
-        android:fontFamily="@font/poppins_semibold"
-        android:gravity="center"
-        android:text="Seberapa tertarik anda \n dengan pembuatan dan \n perancangan perangkat\n lunak?"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutMenuAtas1" />
 
     <TextView
         android:id="@+id/tingkatkan2"
@@ -75,180 +47,25 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/biru_tua"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="407dp"
-        android:layout_height="389dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        tools:layout_editor_absoluteX="1dp">
-
-        <TextView
-            android:id="@+id/myEditText"
-            android:layout_width="317dp"
-            android:layout_height="40dp"
-            android:autoSizeMaxTextSize="20dp"
-            android:autoSizeMinTextSize="10dp"
-            android:autoSizeTextType="uniform"
-            android:background="@drawable/bgkuis"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:gravity="left|center_vertical"
-            android:text="   A.   Tertarik "
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/myEditText2"
-            android:layout_width="317dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="153dp"
-            android:autoSizeMaxTextSize="20dp"
-            android:layout_marginTop="16dp"
-            android:autoSizeMinTextSize="10dp"
-            android:autoSizeTextType="uniform"
-            android:background="@drawable/bgkuis"
-            android:fontFamily="@font/poppins_semibold"
-            android:gravity="left|center_vertical"
-            android:text="   C.   Tidak tertarik "
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/myEditText3"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/myEditText3"
-            android:layout_width="317dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="210dp"
-            android:autoSizeMaxTextSize="20dp"
-            android:autoSizeMinTextSize="10dp"
-            android:autoSizeTextType="uniform"
-            android:background="@drawable/bgkuis"
-            android:fontFamily="@font/poppins_semibold"
-            android:gravity="left|center_vertical"
-            android:text="   B.   Mungkin tertarik"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/myEditText"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <LinearLayout
-            android:id="@+id/layoutMenuAtas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:layout_marginBottom="0dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="12dp">
-
-            <LinearLayout
-                android:id="@+id/btnPengajuanRuangan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:layout_marginBottom="30dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-
-                <Button
-                    android:id="@+id/btn_PengajuanRuangan"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:autoSizeMaxTextSize="20dp"
-                    android:autoSizeMinTextSize="10dp"
-                    android:autoSizeTextType="uniform"
-                    android:background="@drawable/btn_orange"
-                    android:enabled="true"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:gravity="center"
-                    android:text="Sebelumnya"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="24dp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/btnPengajuanAsset"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btn_PengajuanAset"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:autoSizeMaxTextSize="20dp"
-                    android:autoSizeMinTextSize="10dp"
-                    android:autoSizeTextType="uniform"
-                    android:background="@drawable/btn_orange"
-                    android:enabled="false"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:gravity="center"
-                    android:text="Selanjutnya"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="24dp" />
-
-
-            </LinearLayout>
-
-        </LinearLayout>
-        <!-- Other EditText attributes -->
-        />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutMenuAtas1"
+    <ScrollView
+        android:id="@+id/sv_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:elevation="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tingkatkan2"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/tingkatkan2">
 
 
-        <LinearLayout
-            android:id="@+id/btnPengajuanAsset1"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/btn_PengajuanAset1"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
                 android:autoSizeMaxTextSize="16dp"
                 android:autoSizeMinTextSize="10dp"
                 android:autoSizeTextType="uniform"
@@ -256,15 +73,254 @@
                 android:enabled="false"
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center"
-                android:text="2/5"
+                android:text="2/2"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="24dp" />
+                android:textSize="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/bgkuislagi"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_PengajuanAset1" />
+
+            <TextView
+                android:id="@+id/tingkatkan3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="22dp"
+                android:autoSizeMinTextSize="10dp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:text="Seberapa tertarik anda \n dengan pembuatan dan \n perancangan perangkat\n lunak ?"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView10"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView10"/>
+
+            <TextView
+                android:id="@+id/myEditText"
+                android:layout_width="317dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:autoSizeMaxTextSize="20dp"
+                android:autoSizeMinTextSize="10dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/bgkuis"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left|center_vertical"
+                android:paddingStart="15dp"
+                android:text="A.   Tertarik "
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView10" />
+
+            <TextView
+                android:id="@+id/myEditText2"
+                android:layout_width="317dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="153dp"
+                android:autoSizeMaxTextSize="20dp"
+                android:autoSizeMinTextSize="10dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/bgkuis"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left|center_vertical"
+                android:paddingStart="15dp"
+                android:text="C.  Tidak tertarik "
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/myEditText3"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/myEditText3"
+                android:layout_width="317dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="210dp"
+                android:autoSizeMaxTextSize="20dp"
+                android:autoSizeMinTextSize="10dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/bgkuis"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="left|center_vertical"
+                android:paddingStart="15dp"
+                android:text="B.   Sedikit tertarik"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/myEditText"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <Button
+                android:id="@+id/btn_PengajuanRuangan"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/btn_orange"
+                android:enabled="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Sebelumnya"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toStartOf="@+id/btn_PengajuanAset"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/myEditText2" />
+
+            <Button
+                android:id="@+id/btn_PengajuanAset"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/btn_orange"
+                android:enabled="false"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Selanjutnya"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_PengajuanRuangan"
+                app:layout_constraintTop_toBottomOf="@id/myEditText2" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="40dp"
+                android:autoSizeMaxTextSize="20dp"
+                android:autoSizeMinTextSize="10dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/btn_orange"
+                android:enabled="false"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Selanjutnya"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_PengajuanRuangan"
+                app:layout_constraintTop_toBottomOf="@id/btn_PengajuanAset" />
 
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:id="@+id/constraintLayout2"-->
+    <!--        android:layout_width="407dp"-->
+    <!--        android:layout_height="389dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+
+
+
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/layoutMenuAtas"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="25dp"-->
+    <!--            android:layout_marginStart="25dp"-->
+    <!--            android:layout_marginEnd="25dp"-->
+    <!--            android:layout_marginBottom="25dp"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent">-->
+
+    <!--            <LinearLayout-->
+    <!--                android:id="@+id/btnPengajuanRuangan"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_margin="15dp"-->
+    <!--                android:layout_marginBottom="30dp"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:orientation="vertical">-->
+
+
+
+
+
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:id="@+id/btnPengajuanAsset"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_margin="15dp"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:orientation="vertical">-->
+
+
+
+
+    <!--            </LinearLayout>-->
+
+    <!--        </LinearLayout>-->
+    <!--        &lt;!&ndash; Other EditText attributes &ndash;&gt;-->
+    <!--        />-->
+
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/layoutMenuAtas1"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="16dp"-->
+    <!--        android:elevation="0dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tingkatkan2"-->
+    <!--        app:layout_constraintVertical_bias="0.0">-->
+
+    <!--        -->
+    <!--        -->
+
+
+
+    <!--    </LinearLayout>-->
+    <!--    -->
+    <!--    -->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

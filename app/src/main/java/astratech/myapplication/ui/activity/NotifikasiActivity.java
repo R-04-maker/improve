@@ -146,7 +146,7 @@ public class NotifikasiActivity extends AppCompatActivity {
 
         Notifikasi notifikasi3 = new Notifikasi();
         notifikasi3.setIdNotifikasi(String.valueOf(2));
-        notifikasi3.setNamaNotifikasi("Pengajuan Surat Pengantar Diterima");
+        notifikasi3.setNamaNotifikasi("Pengajuan Surat Diterima");
         notifikasi3.setDeskripsiNotifikasi("Selamat!!!, pengajuan surat pengantar untuk mengikuti perlombaan Web Design yang di selengga");
         notifikasi3.setWaktuNotifikasi("20 jam");
         notifikasi3.setJenisNotifikasi("Surat Pengantar");

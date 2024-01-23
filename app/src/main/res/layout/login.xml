@@ -180,7 +180,7 @@
         android:fontFamily="@font/poppins_extrabold"
         android:gravity="center"
         android:text="Masuk"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:textColor="#FFFFFF"
         app:circularflow_radiusInDP="100dp"
         app:layout_constraintEnd_toEndOf="parent"

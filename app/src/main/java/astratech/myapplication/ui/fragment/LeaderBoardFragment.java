@@ -76,6 +76,26 @@ public class LeaderBoardFragment extends Fragment {
             }
         });
 
+        mRvLeaderBoard.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                // dx adalah perubahan horizontal dan dy adalah perubahan vertikal saat RecyclerView digeser.
+
+                if (dy > 0) {
+                    ImageView spasiImg = view.findViewById(R.id.spasi_kebawah_rv_elad);
+                    spasiImg.setVisibility(View.VISIBLE);
+                    // RecyclerView sedang digeser ke bawah (scroll down)
+                    // Tambahkan kode yang ingin dijalankan saat scroll down di sini
+                } else if (dy < 0) {
+                    ImageView spasiImg = view.findViewById(R.id.spasi_kebawah_rv_elad);
+                    spasiImg.setVisibility(View.GONE);
+                    // RecyclerView sedang digeser ke atas (scroll up)
+                    // Tambahkan kode yang ingin dijalankan saat scroll up di sini
+                }
+            }
+        });
 
         return view;
     }

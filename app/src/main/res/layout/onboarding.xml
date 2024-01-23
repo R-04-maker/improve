@@ -21,12 +21,11 @@
         android:id="@+id/imageView11"
         android:layout_width="400dp"
         android:layout_height="400dp"
-        android:layout_marginTop="-250dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/newiconlagi"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView8" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <Button
@@ -71,18 +70,21 @@
 
     <TextView
         android:id="@+id/desc"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="27dp"
         android:autoSizeMaxTextSize="18dp"
-        android:autoSizeMinTextSize="10dp"
+        android:autoSizeMinTextSize="16dp"
         android:autoSizeTextType="uniform"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
-        android:text="Tingkatkan kualitas dirimu \n dapatkan rekomendasi lomba\n dan jadi yang terbaik"
+        android:text="Tingkatkan kualitas dirimu dan jadi yang terbaik dengan rekomendasi kegiatan dari improve"
         android:textAllCaps="false"
         android:textColor="#0D046B"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tingkatkan" />
 </androidx.constraintlayout.widget.ConstraintLayout>

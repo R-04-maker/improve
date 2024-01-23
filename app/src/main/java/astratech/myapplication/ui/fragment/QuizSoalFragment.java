@@ -211,7 +211,7 @@ public class QuizSoalFragment extends Fragment {
 //                    builder.setNegativeButton("Tidak", null);
 //                    builder.show();
                 }else {
-                    textangka.setText(textnomor[currentIndex]);
+                    textangka.setText("2/2");
 
                     // Update the currentIndex to point to the next item
                     currentIndex = (currentIndex + 1) % textnomor.length;
@@ -260,7 +260,7 @@ public class QuizSoalFragment extends Fragment {
 //                    builder.setNegativeButton("Tidak", null);
 //                    builder.show();
                 }else {
-                    textangka.setText(textnomor[currentIndex]);
+                    textangka.setText("1/2");
 
                     // Update the currentIndex to point to the next item
                     currentIndex = (currentIndex + 1) % textnomor.length;
